@@ -22,6 +22,10 @@ Header 6
 .h6-nav-bar {
   padding: 0px;
 
+  .ml-auto {
+    margin-left: auto !important;
+  }
+
   .navbar-nav {
     .nav-link {
       padding: 35px 15px;
@@ -679,7 +683,7 @@ Grid page
   padding: 0 15px;
 }
 
-.show-grid [class^="col-"] {
+.show-grid [class^='col-'] {
   padding-top: 10px;
   padding-bottom: 10px;
   border: 1px solid $border;
@@ -857,7 +861,7 @@ Timeline page
 }
 
 .timeline:before {
-  content: " ";
+  content: ' ';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -874,7 +878,7 @@ Timeline page
 
 .timeline > li:before,
 .timeline > li:after {
-  content: " ";
+  content: ' ';
   display: table;
 }
 
@@ -884,7 +888,7 @@ Timeline page
 
 .timeline > li:before,
 .timeline > li:after {
-  content: " ";
+  content: ' ';
   display: table;
 }
 
@@ -904,7 +908,7 @@ Timeline page
 }
 
 .timeline > li > .timeline-panel:before {
-  content: " ";
+  content: ' ';
   display: inline-block;
   position: absolute;
   top: 26px;
@@ -916,7 +920,7 @@ Timeline page
 }
 
 .timeline > li > .timeline-panel:after {
-  content: " ";
+  content: ' ';
   display: inline-block;
   position: absolute;
   top: 27px;
@@ -1326,10 +1330,10 @@ textarea {
 }
 
 .input-group-addon {
-  [type="radio"]:not(:checked),
-  [type="radio"]:checked,
-  [type="checkbox"]:not(:checked),
-  [type="checkbox"]:checked {
+  [type='radio']:not(:checked),
+  [type='radio']:checked,
+  [type='checkbox']:not(:checked),
+  [type='checkbox']:checked {
     position: initial;
     opacity: 1;
   }

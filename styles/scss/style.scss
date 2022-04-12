@@ -18,11 +18,11 @@ File: scss
  *	8. Custom Templates
  */
 
-@import "variable";
-@import "~/node_modules/bootstrap/scss/bootstrap";
-@import "../scss/icons/font-awesome/css/font-awesome.min.css";
-@import "../scss/icons/themify-icons/themify-icons.css";
-@import "elements.scss";
-@import "app.scss";
-@import "common.scss";
-@import "responsive.scss";
+@import 'variable';
+@import '~/node_modules/bootstrap/scss/bootstrap';
+@import '../scss/icons/font-awesome/css/font-awesome.min.css';
+@import '../scss/icons/themify-icons/themify-icons.css';
+@import 'elements.scss';
+@import 'app.scss';
+@import 'common.scss';
+@import 'responsive.scss';
