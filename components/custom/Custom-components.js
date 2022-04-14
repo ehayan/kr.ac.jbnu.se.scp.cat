@@ -16,11 +16,13 @@ import BlogComponent from './sections/blogcomponent';
 import C2aComponent from './sections/c2acomponent';
 import ContactComponent from './sections/contactcomponent';
 import CallToAction from '../../components/call-to-action/CallToAction';
+import Portfolio from './sections/portfoliocomponent';
 
 const CustomComponents = () => {
   return (
     <div>
       <Banner2 />
+      <Portfolio />
       {/* <HeaderComponent /> */}
       {/* <BannerComponent /> */}
       {/* <FormBannerComponent />

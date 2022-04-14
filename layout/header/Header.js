@@ -24,8 +24,9 @@ const Header = () => {
         <Container className='po-relative'>
           <Navbar className='navbar-expand-lg h6-nav-bar'>
             <NavbarBrand href='/'>
-              <Image src={logo} alt='wrapkit' />
+              <Image src={logo} />
             </NavbarBrand>
+            <span>Cat</span>
             <NavbarToggler onClick={toggle}>
               <span className='ti-menu'></span>
             </NavbarToggler>
@@ -65,9 +66,9 @@ const Header = () => {
               </Nav>
               <div className='act-buttons'>
                 <NavLink
-                  // href='https://wrappixel.com/templates/nextkit-nextjs-free-uikit'
+                  href='/login'
                   className='btn btn-light font-14'
-                  target='_blank'
+                  // target='_blank'
                 >
                   Login
                 </NavLink>
