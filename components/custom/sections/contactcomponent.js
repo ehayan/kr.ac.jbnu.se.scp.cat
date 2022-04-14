@@ -8,13 +8,13 @@ import {
   Input,
   Button,
 } from 'reactstrap';
-import {signIn, signOut, useSession} from 'next-auth/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 const ContactComponent = () => {
-  const {data: session, status} = useSession();
+  const { data: session, status } = useSession();
 
-  if(status === 'loading'){
-    <p>Loading...</p>
+  if (status === 'loading') {
+    <p>Loading...</p>;
   }
   return (
     <div>
@@ -83,11 +83,11 @@ const ContactComponent = () => {
                       251 546 9442
                       <br /> info@wrappixel.com
                     </p> */}
-                    
-                    {!session &&(
-                       <button onClick={() => signIn()}> Google Login</button> 
+
+                    {!session && (
+                      <button onClick={() => signIn()}> Google Login</button>
                     )}
-                    {session &&(
+                    {session && (
                       <button onClick={() => signOut()}> Google Logout</button>
                     )}
                     <style jsx>{`
@@ -104,11 +104,6 @@ const ContactComponent = () => {
                         font-weight:500;
                         font-family:Roboto, sans-serif;
                     `}</style>
-                    
-                    <p className='text-white op-8'>
-                      601 Sherwood Ave.
-                      <br /> San Bernandino, CA 92404
-                    </p>
                   </div>
                 </Col>
               </Row>

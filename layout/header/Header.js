@@ -37,19 +37,19 @@ const Header = () => {
               id='h6-info'
             >
               <Nav navbar className='ml-auto'>
-                {/* <NavItem>
-                  <Link href='/'>
+                <NavItem>
+                  <Link href='/link'>
                     <a
                       className={
-                        router.pathname == '/'
+                        router.pathname == '/link'
                           ? 'text-white nav-link'
                           : 'nav-link'
                       }
                     >
-                      Custom Components
+                      Link
                     </a>
                   </Link>
-                </NavItem> */}
+                </NavItem>
                 <NavItem>
                   <Link href='/basic'>
                     <a
@@ -74,6 +74,12 @@ const Header = () => {
                 </NavLink>
               </div>
             </Collapse>
+            <style jsx>{`
+              span {
+                font-size: 20px;
+                color: white;
+              }
+            `}</style>
           </Navbar>
         </Container>
       </div>
