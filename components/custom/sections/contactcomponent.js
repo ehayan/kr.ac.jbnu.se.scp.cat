@@ -8,8 +8,14 @@ import {
   Input,
   Button,
 } from 'reactstrap';
+import {signIn, signOut, useSession} from 'next-auth/react';
 
 const ContactComponent = () => {
+  const {data: session, status} = useSession();
+
+  if(status === 'loading'){
+    <p>Loading...</p>
+  }
   return (
     <div>
       {/* <div className='spacer bg-light'>
@@ -73,10 +79,32 @@ const ContactComponent = () => {
                 <Col lg='4'>
                   <div className='detail-box p-40 bg-info'>
                     <h2 className='text-white'>Social Login</h2>
-                    <p className='text-white m-t-30 op-8'>
+                    {/* <p className='text-white m-t-30 op-8'>
                       251 546 9442
                       <br /> info@wrappixel.com
-                    </p>
+                    </p> */}
+                    
+                    {!session &&(
+                       <button onClick={() => signIn()}> Google Login</button> 
+                    )}
+                    {session &&(
+                      <button onClick={() => signOut()}> Google Logout</button>
+                    )}
+                    <style jsx>{`
+                      button{
+                        background-color:rgb(255,255,255);
+                        display:inline-flex;
+                        align-items:center,;
+                        clolr: rgba(0,0,0,0.54);
+                        box-shadow: rgb(0,0,0,0.24) 0px 2px 2px 0px, rgba(0,0,0,0.24) 0px 0px 1px 0px;
+                        padding: 5px;
+                        border-radius: 2px;
+                        border: 1px solid transparent;
+                        font-size:14px;
+                        font-weight:500;
+                        font-family:Roboto, sans-serif;
+                    `}</style>
+                    
                     <p className='text-white op-8'>
                       601 Sherwood Ave.
                       <br /> San Bernandino, CA 92404
