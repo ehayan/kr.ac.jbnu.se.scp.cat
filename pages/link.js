@@ -6,7 +6,7 @@ export default function Link() {
   return (
     <div>
       <Head>
-        <title>link</title>
+        <title>CAT | Project</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

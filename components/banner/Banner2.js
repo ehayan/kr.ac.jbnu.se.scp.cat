@@ -13,7 +13,7 @@ const Banner2 = () => {
             <h1 className='title'>안녕하세요</h1>
             <h4 className='subtitle font-light'>
               협업 지원 도구 통합
-              <br /> Collaborate Assitant Tools
+              <br /> Collaborate Assistant Tools
             </h4>
             {/* <a
               href='https://wrappixel.com/templates/nextkit-nextjs-free-uikit'

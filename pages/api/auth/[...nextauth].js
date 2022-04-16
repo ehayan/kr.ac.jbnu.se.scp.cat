@@ -25,9 +25,9 @@ export default NextAuth({
       },
       redirect: async (url, _baseUrl) => {
           if( url === '/profile'){
-              return Promise.resolve('/login');
+              return Promise.resolve('/');
           }
-          return Promise.resolve('/login');
+          return Promise.resolve('/');
       }
   }
 });

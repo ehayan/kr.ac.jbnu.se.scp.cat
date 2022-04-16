@@ -34,7 +34,7 @@ const PortfolioComponent = () => {
           <Row className='justify-content-center'>
             <Col md='7' className='text-center'>
               <h1 className='title'>
-                Collaborate Assitant Tools(CAT) <hr></hr>
+                Collaborate Assistant Tools(CAT) <hr></hr>
               </h1>
               <h6 className='subtitle'>
                 개발 협업 시, 취향에 따라 용건에 따라 다양한 협업 도구들을

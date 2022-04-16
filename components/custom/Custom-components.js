@@ -23,9 +23,9 @@ const CustomComponents = () => {
     <div>
       <Banner2 />
       <Portfolio />
-      {/* <HeaderComponent /> */}
-      {/* <BannerComponent /> */}
-      {/* <FormBannerComponent />
+      {/* <HeaderComponent />
+      <BannerComponent />
+      <FormBannerComponent />
       <FeatureComponent />
       <PortfolioComponent />
       <PricingComponent />

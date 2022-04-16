@@ -12,12 +12,19 @@ import {
   Container,
   NavLink,
 } from 'reactstrap'; //module
+import { signIn, signOut, useSession } from 'next-auth/react';
 import logo from '../../assets/images/logos/small_cat_logo.png';
 
 const Header = () => {
+  const {data:session, status} = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const toggle = () => setIsOpen(!isOpen);
+
+  if(status === 'loading'){
+    return <p>Loading...</p>
+  }
+
   return (
     <div className='topbar' id='top'>
       <div className='header6'>
@@ -51,10 +58,10 @@ const Header = () => {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href='/basic'>
+                  <Link href='/toolhelp'>
                     <a
                       className={
-                        router.pathname == '/basic'
+                        router.pathname == '/toolhelp'
                           ? 'text-white nav-link'
                           : 'nav-link'
                       }
@@ -65,13 +72,16 @@ const Header = () => {
                 </NavItem>
               </Nav>
               <div className='act-buttons'>
-                <NavLink
-                  href='/login'
-                  className='btn btn-light font-14'
-                  // target='_blank'
-                >
-                  Login
-                </NavLink>
+                <button className='btn btn-light font-14' onClick={() => {
+                  if(session){
+                    signOut();
+                  }
+                  else if(!session) {
+                    signIn();
+                  }
+                }}>
+                  {session ? "Logout" : "Login"}
+                </button>
               </div>
             </Collapse>
             <style jsx>{`

@@ -2,29 +2,63 @@
 import React from "react";
 import { Row, Col, Container, Card, CardBody } from "reactstrap";
 import Image from "next/image";
-import img1 from "../../../assets/images/features/feature13/img1.jpg";
-import img2 from "../../../assets/images/features/feature13/img2.jpg";
-import img3 from "../../../assets/images/features/feature13/img3.jpg";
-import img4 from "../../../assets/images/features/feature13/img4.jpg";
-import img5 from "../../../assets/images/features/feature30/feature-img.jpg";
+import githubLogo from "../../../assets/images/tool-logos/git-hub.png";
+import trelloLogo from "../../../assets/images/tool-logos/trello.png";
+import slackLogo from "../../../assets/images/tool-logos/slack.png";
+import notionLogo from "../../../assets/images/tool-logos/notion.png";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const FeatureComponent = () => {
+  const router = useRouter();
+
   return (
     <div>
       <div className="spacer bg-light">
         <Container>
           <Row className="justify-content-center">
-            <Col md="7" className="text-center">
-              <h1 className="title font-bold">Features</h1>
+            <Col md="0" className="text-center">
+              <h1 className="title font-bold">지원 도구 도움말</h1>
               <h6 className="subtitle">
-                Here you can check Demos we created based on WrapKit. Its quite
-                easy to Create your own dream website &amp; dashboard in
-                No-time.
+                협업 지원 도구를 사용하기 어렵다면
+                <br />
+                CAT이 제공하는 도움말을 통해 사용법을 익혀보세요.
               </h6>
+              <br />
+              <Image src={githubLogo} width={80} height={80}/>
+              <Image src={trelloLogo} width={80} height={80}/>
+              <Image src={slackLogo} width={80} height={80}/>
+              <Image src={notionLogo} width={80} height={80}/>
+              <br />
+              <Link href="/toolhelp/github" >
+                GitHub
+              </Link>
+              <Link href="/toolhelp/trello">
+                Trello     
+              </Link>
+              <Link href="/toolhelp/slack">
+                Slack     
+              </Link>
+              <Link href="/toolhelp/notion">
+                Notion     
+              </Link>
             </Col>
           </Row>
-        </Container>
+          <style jsx>{`
+            Link{
+              text-decoration: none;
+              color: black;
+            }
+          `}</style>
+        </Container>]
       </div>
+    </div>
+  );
+};
+
+export default FeatureComponent;
+
+      {/* </div>
       <div className="spacer feature4">
         <Container>
           <Row className="justify-content-center">
@@ -250,13 +284,12 @@ const FeatureComponent = () => {
                     </a>
                   </div>
                 </CardBody>
-              </Card>
-            </Col>
+              </Card> */}
+            {/* </Col>
           </Row>
         </Container>
-      </div>
-    </div>
-  );
-};
+      </div> */}
+//     </div>
+//   );
+// };
 
-export default FeatureComponent;
