@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const Link = (page) => {
+const ProjectPage = (page) => {
   return (
     <div>
       <Head>
@@ -10,4 +10,5 @@ const Link = (page) => {
     </div>
   );
 };
-export default Link;
+
+export default ProjectPage;

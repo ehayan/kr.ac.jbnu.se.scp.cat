@@ -16,13 +16,13 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import logo from '../../assets/images/logos/small_cat_logo.png';
 
 const Header = () => {
-  const {data:session, status} = useSession();
+  const { data: session, status } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const toggle = () => setIsOpen(!isOpen);
 
-  if(status === 'loading'){
-    return <p>Loading...</p>
+  if (status === 'loading') {
+    return <p>Loading...</p>;
   }
 
   return (
@@ -44,16 +44,16 @@ const Header = () => {
               id='h6-info'
             >
               <Nav navbar className='ml-auto'>
-                <NavItem>
-                  <Link href='/link'>
+                <NavItem className={session ? '' : 'hide'}>
+                  <Link href='/project'>
                     <a
                       className={
-                        router.pathname == '/link'
+                        router.pathname == '/project'
                           ? 'text-white nav-link'
                           : 'nav-link'
                       }
                     >
-                      Link
+                      Project
                     </a>
                   </Link>
                 </NavItem>
@@ -72,15 +72,17 @@ const Header = () => {
                 </NavItem>
               </Nav>
               <div className='act-buttons'>
-                <button className='btn btn-light font-14' onClick={() => {
-                  if(session){
-                    signOut();
-                  }
-                  else if(!session) {
-                    signIn();
-                  }
-                }}>
-                  {session ? "Logout" : "Login"}
+                <button
+                  className='btn btn-light font-14'
+                  onClick={() => {
+                    if (session) {
+                      signOut();
+                    } else if (!session) {
+                      signIn();
+                    }
+                  }}
+                >
+                  {session ? 'Logout' : 'Login'}
                 </button>
               </div>
             </Collapse>
