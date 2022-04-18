@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import FormBannerComponent from '../components/custom/sections/formbannercomponent';
 
 const Link = (page) => {
   return (
@@ -7,6 +8,7 @@ const Link = (page) => {
         <title>CAT | Project</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <FormBannerComponent />
     </div>
   );
 };

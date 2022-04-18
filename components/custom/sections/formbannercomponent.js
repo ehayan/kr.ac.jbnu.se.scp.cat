@@ -1,7 +1,6 @@
 import React from 'react';
-import { Row, Col, Container, Form } from 'reactstrap';
+import { Row, Col, Container, Form, Alert } from 'reactstrap';
 import Image from 'next/image';
-// import banner from '../../../assets/images/form-banners/banner1/banner-img.png';
 import bannerimg from '../../../assets/images/logos/cat_logo.png';
 
 const FormBannerComponent = () => {
@@ -26,6 +25,7 @@ const FormBannerComponent = () => {
                     />
                     <input
                       type='submit'
+                      onClick={console.log('링크추가')}
                       value='ADD'
                       className='bg-info font-semibold font-16 btn-rounded text-uppercase text-white text-center'
                     />

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Cards from '../components/basic/cards';
 
 const ProjectPage = (page) => {
   return (
@@ -7,6 +8,10 @@ const ProjectPage = (page) => {
         <title>CAT | Project</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
+
+      <div>
+        <Cards />
+      </div>
     </div>
   );
 };
