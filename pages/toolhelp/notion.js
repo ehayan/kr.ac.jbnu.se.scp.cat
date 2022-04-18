@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import NotionHelp from '../../components/custom/sections/toolhelp/notion-help';
-import FeatureComponent from '../../components/custom/sections/featurecomponent';
+import HelpBannerComponent from '../../components/custom/sections/helpbannercomponent';
 
 export default function ToolHelpNotion() {
   return (
@@ -9,7 +9,7 @@ export default function ToolHelpNotion() {
         <title>CAT | Help | Notion</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <FeatureComponent />
+      <HelpBannerComponent />
       <NotionHelp />
     </div>
   );

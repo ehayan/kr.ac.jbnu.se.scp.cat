@@ -18,6 +18,10 @@ const navigation = [
     title: 'GitHub',
     href: '/project-github',
   },
+  {
+    title: 'Tool Help',
+    href: '/toolhelp',
+  },
 ];
 
 const Sidebar = () => {

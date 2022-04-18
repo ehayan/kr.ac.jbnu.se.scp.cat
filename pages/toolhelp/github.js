@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import GitHubHelp from '../../components/custom/sections/toolhelp/github-help';
-import FeatureComponent from '../../components/custom/sections/featurecomponent';
+import HelpBannerComponent from '../../components/custom/sections/helpbannercomponent';
 
 export default function ToolHelpGit() {
   return (
@@ -9,7 +9,7 @@ export default function ToolHelpGit() {
         <title>CAT | Help | Github</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <FeatureComponent />
+      <HelpBannerComponent />
       <GitHubHelp />
     </div>
   );

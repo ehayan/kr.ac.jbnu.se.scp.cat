@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import SlackHelp from '../../components/custom/sections/toolhelp/slack-help';
-import FeatureComponent from '../../components/custom/sections/featurecomponent';
+import HelpBannerComponent from '../../components/custom/sections/helpbannercomponent';
 
 export default function ToolHelpSlack() {
   return (
@@ -9,7 +9,7 @@ export default function ToolHelpSlack() {
         <title>CAT | Help | Slack</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <FeatureComponent />
+      <HelpBannerComponent />
       <SlackHelp />
     </div>
   );
