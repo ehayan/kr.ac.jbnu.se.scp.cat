@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 const navigation = [
   {
     title: 'Dashboard',
-    href: '/',
+    href: '/dashboard',
   },
   {
     title: 'Link',
@@ -26,9 +26,12 @@ const Sidebar = () => {
   return (
     <div className='p-20'>
       <div className='d-flex align-items-center'>
-        <Image src={logo} height={'60px'} width={'60px'} />
+        <a href='/'>
+          <Image src={logo} height={'60px'} width={'60px'} />
+        </a>
+        <h4 className='m-l-5'>Cat</h4>
       </div>
-      <div className='pt-4 mt-2'>
+      <div className='pt-2 mt-2'>
         <Nav vertical className='sidebarNav'>
           {navigation.map((navi, index) => (
             <NavItem key={index} className='sidenav-bg'>

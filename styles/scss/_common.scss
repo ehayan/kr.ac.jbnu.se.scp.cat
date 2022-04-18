@@ -1514,3 +1514,18 @@ Modal in center
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
 }
+
+/*******************
+Sidebar
+*******************/
+.sidebarArea {
+  height: 100vh;
+}
+.sidenav-bg:hover {
+  background-color: $gray-100;
+  border-radius: $border-radius;
+}
+.contentArea {
+  height: 100vh;
+  background-color: #f6f6f6;
+}

@@ -7,7 +7,7 @@ File: scss
 /******************* 
 This is the font import from the google api 
 *******************/
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 /******************* 
 Global Styles 
 *******************/
@@ -474,7 +474,7 @@ html body {
   }
 
   .font-stylish {
-    font-family: "Calafia-Regular";
+    font-family: 'Calafia-Regular';
   }
 }
 
@@ -643,6 +643,10 @@ Background Colors
 
 .bg-yellow {
   background-color: $yellow;
+}
+
+.bg-lightblue {
+  background-color: #afe1fa;
 }
 
 .bg-facebook {
@@ -1615,14 +1619,14 @@ a.btn-outline-success {
   }
 
   &:before {
-    content: "";
+    content: '';
     padding-right: 27px;
     background-color: $success;
     color: #ffffff;
   }
 
   &:after {
-    content: "";
+    content: '';
     padding-right: 24px;
     background-color: $inverse;
     color: #999999;

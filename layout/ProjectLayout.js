@@ -5,12 +5,12 @@ import SideBar from '../components/sidebar/Sidebar';
 const ProjectLayout = ({ children }) => {
   return (
     <main>
-      <div className='pageWrapper d-md-block d-lg-flex '>
-        <aside className='sidebarArea bg-yellow'>
+      <div className='pageWrapper d-flex'>
+        <aside className='sidebarArea bg-lightblue'>
           <SideBar />
         </aside>
 
-        <div className='contentArea'>
+        <div className='contentArea flex-fill'>
           <div className='container-fluid'>{children}</div>
         </div>
       </div>

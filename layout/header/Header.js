@@ -33,7 +33,7 @@ const Header = () => {
             <NavbarBrand href='/'>
               <Image src={logo} />
             </NavbarBrand>
-            <span>Cat</span>
+            <h3>Cat</h3>
             <NavbarToggler onClick={toggle}>
               <span className='ti-menu'></span>
             </NavbarToggler>
@@ -87,8 +87,7 @@ const Header = () => {
               </div>
             </Collapse>
             <style jsx>{`
-              span {
-                font-size: 20px;
+              h3 {
                 color: white;
               }
             `}</style>
