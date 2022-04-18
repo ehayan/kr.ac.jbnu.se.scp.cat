@@ -11,15 +11,15 @@ const NotionHelp = () => {
       <div className="static-slider10">
         <Container>
           <Row className="justify-content-center">
-            <Col md="8" className="align-self-center ">
+            <Col md="10" className="align-self-center ">
               <h1 className="title" >Notion</h1>
               <h6 className="subtitle op-8">
                 Notion
               </h6>
             </Col>
-            <Col md="3" className="align-self-center ">
+            {/* <Col md="3" className="align-self-center ">
               <Image src={BigNotion}/>
-            </Col>
+            </Col> */}
           </Row>
         </Container>
       </div>

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import logo from '../../assets/images/logos/cat_logo.png';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 const navigation = [
   {
@@ -15,11 +16,12 @@ const navigation = [
   },
   {
     title: 'GitHub',
-    href: '/',
+    href: '/project-github',
   },
 ];
 
 const Sidebar = () => {
+  const { data: session } = useSession();
   let curl = useRouter();
   const location = curl.pathname;
 
@@ -30,6 +32,18 @@ const Sidebar = () => {
           <Image src={logo} height={'60px'} width={'60px'} />
         </a>
         <h4 className='m-l-5'>Cat</h4>
+      </div>
+      <div className='act-buttons pt-2 mt-2 m-l-15'>
+        <button
+          className='btn btn-light font-14 '
+          onClick={() => {
+            if (session) {
+              signOut();
+            }
+          }}
+        >
+          {session ? 'Logout' : 'Login'}
+        </button>
       </div>
       <div className='pt-2 mt-2'>
         <Nav vertical className='sidebarNav'>
