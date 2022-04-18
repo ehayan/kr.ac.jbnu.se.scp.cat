@@ -5,7 +5,7 @@ const ProjectPage = (page) => {
   return (
     <div>
       <Head>
-        <title>CAT | Project</title>
+        <title>CAT | Project | Dashboard</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
