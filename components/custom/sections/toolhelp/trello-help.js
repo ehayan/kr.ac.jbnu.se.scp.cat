@@ -11,15 +11,15 @@ const TrelloHelp = () => {
       <div className="static-slider10">
         <Container>
           <Row className="justify-content-center">
-            <Col md="8" className="align-self-center ">
+            <Col md="10" className="align-self-center ">
               <h1 className="title" >Trello</h1>
               <h6 className="subtitle op-8">
                 Trello
               </h6>
             </Col>
-            <Col md="3" className="align-self-center ">
+            {/* <Col md="3" className="align-self-center ">
                 <Image src={BigTrello}/>
-            </Col>
+            </Col> */}
           </Row>
         </Container>
       </div>

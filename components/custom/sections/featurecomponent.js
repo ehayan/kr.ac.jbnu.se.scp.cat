@@ -30,7 +30,7 @@ const FeatureComponent = () => {
               <Image src={slackLogo} width={80} height={80}/>
               <Image src={notionLogo} width={80} height={80}/>
               <br />
-              <Link href="/toolhelp/github" >
+              <Link href="/toolhelp/github" className={router.pathname === "/toolhelp/github" ? "active" : ""} >
                 GitHub
               </Link>
               <Link href="/toolhelp/trello">
@@ -48,6 +48,9 @@ const FeatureComponent = () => {
             Link{
               text-decoration: none;
               color: black;
+            }
+            .active {
+              background-color: black;
             }
           `}</style>
         </Container>]

@@ -21,7 +21,7 @@ body {
   font-family: $bodyfont;
   margin: 0;
   overflow-x: hidden;
-  color: $bodytext;
+  color: #000000;
   font-weight: 400;
 }
 
@@ -79,7 +79,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $headingtext;
+  color: #000000;
   font-family: $headingfont;
 }
 
@@ -1734,4 +1734,15 @@ a.btn-outline-success {
   background-size: cover;
   background-position: top 20% center;
   background-image: $c2a-image;
+}
+
+.commit-txt {
+  color: $white;
+  text-align: center;
+  padding: 10px 25px;
+  box-shadow: none;
+  transition: 0s;
+  border-radius: $radius;
+  border-bottom-left-radius : 0px;
+  border-bottom-right-radius : 0px;
 }

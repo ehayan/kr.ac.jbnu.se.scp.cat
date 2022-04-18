@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 import SideBar from '../components/sidebar/Sidebar';
+import FormBannerComponent from '../components/custom/sections/formbannercomponent';
 
 const ProjectLayout = ({ children }) => {
   return (
