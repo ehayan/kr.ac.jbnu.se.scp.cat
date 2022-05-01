@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 import SideBar from '../components/sidebar/Sidebar';
-import FormBannerComponent from '../components/custom/sections/formbannercomponent';
+import Project_header from './header/Project-header';
 
 const ProjectLayout = ({ children }) => {
   return (
@@ -12,6 +12,7 @@ const ProjectLayout = ({ children }) => {
         </aside>
 
         <div className='contentArea flex-fill'>
+          <Project_header />
           <div className='container-fluid'>{children}</div>
         </div>
       </div>

@@ -4,23 +4,44 @@ import logo from '../../assets/images/logos/cat_logo.png';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { signIn, signOut, useSession } from 'next-auth/react';
-
+import {
+  FaClipboardList,
+  FaRegPlusSquare,
+  FaGithub,
+  FaRegBookmark,
+  FaGoogleDrive,
+} from 'react-icons/fa';
+import { SiNotion } from 'react-icons/si';
 const navigation = [
   {
     title: 'Dashboard',
     href: '/project',
+    icon: <FaClipboardList />,
   },
   {
     title: 'Link',
     href: '/link',
+    icon: <FaRegPlusSquare />,
   },
   {
     title: 'GitHub',
     href: '/project-github',
+    icon: <FaGithub />,
+  },
+  {
+    title: 'GoogleDrive',
+    href: '/googledrive',
+    icon: <FaGoogleDrive />,
+  },
+  {
+    title: 'Notion',
+    href: '/notion',
+    icon: <SiNotion />,
   },
   {
     title: 'Tool Help',
     href: '/toolhelp',
+    icon: <FaRegBookmark />,
   },
 ];
 
@@ -59,7 +80,7 @@ const Sidebar = () => {
                     location === navi.href ? 'nav-link' : 'text-dark nav-link'
                   }
                 >
-                  <i className={navi.icon}></i>
+                  <i>{navi.icon}</i>
                   <span className='ms-3 d-inline-block'>{navi.title}</span>
                 </a>
               </Link>

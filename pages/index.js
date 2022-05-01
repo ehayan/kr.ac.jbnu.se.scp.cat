@@ -1,5 +1,8 @@
 import Head from 'next/head';
-import CustomComponents from '../components/custom/Custom-components';
+// import CustomComponents from '../components/custom/Custom-components';
+import Banner2 from '../components/banner/Banner2';
+import Portfolio from '../components/custom/sections/portfoliocomponent';
+
 export default function Home() {
   return (
     <div>
@@ -8,7 +11,9 @@ export default function Home() {
         <meta name='description' content='CAT' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <CustomComponents />
+      <Banner2 />
+      <Portfolio />
+      {/* <CustomComponents /> */}
     </div>
   );
 }
