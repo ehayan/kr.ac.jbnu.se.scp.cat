@@ -1,12 +1,4 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  reactStrictMode: true,
-  images: {
-      domains: ['avatars.githubusercontent.com'],
-  },
-};
-
-
 const withTM = require("next-transpile-modules")([
   "@fullcalendar/common",
   "@babel/preset-react",
@@ -18,5 +10,8 @@ const withTM = require("next-transpile-modules")([
 ]);
 
 module.exports = withTM({
-  // your custom config goes here
+  reactStrictMode: true,
+  images: {
+      domains: ['avatars.githubusercontent.com'],
+  },
 });
