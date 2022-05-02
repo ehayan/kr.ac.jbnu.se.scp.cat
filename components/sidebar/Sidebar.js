@@ -11,6 +11,8 @@ import {
   FaRegBookmark,
   FaGoogleDrive,
   FaRegCalendarAlt,
+  FaTrello,
+  FaSlack,
 } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
 const navigation = [
@@ -38,6 +40,16 @@ const navigation = [
     title: 'Notion',
     href: '/notion',
     icon: <SiNotion />,
+  },
+  {
+    title: 'Trello',
+    href: '/trello',
+    icon: <FaTrello />,
+  },
+  {
+    title: 'Slack',
+    href: '/slack',
+    icon: <FaSlack />,
   },
   {
     title: 'Tool Help',
