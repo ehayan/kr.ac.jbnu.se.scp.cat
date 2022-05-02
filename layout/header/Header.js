@@ -78,7 +78,7 @@ const Header = () => {
                     if (session) {
                       signOut();
                     } else if (!session) {
-                      signIn();
+                      signIn("google");
                     }
                   }}
                 >
