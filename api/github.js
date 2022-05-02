@@ -13,8 +13,9 @@ export function getRepositoryName(link) {
   data = {
     name : author name,
     avatar_url : author avatar image url,
-    date : commit date
-    message : commit message
+    date : commit date,
+    message : commit message,
+    commit_url : commit page url
   }
 */
 export async function getCommits(link) {
@@ -26,12 +27,14 @@ export async function getCommits(link) {
   );
   const json = await response.json();
   let returns = [];
+  console.log(json);
   for(let i=0; i<3; i++) {
     const value = {
       name : json[i].commit.author.name,
       avatar_url : json[i].author.avatar_url,
       date : json[i].commit.author.date,
-      message : json[i].commit.message
+      message : json[i].commit.message,
+      commit_url : `${link}/commit/${json[i].sha}`
     }
     returns.push(value);
   }
