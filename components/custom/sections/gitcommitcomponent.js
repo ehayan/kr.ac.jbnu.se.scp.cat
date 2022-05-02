@@ -42,11 +42,11 @@ const GitCommitComponent = () => {
   }
 
   function copyToClipboard() {
-    if(typeof window !== 'object') return;
-    const copyText = document.querySelector("#clone-address");
-    copyText.select();
-    document.execCommand("Copy");
-    console.log('Copied!');
+    // if(typeof window !== 'object') return;
+    // const copyText = document.querySelector("#clone-address");
+    // copyText.select();
+    // document.execCommand("Copy");
+    // console.log('Copied!');
   }
 
   return (
