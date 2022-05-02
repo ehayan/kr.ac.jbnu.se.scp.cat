@@ -1118,6 +1118,33 @@ Buttons
   }
 }
 
+.btn-github{
+  background : transparent;
+  border : none;
+
+  &:hover{
+    background: #c9c8c8;
+    border-radius: 10px;
+  }
+
+  &::after{
+    background-color: #000000;
+    border-bottom: #76a7f0;
+  }
+
+}
+
+.btn-copy{
+  width: 30px;
+  height: 30px;
+  background : #c9c8c8;
+  border-radius: 5%;
+  border : none;
+
+
+
+}
+
 .btn-themecolor,
 .btn-themecolor.disabled {
   background: $themecolor;
