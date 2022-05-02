@@ -61,7 +61,9 @@ const GitCommitComponent = () => {
                   </div>
                   <h5>{commit.name}</h5>
                   <p className="m-t-40">
-                    {commit.message}
+                      <a href="https://github.com/gusdn6901/kr.ac.jbnu.se.scp.cat/commit/00b418ecc34d842a64b56d8365e4725d166a2b2f">
+                        {commit.message}
+                      </a>
                   </p>
                 </CardBody>
               </Card>

@@ -1,3 +1,8 @@
+// return repository owner's name from github link
+export function getOwnerName(link) {
+  return link.split("/")[3];
+}
+
 // return repository name from github link
 export function getRepositoryName(link) {
   return link.split("/")[4];
