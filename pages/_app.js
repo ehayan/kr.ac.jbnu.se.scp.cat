@@ -2,6 +2,9 @@ import '../styles/scss/style.scss';
 import { SessionProvider } from 'next-auth/react';
 import ProjectLayout from '../layout/ProjectLayout';
 import Layout from '../layout/Layout';
+import "@fullcalendar/common/main.css";
+import "@fullcalendar/daygrid/main.css";
+// import "@fullcalendar/timegrid/main.css";
 
 function MyApp({ Component, pageProps }) {
   let NestedLayout = Component.length;

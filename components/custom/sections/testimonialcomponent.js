@@ -9,7 +9,7 @@ import img3 from "../../../assets/images/testimonial/3.jpg";
 const TestimonialComponent = () => {
   return (
     <div>
-      <div className="spacer">
+      {/* <div className="spacer">
         <Container>
           <Row className="justify-content-center">
             <Col md="7" className="text-center">
@@ -22,16 +22,14 @@ const TestimonialComponent = () => {
             </Col>
           </Row>
         </Container>
-      </div>
+      </div> */}
       <div className="testimonial3 spacer bg-light">
         <Container>
           <Row className="justify-content-center">
             <Col md="7" className="text-center">
-              <h2 className="title">Check what our Customers are Saying</h2>
+              <h2 className="title">Google Drive</h2>
               <h6 className="subtitle">
-                You can relay on our amazing features list and also our customer
-                services will be great experience for you without doubt and in
-                no-time
+                CAT이 제공하는 구글 드라이브 기능을 통해 자료를 효율적으로 관리할 수 있습니다.
               </h6>
             </Col>
           </Row>

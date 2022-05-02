@@ -10,6 +10,7 @@ import {
   FaGithub,
   FaRegBookmark,
   FaGoogleDrive,
+  FaRegCalendarAlt,
 } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
 const navigation = [
@@ -42,6 +43,11 @@ const navigation = [
     title: 'Tool Help',
     href: '/toolhelp',
     icon: <FaRegBookmark />,
+  },
+  {
+    title: 'Calendar',
+    href: '/project-calendar',
+    icon: <FaRegCalendarAlt />,
   },
 ];
 
