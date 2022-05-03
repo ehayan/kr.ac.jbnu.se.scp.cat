@@ -11,6 +11,7 @@ import GitLogo from "../../../assets/images/tool-logos/small-git-hub.png";
 import { Row, Col, Container, Card, CardBody } from "reactstrap";
 import * as Github from "../../../api/github";
 import { BiCopy } from 'react-icons/bi';
+import {BsCheck2} from 'react-icons/bs';
 
 const GitCommitComponent = () => {
   const link = "https://github.com/gusdn6901/kr.ac.jbnu.se.scp.cat";
@@ -39,14 +40,6 @@ const GitCommitComponent = () => {
     }
     
     return address;
-  }
-
-  function copyToClipboard() {
-    // if(typeof window !== 'object') return;
-    // const copyText = document.querySelector("#clone-address");
-    // copyText.select();
-    // document.execCommand("Copy");
-    // console.log('Copied!');
   }
 
   return (
@@ -80,7 +73,12 @@ const GitCommitComponent = () => {
               </div>
               <div>
                 <input id="clone-address" type="text"  readOnly value={cloneAddress()}/>
-                <button className="btn-copy" onClick={copyToClipboard()}><BiCopy/></button>
+                <button className="btn-copy" onClick={() => {
+                  if(typeof window !== 'object') return;
+                  const copyText = document.querySelector("#clone-address");
+                  copyText.select();
+                  document.execCommand("Copy");
+                }}><BiCopy/></button>
                 <style jsx>{`
                   input{
                     border-radius: 5px;
@@ -93,13 +91,31 @@ const GitCommitComponent = () => {
                   }
                   button{
                     margin-top: 10px;
+                    width: 40px:
                     height:28px;
+                    border-radius: 5px;
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
                   }
                 `}</style>
               </div>
+              {/* <div>
+                  <span>Copied!</span>
+                  <style jsx>{`
+                    div{
+                      margin-top: 10px;
+                      margin-left: 250px;
+                    }
+                    span{
+                      padding: 7px;
+                      background-color : #87caeb;
+                      border-radius:5px;
+                    }
+                  `}</style>
+              </div> */}
             </Col>
           </Row>
-          <Row className="m-t-40">
+          <Row className="m-t-60">
             {commits.map((commit) => (
               <Col md="4" className="ml-auto pricing-box align-self-center">
               <Card className="b-all">

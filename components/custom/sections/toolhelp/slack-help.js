@@ -13,21 +13,23 @@ const SlackHelp = () => {
           <Row className="justify-content-center">
             <Col md="10" className="align-self-center ">
               <h1 className="title" >Slack</h1>
+              <h5 className="subtitle op-8">
+                팀과 업무를 이어주는 단일 플랫폼
+              </h5>
               <h6 className="subtitle op-8">
                 Slack
               </h6>
               <br /><br />
               <p>
-                GtiHub는 버전 관리 및 협업을 위한 코드 호스팅 플랫폼입니다. 
-                GitHub는 코드 저장소인 리포지토리(repository)를 생성할 수 있습니다.
-                리포지토리는 일반적으로 단일 프로젝트를 구성하는 데 사용됩니다.
+                Slack은 팀의 업무에 관련된 커뮤니케이션이 집중되어 있는 플랫폼입니다.
               </p><br />
-              <li>리포지토리(repository) 생성 및 사용</li>
-              <li>새 분기(branch) 시작 및 관리</li>
-              <li>커밋으로 GitHub에 푸시</li>
-              <li>풀 리퀘스트(pull request) 열기 및 병합(merge)</li>
+              <li>채널</li>
+              <li>슬랙 커넥트(Slack Connect)</li>
+              <li>메시징</li>
+              <li>허들 및 클립</li>
+              <li>접근성</li>
               <br /><br />
-              <h3><b>리포지토리(repository) 생성</b></h3><br/>
+              <h3><b>채널</b></h3><br/>
               <p>1. 오른쪽 상단의 + 메뉴의 'New repository'를 선택합니다</p>
               <p>2. Respository name 칸에 원하는 리포지토리의 이름을 입력합니다</p>
               <p>3. 원하는 경우 Description 칸에 리포지토리의 설명을 작성합니다</p>
