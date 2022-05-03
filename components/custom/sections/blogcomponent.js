@@ -1,100 +1,84 @@
 /* eslint-disable */
-import React from "react";
-import { Row, Col, Container, Card } from "reactstrap";
-import Image from "next/image";
-import img1 from "../../../assets/images/blog/blog-home/img3.jpg";
-import img2 from "../../../assets/images/blog/blog-home/img2.jpg";
-import img3 from "../../../assets/images/blog/blog-home/img1.jpg";
+import React from 'react';
+import { Row, Col, Container, Card } from 'reactstrap';
+import Image from 'next/image';
+import img1 from '../../../assets/images/blog/blog-home/img3.jpg';
+import img2 from '../../../assets/images/blog/blog-home/img2.jpg';
+import img3 from '../../../assets/images/blog/blog-home/img1.jpg';
 
 const BlogComponent = () => {
   return (
     <div>
-      <div className="blog-home2 spacer">
+      <div className='blog-home2 spacer'>
         <Container>
-          <Row className="justify-content-center">
-            <Col md="8" className="text-center">
-              <h2 className="title">Recent Blogs</h2>
-              <h6 className="subtitle">
-                You can relay on our amazing features list and also our customer
-                services will be great experience for you without doubt and in
-                no-time
+          <Row className='justify-content-center'>
+            <Col md='8' className='text-center'>
+              <h1 className='title'>등록된 프로젝트</h1>
+              <hr></hr>
+              <h6 className='subtitle'>
+                현재 등록된 프로젝트 <strong>shortcut</strong>
               </h6>
             </Col>
           </Row>
-          <Row className="m-t-40 justify-content-center">
-            <Col lg="4" md="6">
+          <Row className='m-t-40 justify-content-center'>
+            <Col lg='4' md='6'>
               <Card>
-                <a href="#">
+                <a href='#'>
                   <Image
-                    className="card-img-top"
+                    className='card-img-top'
                     src={img1}
-                    alt="wrappixel kit"
+                    alt='wrappixel kit'
                   />
                 </a>
-                <div className="date-pos bg-info-gradiant">
+                <div className='date-pos bg-info-gradiant'>
                   Oct<span>23</span>
                 </div>
-                <h5 className="font-medium m-t-30">
-                  <a href="#" className="link">
-                    You should have eagle’s eye on new trends and techonogies
+                <h5 className='font-medium m-t-30'>
+                  <a href='#' className='link'>
+                    Project 1
                   </a>
                 </h5>
-                <p className="m-t-20">
-                  Business Park, Opp. Corns Sam Restaurant, New Yoark, US
-                </p>
-                <a href="#" className="linking text-themecolor m-t-10">
-                  Learn More <i className="ti-arrow-right"></i>
-                </a>
+                <p className='m-t-20'>Project 1 explanation</p>
               </Card>
             </Col>
-            <Col lg="4" md="6">
+            <Col lg='4' md='6'>
               <Card>
-                <a href="#">
+                <a href='#'>
                   <Image
-                    className="card-img-top"
+                    className='card-img-top'
                     src={img2}
-                    alt="wrappixel kit"
+                    alt='wrappixel kit'
                   />
                 </a>
-                <div className="date-pos bg-info-gradiant">
+                <div className='date-pos bg-info-gradiant'>
                   Oct<span>23</span>
                 </div>
-                <h5 className="font-medium m-t-30">
-                  <a href="#" className="link">
-                    New Seminar on Newest Food Recipe from World’s Best
+                <h5 className='font-medium m-t-30'>
+                  <a href='#' className='link'>
+                    Project 2
                   </a>
                 </h5>
-                <p className="m-t-20">
-                  Business Park, Opp. Corns Sam Restaurant, New Yoark, US
-                </p>
-                <a href="#" className="linking text-themecolor m-t-10">
-                  Learn More <i className="ti-arrow-right"></i>
-                </a>
+                <p className='m-t-20'>Project 2 explanation</p>
               </Card>
             </Col>
-            <Col lg="4" md="6">
+            <Col lg='4' md='6'>
               <Card>
-                <a href="#">
+                <a href='#'>
                   <Image
-                    className="card-img-top"
+                    className='card-img-top'
                     src={img3}
-                    alt="wrappixel kit"
+                    alt='wrappixel kit'
                   />
                 </a>
-                <div className="date-pos bg-info-gradiant">
+                <div className='date-pos bg-info-gradiant'>
                   Oct<span>23</span>
                 </div>
-                <h5 className="font-medium m-t-30">
-                  <a href="#" className="link">
-                    Learn from small things to create something bigger.
+                <h5 className='font-medium m-t-30'>
+                  <a href='#' className='link'>
+                    Project 3
                   </a>
                 </h5>
-                <p className="m-t-20">
-                  Business Park, Opp. Corns Sam Restaurant, New Yoark, US
-                </p>
-                <a href="#" className="linking text-themecolor m-t-10">
-                  Learn More <i className="ti-arrow-right"></i>
-                </a>
+                <p className='m-t-20'>Project 3 explanation</p>
               </Card>
             </Col>
           </Row>

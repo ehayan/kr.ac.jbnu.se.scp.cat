@@ -424,7 +424,7 @@ Blog homepage 2
 .blog-home2 {
   [class*='col-'] {
     transition: 0.2s ease-in;
-    &:hover {
+    .card:hover {
       transform: translateY(-10px);
     }
   }
@@ -459,5 +459,3 @@ Responsive
     background: $dark;
   }
 }
-
-
