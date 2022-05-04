@@ -1,13 +1,15 @@
 /* eslint-disable */
 import React from "react";
 import { Row, Col, Container, Card, CardBody } from "reactstrap";
-import Image from "next/image";
-import githubLogo from "../../../assets/images/tool-logos/git-hub.png";
-import trelloLogo from "../../../assets/images/tool-logos/trello.png";
-import slackLogo from "../../../assets/images/tool-logos/slack.png";
-import notionLogo from "../../../assets/images/tool-logos/notion.png";
+// import Image from "next/image";
+// import githubLogo from "../../../assets/images/tool-logos/git-hub.png";
+// import trelloLogo from "../../../assets/images/tool-logos/trello.png";
+// import slackLogo from "../../../assets/images/tool-logos/slack.png";
+// import notionLogo from "../../../assets/images/tool-logos/notion.png";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { FaGithub, FaTrello, FaSlack, FaGoogleDrive } from 'react-icons/fa';
+import { SiNotion } from 'react-icons/si';
 
 const HelpBannerComponent = () => {
   const router = useRouter();
@@ -25,10 +27,11 @@ const HelpBannerComponent = () => {
                 CAT이 제공하는 도움말을 통해 사용법을 익혀보세요.
               </h6>
               <br />
-              <Image src={githubLogo} width={80} height={80}/>&emsp;
-              <Image src={trelloLogo} width={80} height={80}/>&emsp;
-              <Image src={slackLogo} width={80} height={80}/>&emsp;
-              <Image src={notionLogo} width={80} height={80}/>
+              <FaGithub className="m-b-20" size={80}/>&emsp;
+              <FaTrello className="m-b-20" size={80}/>&emsp; 
+              <FaSlack className="m-b-20" size={80}/>&emsp;
+              <SiNotion className="m-b-20" size={80}/>&emsp;
+              <FaGoogleDrive className="m-b-20" size={80}/>
               <br />
               <Link href="/toolhelp/github"  >
                 <a className={router.pathname === "/toolhelp/github" ? "tool-selected" : ""}>
@@ -48,6 +51,11 @@ const HelpBannerComponent = () => {
               <Link href="/toolhelp/notion">
                 <a className={router.pathname === "/toolhelp/notion" ? "tool-selected" : ""}>
                   Notion
+                </a>
+              </Link>&emsp;&emsp;
+              <Link href="/toolhelp/googledrive">
+                <a className={router.pathname === "/toolhelp/googledrive" ? "tool-selected" : ""}>
+                  Google Drive
                 </a>
               </Link>
             </Col>
