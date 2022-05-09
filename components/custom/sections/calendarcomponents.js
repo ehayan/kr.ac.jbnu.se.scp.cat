@@ -39,19 +39,50 @@ const CalendarFunction = () => {
       title: '17시 교수님 면담',
       start: '2022-05-09',
       end : '2022-05-10'
+    },
+    {
+      title: 'aaa',
+      start: '2022-05-11',
+      end : '2022-05-11'
     }
   ];
   const [events, setEvents] = useState(static_events);
+
+  function addEvent(){
+    
+  }
+
   return (
 
-    <FullCalendar
+    <div>
+      <div className="m-b-20">
+        <h3 className="m-t-5 m-l-20">Add Schedule</h3>
+        <span className="m-l-20">start date</span>
+        <input id="startDate" type="date" className="m-b-20 m-l-10"></input>
+        <span className="m-l-20">end date</span>
+        <input id="endDate" type="date" className="m-b-20 m-l-10"></input>
+        <span className="m-l-20">schedule name</span>
+        <input id="scheduleName" type="text" placeholder="schedule name" className="m-b-20 m-l-10"></input>
+        <button className="m-l-20" onClick={addEvent}>add</button>
+        <style jsx>{`
+          div{
+            background-color: #f7f2d7;
+          }
+          button{
+            border-radius: 5px;
+          }
+      `}</style>
+
+      </div>
+      
+      <FullCalendar
       innerRef={calendarRef}
       plugins={[dayGridPlugin, interactionPlugin]}
       // editable  
       selectable
-      eventClick={() => {
-        console.log('Clicked');
-      }}
+      // eventClick={() => {
+      //   console.log('Clicked');
+      // }}
       // select ={selectEvent}
       headerToolbar = {
         {
@@ -63,6 +94,7 @@ const CalendarFunction = () => {
       events = {events}
 
     />
+    </div>
   );
 };
 
