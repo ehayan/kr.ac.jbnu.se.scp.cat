@@ -335,6 +335,10 @@ html body {
     margin-right: 40px;
   }
 
+  .m-r-50 {
+    margin-right: 50px;
+  }
+
   .m-t-0 {
     margin-top: 0px;
   }
@@ -1790,4 +1794,38 @@ a.btn-outline-success {
   padding-left : 7px;
   padding-right : 7px;
   border-radius: 5px;
+}
+
+.board-card{
+  background-color: #ebecf0;
+  width: 350px;
+  padding: 20px;
+  padding-bottom: 0;
+  border-radius: 5px;
+  margin-right: auto;
+}
+
+.board-add{
+  background-color: #ebecf0;
+  border: hidden;
+
+  &.hober{
+    background-color: #b9b9b9;
+  }
+}
+
+.board-card-name{
+  padding: 20px;
+  padding-bottom: 0;
+  margin-right: auto;
+}
+
+.board-card-content{
+  padding: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+.v-a-m{
+  vertical-align: middle;
 }

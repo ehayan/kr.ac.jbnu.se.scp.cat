@@ -26,6 +26,10 @@ Header 6
     margin-left: auto !important;
   }
 
+  .mr-auto{
+    margin-right: auto !important;
+  }
+
   .navbar-nav {
     .nav-link {
       padding: 35px 15px;
@@ -164,11 +168,16 @@ card
 
 .card {
   border: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  width:300px;
 
   &.card-shadow {
     box-shadow: $card-shadow;
   }
+}
+
+.card-width{
+  width:260px;
 }
 
 .card-group .card {
