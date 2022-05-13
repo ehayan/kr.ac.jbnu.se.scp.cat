@@ -1,44 +1,133 @@
-import React from 'react';
-import { Row, Col, Container, Form, Alert } from 'reactstrap';
+import React, { useState } from 'react';
+import { Row, Col, Container, Form, Input } from 'reactstrap';
 import Image from 'next/image';
 import bannerimg from '../../../assets/images/logos/cat_logo.png';
+import RegisteredList from './listcomponent';
 
 const FormBannerComponent = () => {
+  const [x, setX] = useState([]);
+  //RadioButton select
+  const handleClickRadioButton = (e) => {
+    console.log(e.target.value);
+    setX(e.target.value);
+  };
+
+  //URL
+  const [url, setURL] = useState('');
+  const handleURLInput = ({ target: { value } }) => {
+    setURL(value);
+    console.log(value);
+  };
+
+  //click ADD Button
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (x == '') {
+      alert('도구를 선택하세요');
+    } else if (url == '') {
+      alert('링크를 입력하세요');
+    } else {
+      console.log(`${x} : ${url}`);
+      alert(`${x} : ${url}`);
+    }
+  };
+
   return (
     <div>
       <div className='bg-light'>
         <section>
-          <div id='banner1' className='banner spacer'>
+          <div id='banner1'>
             <Container>
-              <Row className='m-l-40'>
-                <Col lg='5' md='7' className='align-self-center'>
-                  <h2 className='title font-bold'>ADD LINK</h2>
+              <Row className='m-l-30 p-t-30'>
+                <Col className='align-self-center'>
+                  <h2 className='title font-bold'>
+                    ADD LINK
+                    <Image src={bannerimg} width='200px' height='200px' />
+                  </h2>
+
                   <p className='m-t-20 m-b-40'>
                     Please enter the link(url) you want to add
                   </p>
-                  <Form className='m-t-40'>
-                    <input
+
+                  <Form className='m-t-40' onSubmit={handleSubmit}>
+                    <div className='m-b-20'>
+                      <Input
+                        type='radio'
+                        value='1'
+                        checked={x === '1'}
+                        name='github'
+                        onChange={handleClickRadioButton}
+                      />
+                      <label>GitHub</label>
+                      <label>
+                        <Input
+                          type='radio'
+                          value='2'
+                          checked={x === '2'}
+                          onChange={handleClickRadioButton}
+                        />
+                        GoogleDrive
+                      </label>
+                      <label>
+                        <Input
+                          type='radio'
+                          value='3'
+                          checked={x === '3'}
+                          onChange={handleClickRadioButton}
+                        />
+                        Notion
+                      </label>
+                      <label>
+                        <Input
+                          type='radio'
+                          value='4'
+                          checked={x === '4'}
+                          onChange={handleClickRadioButton}
+                        />
+                        Trello
+                      </label>
+                      <label>
+                        <Input
+                          type='radio'
+                          value='5'
+                          checked={x === '5'}
+                          onChange={handleClickRadioButton}
+                        />
+                        Slack
+                      </label>
+                      <label>
+                        <Input
+                          type='radio'
+                          value='6'
+                          checked={x === '6'}
+                          onChange={handleClickRadioButton}
+                        />
+                        etc
+                      </label>
+                    </div>
+
+                    <Input
                       type='url'
-                      name='link'
+                      name='url'
+                      value={url}
                       placeholder='Enter Link address'
                       className='font-15'
+                      onChange={handleURLInput}
                     />
-                    <input
+                    {/* <input
                       type='submit'
-                      onClick={console.log('링크추가')}
                       value='ADD'
+                      onClick={handleURLInput}
                       className='bg-info font-semibold font-16 btn-rounded text-uppercase text-white text-center'
-                    />
+                    /> */}
+                    <button type='submit'>ADD</button>
                   </Form>
                 </Col>
-                <Col lg='6' md='5' className='m-l-40 align-self-center ml-auto'>
-                  <Image src={bannerimg} className='img-fluid ' />
+
+                <Col className='align-self-center'>
+                  <RegisteredList />
                 </Col>
-                <style jsx>{`
-                  p {
-                    color: #11295f;
-                  }
-                `}</style>
               </Row>
             </Container>
           </div>
