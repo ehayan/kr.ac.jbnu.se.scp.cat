@@ -169,15 +169,18 @@ card
 .card {
   border: 0px;
   margin-bottom: 10px;
-  width:300px;
 
   &.card-shadow {
     box-shadow: $card-shadow;
   }
 }
 
-.card-width{
-  width:260px;
+.card-width-300{
+  width:300px;
+}
+
+.card-width-270{
+  width:270px;
 }
 
 .card-group .card {
