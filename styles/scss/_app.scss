@@ -1826,6 +1826,23 @@ a.btn-outline-success {
   margin-bottom: 0;
 }
 
+.board-align{
+  align-items: flex-start;
+}
+
 .v-a-m{
   vertical-align: middle;
 }
+
+@media (min-width: 768px) {
+  .container-width {
+    width: 900px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-width {
+    width: 1300px;
+  }
+}
+

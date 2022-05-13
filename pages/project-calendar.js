@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import CalendarComponent from '../components/custom/sections/calendarcomponents';
+import AddScheduleComponent from '../components/custom/sections/calendaraddschedulecomponent';
+import { Row, Col, Container } from 'reactstrap';
 
 const Dashboard = (page) => {
   return (
@@ -8,7 +10,16 @@ const Dashboard = (page) => {
         <title>CAT | Project | Calendar</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <CalendarComponent />
+      <Container className='container-width m-t-20'>
+        <Row >
+          <Col md="3" className="m-t-60">
+            <AddScheduleComponent/>
+          </Col>
+          <Col md="9">
+            <CalendarComponent />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

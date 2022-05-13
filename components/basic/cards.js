@@ -1,4 +1,5 @@
 /* eslint-disable */
+import CalendarFunction from '../custom/sections/calendarcomponents';
 import React from 'react';
 import {
   Card,
@@ -11,6 +12,7 @@ import {
 } from 'reactstrap';
 
 const Cards = () => {
+  
   return (
     <div className='m-t-20'>
       <Container>
@@ -40,6 +42,14 @@ const Cards = () => {
           <CardTitle>대시보드</CardTitle>
           <CardText>Dashboard</CardText>
         </Card>
+
+        <Col md='6'>
+            <Card body className='card-shadow'>
+              <CalendarFunction/>
+            </Card>
+          </Col>
+
+        
       </Container>
     </div>
   );

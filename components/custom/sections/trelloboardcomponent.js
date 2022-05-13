@@ -14,7 +14,7 @@ const TrelloBoardComponent = () => {
           
           <Row className="m-t-30">
             <Col md="2" className="m-l-20 align-self-center">
-              <Card className="board-card card-width-300 m-b-0 p-0 b-all">
+              <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
                 <p className="board-card-name m-b-0 ">To Do	&#40;requirments&#41;</p>
                 <CardBody>
                   <Card className="card-width-270 b-all">
@@ -31,7 +31,7 @@ const TrelloBoardComponent = () => {
               </Card>
             </Col>
             <Col md="2" className="m-l-20 align-self-center">
-              <Card className="board-card card-width-300 m-b-0 p-0 b-all">
+              <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
                 <p className="board-card-name m-b-0 ">Done	&#40;requirments&#41;</p>
                 <CardBody>
                   <Card className="card-width-270 b-all">
@@ -48,7 +48,7 @@ const TrelloBoardComponent = () => {
               </Card>
             </Col>
             <Col md="2" className="m-l-20 align-self-center">
-              <Card className="board-card card-width-300 m-b-0 p-0 b-all">
+              <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
                 <p className="board-card-name m-b-0 ">To Do	&#40;assignments&#41;</p>
                 <CardBody>
                   <Card className="card-width-270 b-all">
@@ -60,7 +60,7 @@ const TrelloBoardComponent = () => {
               </Card>
             </Col>
             <Col md="2" className="m-l-20 align-self-center">
-              <Card className="board-card card-width-300 m-b-0 p-0 b-all">
+              <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
                 <p className="board-card-name m-b-0 ">Done	&#40;assignments&#41;</p>
                 <CardBody>
                   <Card className=" card-width-270 b-all">

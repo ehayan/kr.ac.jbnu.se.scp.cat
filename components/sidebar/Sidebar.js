@@ -18,7 +18,7 @@ import { SiNotion } from 'react-icons/si';
 const navigation = [
   {
     title: 'Dashboard',
-    href: '/project',
+    href: '/project-dashboard',
     icon: <FaClipboardList />,
   },
   {
@@ -33,22 +33,22 @@ const navigation = [
   },
   {
     title: 'GoogleDrive',
-    href: '/googledrive',
+    href: '/project-googledrive',
     icon: <FaGoogleDrive />,
   },
   {
     title: 'Notion',
-    href: '/notion',
+    href: '/project-notion',
     icon: <SiNotion />,
   },
   {
     title: 'Trello',
-    href: '/trello',
+    href: '/project-trello',
     icon: <FaTrello />,
   },
   {
     title: 'Slack',
-    href: '/slack',
+    href: '/project-slack',
     icon: <FaSlack />,
   },
   {

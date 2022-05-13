@@ -45,7 +45,7 @@ const Header = () => {
             >
               <Nav navbar className='ml-auto'>
                 <NavItem className={session ? '' : 'hide'}>
-                  <Link href='/project'>
+                  <Link href='/project-dashboard'>
                     <a
                       className={
                         router.pathname == '/project'
