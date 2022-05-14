@@ -30,7 +30,7 @@ const TrelloBoardComponent = () => {
                 </CardBody>
               </Card>
             </Col>
-            <Col md="2" className="m-l-20 align-self-center">
+            {/* <Col md="2" className="m-l-20 align-self-center">
               <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
                 <p className="board-card-name m-b-0 ">Done	&#40;requirments&#41;</p>
                 <CardBody>
@@ -75,7 +75,7 @@ const TrelloBoardComponent = () => {
                   </Card>
                 </CardBody>
               </Card>
-            </Col>
+            </Col> */}
             
           </Row>
       </div>
