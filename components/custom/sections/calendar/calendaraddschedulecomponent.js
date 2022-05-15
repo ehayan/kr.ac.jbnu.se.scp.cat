@@ -7,7 +7,7 @@ const AddScheduleComponent = () =>{
 
     return (
         <div>
-          <h3 className="m-t-5 m-l-20">Add Schedules</h3>
+          <h3 className="m-t-5 m-l-20 m-b-20">Add Schedules</h3>
           <span className="m-l-20">start date</span>
           <input id="startDate" type="date" className="m-b-20 m-l-10"></input><br/>
           <span className="m-l-20">end date</span>

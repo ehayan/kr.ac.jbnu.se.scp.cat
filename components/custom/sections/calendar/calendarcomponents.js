@@ -42,9 +42,19 @@ const CalendarFunction = () => {
       end : '2022-05-10'
     },
     {
-      title: 'aaa',
-      start: '2022-05-11',
-      end : '2022-05-11'
+      title: '19시 논문 피드백 회의',
+      start: '2022-05-12',
+      end : '2022-05-12'
+    },
+    {
+      title: '14시 논문 2차 통합',
+      start: '2022-05-13',
+      end : '2022-05-13'
+    },
+    {
+      title: '17시 교수님 면담',
+      start: '2022-05-16',
+      end : '2022-05-16'
     }
   ];
   const [events, setEvents] = useState(static_events);

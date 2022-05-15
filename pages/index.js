@@ -1,7 +1,7 @@
 import Head from 'next/head';
-// import CustomComponents from '../components/custom/Custom-components';
+import CustomComponents from '../components/custom/Custom-components';
 import Banner2 from '../components/banner/Banner2';
-import Portfolio from '../components/custom/sections/portfoliocomponent';
+import Portfolio from '../components/custom/sections/beforelogin/portfoliocomponent';
 import BlogComponent from '../components/custom/sections/blogcomponent';
 import { useSession } from 'next-auth/react';
 
@@ -15,7 +15,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Banner2 />
-      {session ? <BlogComponent /> : <Portfolio />}
+      {session ? <BlogComponent /> : <CustomComponents />}
       {/* <Portfolio />
       <BlogComponent /> */}
     </div>

@@ -16,13 +16,15 @@ import Banner2 from '../banner/Banner2';
 // import C2aComponent from './sections/c2acomponent';
 // import ContactComponent from './sections/contactcomponent';
 // import CallToAction from '../../components/call-to-action/CallToAction';
-import Portfolio from './sections/portfoliocomponent';
+import Portfolio from './sections/beforelogin/portfoliocomponent';
+import HelpInfoComponent from './sections/beforelogin/helpinfocomponent';
 
 const CustomComponents = () => {
   return (
     <div>
-      <Banner2 />
+      {/* <Banner2 /> */}
       <Portfolio />
+      <HelpInfoComponent />
       {/* <HeaderComponent />
       <BannerComponent />
       <FormBannerComponent />

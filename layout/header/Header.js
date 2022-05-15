@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+// import GithubDetailsMenuElement from'@github/details-menu-element';
 import { useRouter } from 'next/router';
 import {
   Collapse,
@@ -13,6 +14,8 @@ import {
   NavLink,
 } from 'reactstrap'; //module
 import { signIn, signOut, useSession } from 'next-auth/react';
+import { BsFillBellFill} from 'react-icons/bs';
+import {GoTriangleDown} from 'react-icons/go';
 import logo from '../../assets/images/logos/small_cat_logo.png';
 
 const Header = () => {
@@ -71,6 +74,18 @@ const Header = () => {
                   </Link>
                 </NavItem>
               </Nav>
+              <div className={session ? '' : 'hide'}>
+                <details open className='m-l-10 m-r-15'>
+                  <summary className='alarm-bell' type='button'><BsFillBellFill width={80} /></summary>
+                  {/* <details-menu role="menu">
+                    <ul className='alarm-content'>
+                      <li>alarm 1</li>
+                      <li>alarm 2</li>
+                    </ul>
+                  </details-menu> */}
+                </details>
+                
+              </div>
               <div className='act-buttons'>
                 <button
                   className='btn btn-light font-14'
