@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import FormBannerComponent from '../components/custom/sections/formbannercomponent';
+import AddLinkComponent from '../components/custom/sections/addlinkcomponent';
 
 const Link = (page) => {
   return (
@@ -8,7 +8,7 @@ const Link = (page) => {
         <title>CAT | Project | Link</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <FormBannerComponent />
+      <AddLinkComponent />
     </div>
   );
 };

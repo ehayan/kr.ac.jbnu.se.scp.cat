@@ -1,7 +1,7 @@
 import React from 'react';
 
 // core components
-import Banner2 from '../banner/Banner2';
+import BeforeLoginBanner from '../banner/BeforeLoginBanner';
 
 // sections for this page
 // import HeaderComponent from './sections/headercomponent';
@@ -25,6 +25,7 @@ const CustomComponents = () => {
       {/* <Banner2 /> */}
       <Portfolio />
       <HelpInfoComponent />
+      {/* <TestimonialComponent /> */}
       {/* <HeaderComponent />
       <BannerComponent />
       <FormBannerComponent />
@@ -32,7 +33,6 @@ const CustomComponents = () => {
       <PortfolioComponent />
       <PricingComponent />
       <TeamComponent />
-      <TestimonialComponent />
       <BlogComponent />
       <C2aComponent />
       <ContactComponent />

@@ -175,6 +175,15 @@ card
   }
 }
 
+.card2 {
+  border: 5px;
+  margin-bottom: 10px;
+
+  &.card-shadow {
+    box-shadow: $card-shadow;
+  }
+}
+
 .card-width-300{
   width:300px;
 }

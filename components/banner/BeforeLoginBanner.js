@@ -3,8 +3,10 @@ import Link from 'next/link';
 import { Container, Row, Col } from 'reactstrap';
 import Image from 'next/image';
 import bannerimg from '../../assets/images/logos/cat_logo.png';
+import Header from '../../layout/header/Header';
 
-const Banner2 = () => {
+
+const BeforeLoginBanner = () => {
   return (
     <div className='static-slider-head banner2'>
       <Container>
@@ -36,4 +38,4 @@ const Banner2 = () => {
   );
 };
 
-export default Banner2;
+export default BeforeLoginBanner;

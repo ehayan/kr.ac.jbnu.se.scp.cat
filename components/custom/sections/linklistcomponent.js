@@ -74,7 +74,7 @@ const List = () => {
               key={list.id}
               action
               href={list.link}
-              // tag='a'
+              tag='a'
               className='d-flex align-items-center p-3 border-0'
             >
               <div>

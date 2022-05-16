@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Row, Col, Container, Form, Input } from 'reactstrap';
 import Image from 'next/image';
 import bannerimg from '../../../assets/images/logos/cat_logo.png';
-import RegisteredList from './listcomponent';
+import RegisteredList from './linklistcomponent';
 
-const FormBannerComponent = () => {
+const AddLinkComponent = () => {
   const [x, setX] = useState([]);
   //RadioButton select
   const handleClickRadioButton = (e) => {
@@ -59,7 +59,7 @@ const FormBannerComponent = () => {
                         name='github'
                         onChange={handleClickRadioButton}
                       />
-                      <label>GitHub</label>
+                      <label>GitHub</label>&nbsp;
                       <label>
                         <Input
                           type='radio'
@@ -68,7 +68,7 @@ const FormBannerComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         GoogleDrive
-                      </label>
+                      </label>&nbsp;
                       <label>
                         <Input
                           type='radio'
@@ -77,7 +77,7 @@ const FormBannerComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Notion
-                      </label>
+                      </label>&nbsp;
                       <label>
                         <Input
                           type='radio'
@@ -86,7 +86,7 @@ const FormBannerComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Trello
-                      </label>
+                      </label>&nbsp;
                       <label>
                         <Input
                           type='radio'
@@ -95,7 +95,7 @@ const FormBannerComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Slack
-                      </label>
+                      </label>&nbsp;
                       <label>
                         <Input
                           type='radio'
@@ -137,4 +137,4 @@ const FormBannerComponent = () => {
   );
 };
 
-export default FormBannerComponent;
+export default AddLinkComponent;
