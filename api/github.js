@@ -27,7 +27,6 @@ export async function getCommits(link) {
   );
   const json = await response.json();
   let returns = [];
-  console.log(json);
   for(let i=0; i<3; i++) {
     const value = {
       name : json[i].commit.author.name,

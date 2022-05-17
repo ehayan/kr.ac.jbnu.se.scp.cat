@@ -1,19 +1,61 @@
 /* eslint-disable */
+import { useEffect, useState } from "react";
 import { Row, Col, Container, Card, CardBody } from "reactstrap";
+import * as Trello from "../../../api/trello";
 
-const TrelloBoardComponent = () => {
+const TrelloBoardComponent = (prop) => {
+  const link = "https://trello.com/b/i6j02hs3/cat-example";
+  const API_KEY = "1baedb69e84e135c003ec353a955fe47";
+  const TOKEN = "4081aef89869ef47cd712c6366d7882f7b8f20fc53239e9fd8f6b44bba648d68";
+  const [trelloDatas, setTrelloDatas] = useState([]);
+
+  useEffect(()=> {
+    Trello.getDatas(link, API_KEY, TOKEN).then((datas)=> {
+      setTrelloDatas(datas);
+      // let cardLists = [];
+      // datas.forEach((board) => {
+      //   Trello.getCards(board.id, API_KEY, TOKEN).then((data)=> {
+      //     const card = {"board" : board, "index" : datas.indexOf(board), "card" : data};
+      //     cardLists.push(card);
+      //   });
+      // });
+      // setCards(cardLists);
+      // console.log(cards);
+    });
+    console.log(trelloDatas)
+  }, []);
 
   return (
     <div>
       <div>
         <div>
           <h2 className="title">
-            <span className="m-l-20">Board Name</span>
+            <span className="m-l-20">{Trello.getProjectName(link)}</span>
           </h2>
         </div>
-          
           <Row className="m-t-30">
-            <Col md="2" className="m-l-20 align-self-center">
+            {
+              trelloDatas.map((data) => (
+                <Col md="2" className="m-l-20 align-self-center">
+                  <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
+                    <p className="board-card-name m-b-0 ">{data.board.name}</p>
+                    <CardBody>
+                      <Card className="card-width-270 b-all">
+                        {
+                          data.card.map((card) => (
+                            <CardBody >
+                              <p className="board-card-content">{card.name}</p>
+                            </CardBody>
+                          ))
+                        }
+                      </Card>
+                    </CardBody>
+                  </Card>
+                </Col>
+              ))
+            }
+
+            {/* <Col md="2" className="m-l-20 align-self-center">
               <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
                 <p className="board-card-name m-b-0 ">To Do	&#40;requirments&#41;</p>
                 <CardBody>
@@ -29,7 +71,8 @@ const TrelloBoardComponent = () => {
                   </Card>
                 </CardBody>
               </Card>
-            </Col>
+            </Col> */}
+            
             {/* <Col md="2" className="m-l-20 align-self-center">
               <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
                 <p className="board-card-name m-b-0 ">Done	&#40;requirments&#41;</p>
