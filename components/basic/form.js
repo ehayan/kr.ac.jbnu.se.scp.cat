@@ -8,77 +8,61 @@ import {
   Label,
   Input,
   Button,
+  Card,
 } from 'reactstrap';
 
 const PageForm = () => {
   return (
     <div>
-      <div className='spacer' id='forms-component'>
-        <Container>
-          <Row className='justify-content-center'>
-            <Col md='7' className='text-center'>
-              <h1 className='title font-bold'>Login</h1>
-              <h6 className='subtitle'>현재는 Google login만을 지원합니다. </h6>
-            </Col>
-          </Row>
-        </Container>
-      </div>
       <Container>
         <Row>
-          <Col md='12'>
-            <Form className='row'>
-              <FormGroup className='col-md-6'>
-                <Label htmlFor='name'>User Name</Label>
+          <Col md='4'>
+            <Card>프로젝트 미리보기 화면</Card>
+          </Col>
+          <Col md='8'>
+            <Form>
+              <FormGroup>
+                <Label htmlFor='name'>Project Name</Label>
                 <Input
                   type='text'
                   className='form-control'
                   id='name'
-                  placeholder='Enter Username'
+                  placeholder='Enter Project Name'
                 />
               </FormGroup>
-              <FormGroup className='col-md-6'>
+              <FormGroup>
                 <Label htmlFor='email'>Email Address</Label>
                 <Input
-                  type='email'
+                  type='text'
                   className='form-control'
                   id='email'
                   placeholder='Enter email'
                 />
               </FormGroup>
-              <FormGroup className='col-md-6'>
+              <FormGroup>
                 <Label htmlFor='password'>Password</Label>
                 <Input
-                  type='password'
+                  type='text'
                   className='form-control'
                   id='password'
                   placeholder='Password'
                 />
               </FormGroup>
-              <FormGroup className='col-md-6'>
+              <FormGroup>
                 <Label htmlFFor='confirmpwd'>Confirm Password</Label>
                 <Input
-                  type='password'
+                  type='text'
                   className='form-control'
                   id='confirmpwd'
                   placeholder='Confirm Password'
                 />
               </FormGroup>
-              <FormGroup className='col-md-12 ml-3'>
-                <Input id='checkbox1' type='checkbox' />
-                <Label htmlFor='checkbox1'> Remember me </Label>
-              </FormGroup>
               <Col md='12'>
                 <Button
-                  type='submit'
+                  // type='submit'
                   className='btn btn-success waves-effect waves-light m-r-10'
                 >
                   Submit
-                </Button>
-                <Button
-                  type='submit'
-                  className='btn btn-inverse waves-effect waves-light'
-                >
-                  Cancel
                 </Button>
               </Col>
             </Form>

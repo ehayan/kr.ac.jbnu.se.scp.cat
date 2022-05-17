@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import {
   Container,
@@ -8,7 +9,6 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Dropdown,
 } from 'reactstrap';
 
 const Project_header = () => {
@@ -26,6 +26,10 @@ const Project_header = () => {
               <DropdownMenu end>
                 <DropdownItem>Project 1</DropdownItem>
                 <DropdownItem>Project 2</DropdownItem>
+                <DropdownItem divider />
+                <Link href='/project-setting'>
+                  <DropdownItem>Setting</DropdownItem>
+                </Link>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
