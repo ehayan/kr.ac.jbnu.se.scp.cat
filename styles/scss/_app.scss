@@ -1874,15 +1874,61 @@ a.btn-outline-success {
   border-radius: 50%;
 }
 
-.alarm-bell{
+// .alarm-bell{
+//   background-color: transparent;
+//   border-color:  transparent;
+// }
+
+// .alarm-content{
+//   visibility: hidden;
+// }
+
+// .alarm-background{
+//   background-color: #607df9;
+// }
+
+/******************* 
+Slack
+*******************/
+
+.slack-date{
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: thin;
+  border-color: #999999;
+  text-align: justify;
+}
+
+.slack-pick-date-tri{
   background-color: transparent;
   border-color:  transparent;
 }
 
-.alarm-content{
-  visibility: hidden;
+.slack-member-profile{
+  border-radius: 5px;
+  border-style: solid;
+  border-width: thin;
+  border-color: #999999;
 }
 
-.alarm-background{
-  background-color: #607df9;
+.slack-float-profile{
+  float: left;
+  width: 5%;
+}
+
+.slack-float-conversation{
+  float: left;
+  width: 95%;
+}
+
+.slack-font-name{
+  font-size: 19px;
+}
+
+.slack-font-time{
+  font-size: 14px;
 }
