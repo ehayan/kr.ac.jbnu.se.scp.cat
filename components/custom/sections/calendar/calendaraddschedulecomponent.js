@@ -1,13 +1,26 @@
 import { Row, Col } from "reactstrap";
 
-const AddScheduleComponent = () =>{
-    const addEvent = () =>{
-        
+const AddScheduleComponent = ({ events, setEvents }) =>{
+    const addEvent = (event) =>{
+      const startDate = event.target.parentElement.children[2].value;
+      let end = new Date(event.target.parentElement.children[5].value);
+      end.setDate(end.getDate()+1);
+      const endDate = end.toISOString().slice(0, 10);
+      const title = event.target.parentElement.children[8].value;
+      const schedule = {
+        title: title,
+        start: startDate,
+        end : endDate
+      }
+      setEvents([...events, schedule])
+      event.target.parentElement.children[2].value = "";
+      event.target.parentElement.children[5].value = "";
+      event.target.parentElement.children[8].value = "";
     }
 
     return (
         <div>
-          <h3 className="m-t-5 m-l-20 m-b-20">Add Schedules</h3>
+          <h3 className="m-t-5 m-l-20">Add Schedules</h3>
           <span className="m-l-20">start date</span>
           <input id="startDate" type="date" className="m-b-20 m-l-10"></input><br/>
           <span className="m-l-20">end date</span>

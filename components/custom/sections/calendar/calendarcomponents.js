@@ -7,7 +7,7 @@ import { Row, Col } from "reactstrap";
 
 
 
-const CalendarFunction = () => {
+const CalendarFunction = ({ events, setEvents }) => {
   const calendarRef = useRef(null);
 
   //---addEvent function---
@@ -25,50 +25,33 @@ const CalendarFunction = () => {
   //     };
   //   calendar.unselect();
   // }
-  const static_events = [
-    {
-      title: '논문 작성',
-      start: '2022-05-06',
-      end : '2022-05-08'
-    },
-    {
-      title: '논문 통합',
-      start: '2022-05-08',
-      end : '2022-05-09 '
-    },
-    {
-      title: '17시 교수님 면담',
-      start: '2022-05-09',
-      end : '2022-05-10'
-    },
-    {
-      title: '19시 논문 피드백 회의',
-      start: '2022-05-12',
-      end : '2022-05-12'
-    },
-    {
-      title: '14시 논문 2차 통합',
-      start: '2022-05-13',
-      end : '2022-05-13'
-    },
-    {
-      title: '17시 교수님 면담',
-      start: '2022-05-16',
-      end : '2022-05-16'
-    }
-  ];
-  const [events, setEvents] = useState(static_events);
-
+  function eventClick(event) {
+    if(confirm("일정을 삭제하시겠습니까?")) {
+      const startDate = event.event.startStr;
+      const endDate = event.event.endStr == ""? event.event.startStr : event.event.endStr;
+      const title = event.event.title;
+      let returns = [];
+      events.forEach((event) => {
+        if(event.title == title
+          && event.start == startDate
+          && event.end == endDate) return;
+        returns.push(event);
+      })
+      setEvents(returns);
+    } 
+  }
   return (
     <div>
+        <div id="events">
+
+        </div>
           <FullCalendar
             innerRef={calendarRef}
             plugins={[dayGridPlugin, interactionPlugin]}
             // editable  
+            navlinks={true}
             selectable
-            // eventClick={() => {
-            //   console.log('Clicked');
-            // }}
+            eventClick={eventClick}
             // select ={selectEvent}
             headerToolbar = {
               {
