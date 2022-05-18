@@ -59,7 +59,7 @@ const AddLinkComponent = () => {
                         name='github'
                         onChange={handleClickRadioButton}
                       />
-                      <label>GitHub</label>&nbsp;
+                      <label>GitHub</label>
                       <label>
                         <Input
                           type='radio'
@@ -68,7 +68,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         GoogleDrive
-                      </label>&nbsp;
+                      </label>
                       <label>
                         <Input
                           type='radio'
@@ -77,7 +77,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Notion
-                      </label>&nbsp;
+                      </label>
                       <label>
                         <Input
                           type='radio'
@@ -86,7 +86,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Trello
-                      </label>&nbsp;
+                      </label>
                       <label>
                         <Input
                           type='radio'
@@ -95,7 +95,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Slack
-                      </label>&nbsp;
+                      </label>
                       <label>
                         <Input
                           type='radio'
@@ -115,13 +115,13 @@ const AddLinkComponent = () => {
                       className='font-15'
                       onChange={handleURLInput}
                     />
-                    {/* <input
+                    <Input
                       type='submit'
                       value='ADD'
-                      onClick={handleURLInput}
+                      // onClick={handleURLInput}
                       className='bg-info font-semibold font-16 btn-rounded text-uppercase text-white text-center'
-                    /> */}
-                    <button type='submit'>ADD</button>
+                    />
+                    {/* <button type='submit'>ADD</button> */}
                   </Form>
                 </Col>
 

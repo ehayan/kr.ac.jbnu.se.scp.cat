@@ -31,30 +31,12 @@ const PageForm = () => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label htmlFor='email'>Email Address</Label>
+                <Label htmlFor='explanation'>Project explanation</Label>
                 <Input
                   type='text'
                   className='form-control'
-                  id='email'
-                  placeholder='Enter email'
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor='password'>Password</Label>
-                <Input
-                  type='text'
-                  className='form-control'
-                  id='password'
-                  placeholder='Password'
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFFor='confirmpwd'>Confirm Password</Label>
-                <Input
-                  type='text'
-                  className='form-control'
-                  id='confirmpwd'
-                  placeholder='Confirm Password'
+                  id='explanation'
+                  placeholder='Enter explanation'
                 />
               </FormGroup>
               <Col md='12'>

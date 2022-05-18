@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
-import {
-  Container,
-  Navbar,
-  Nav,
-  NavItem,
-  NavLink,
-  Row,
-  Col,
-  ListGroup,
-  ListGroupItem,
-  Badge,
-} from 'reactstrap';
+import { Container, Navbar, Nav, NavItem, NavLink, Badge } from 'reactstrap';
+
+import { Accordion } from 'react-bootstrap';
 
 import Form from '../../basic/form';
 const Setting = () => {
@@ -19,20 +10,6 @@ const Setting = () => {
   return (
     <Container>
       <div className='px-4 '>
-        {/* 제목 */}
-        <div>
-          <Container>
-            <Row className='justify-content-center'>
-              <Col className='text-center'>
-                <h2 className='title font-bold'>Projects Setting</h2>
-                <h6 className='subtitle'>
-                  등록된 프로젝트 수정 / 프로젝트 추가
-                </h6>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-
         {/* navbar */}
         <Navbar className='navbar-expand-lg h1-nav'>
           <Nav navbar className='mt-2'>
@@ -52,33 +29,26 @@ const Setting = () => {
         {/* main */}
         <div>
           {Content ? (
-            //   Registered Projects
-            <ListGroup as='ol' numbered>
-              <ListGroupItem
-                as='li'
-                className='d-flex justify-content-between align-items-start'
-              >
-                <div className='ms-2 me-auto'>
-                  <div className='fw-bold'>2022_Capston_Project</div>
-                  참여자 이름
-                </div>
-                <Badge color='primary' pill>
-                  14
-                </Badge>
-              </ListGroupItem>
-              <ListGroupItem
-                as='li'
-                className='d-flex justify-content-between align-items-start'
-              >
-                <div className='ms-2 me-auto'>
-                  <div className='fw-bold'>React_Project</div>
-                  참여자 이름
-                </div>
-                <Badge color='primary' pill>
-                  14
-                </Badge>
-              </ListGroupItem>
-            </ListGroup>
+            <Accordion>
+              <Accordion.Item eventKey='0'>
+                <Accordion.Header>
+                  Project 1
+                  <Badge className='m-l-10' pill color='primary'>
+                    프로젝트 생성날짜
+                  </Badge>
+                </Accordion.Header>
+                <Accordion.Body>참여자 이름, 등록된 도구 갯수</Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey='1'>
+                <Accordion.Header>
+                  Project 2
+                  <Badge className='m-l-10' pill color='primary'>
+                    프로젝트 생성날짜
+                  </Badge>
+                </Accordion.Header>
+                <Accordion.Body>참여자 이름, 등록된 도구 갯수</Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
           ) : (
             //   ADD new Project
             <Form />
