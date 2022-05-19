@@ -59,7 +59,7 @@ const AddLinkComponent = () => {
                         name='github'
                         onChange={handleClickRadioButton}
                       />
-                      <label>GitHub</label>
+                      <label>GitHub</label>&nbsp;
                       <label>
                         <Input
                           type='radio'
@@ -68,7 +68,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         GoogleDrive
-                      </label>
+                      </label>&nbsp;
                       <label>
                         <Input
                           type='radio'
@@ -77,7 +77,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Notion
-                      </label>
+                      </label>&nbsp;
                       <label>
                         <Input
                           type='radio'
@@ -86,7 +86,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Trello
-                      </label>
+                      </label>&nbsp;
                       <label>
                         <Input
                           type='radio'
@@ -95,7 +95,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Slack
-                      </label>
+                      </label>&nbsp;
                       <label>
                         <Input
                           type='radio'

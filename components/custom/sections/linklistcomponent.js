@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Card,
   CardBody,
@@ -17,6 +17,8 @@ import {
 } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
 
+// const [link, setLink] = useState([ListData]);
+
 const ListData = [
   {
     title: 'GitHub',
@@ -27,38 +29,38 @@ const ListData = [
   {
     title: 'GoogleDrive',
     icon: <FaGoogleDrive />,
-    link: '#',
+    link: 'aaaaaaaaaa',
     id: 2,
   },
   {
     title: 'Notion',
     icon: <SiNotion />,
-    link: '#',
+    link: '',
     id: 3,
   },
   {
     title: 'Trello',
     icon: <FaTrello />,
-    link: '#',
+    link: '',
     id: 4,
   },
   {
     title: 'Slack',
     icon: <FaSlack />,
-    link: '#',
+    link: '',
     id: 5,
   },
   {
     title: 'etc',
     icon: <FaDiaspora />,
-    link: '#',
+    link: '',
     id: 6,
   },
 ];
 
-const handleDelete = () => {
-  console.log('삭제');
-};
+// const handleDelete = (link) => {
+    
+// };
 
 const List = () => {
   return (
@@ -80,19 +82,27 @@ const List = () => {
               <div>
                 <i className='m-r-5'> {list.icon} </i>
                 {list.title} :
-                <a className={list.link === '#' ? 'hide' : 'm-l-5'}>
+                
+                <a id={list.id} className={list.link === '#' ? 'hide' : 'm-l-5'}>
                   {list.link}
                 </a>
                 <button
-                  className={list.link === '#' ? 'hide' : 'm-l-5'}
-                  onClick={handleDelete}
+                  className={list.link === '' ? 'hide' : 'm-l-5'}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    list.link = '';
+                    const link = document.getElementById(list.id);
+                    link.remove();
+                  }}
                 >
                   ❌
                 </button>
               </div>
             </ListGroupItem>
           ))}
+          
         </ListGroup>
+        
       </CardBody>
     </Card>
   );
