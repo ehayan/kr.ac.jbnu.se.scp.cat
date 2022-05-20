@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Container, Navbar, Nav, NavItem, NavLink, Badge } from 'reactstrap';
+import { Container, Navbar, Nav, NavItem, NavLink } from 'reactstrap';
 
-import { Accordion } from 'react-bootstrap';
-
+import ProjectList from './projectlistcomponent';
 import Form from '../../basic/form';
 const Setting = () => {
   const [Content, setContent] = useState(true);
@@ -23,32 +22,16 @@ const Setting = () => {
                 Add New Project
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink>Project Invitation</NavLink>
+            </NavItem>
           </Nav>
         </Navbar>
 
         {/* main */}
         <div>
           {Content ? (
-            <Accordion>
-              <Accordion.Item eventKey='0'>
-                <Accordion.Header>
-                  Project 1
-                  <Badge className='m-l-10' pill color='primary'>
-                    프로젝트 생성날짜
-                  </Badge>
-                </Accordion.Header>
-                <Accordion.Body>참여자 이름, 등록된 도구 갯수</Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey='1'>
-                <Accordion.Header>
-                  Project 2
-                  <Badge className='m-l-10' pill color='primary'>
-                    프로젝트 생성날짜
-                  </Badge>
-                </Accordion.Header>
-                <Accordion.Body>참여자 이름, 등록된 도구 갯수</Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
+            <ProjectList />
           ) : (
             //   ADD new Project
             <Form />

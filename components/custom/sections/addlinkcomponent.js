@@ -68,7 +68,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         GoogleDrive
-                      </label>&nbsp;
+                      </label>
                       <label>
                         <Input
                           type='radio'
@@ -77,7 +77,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Notion
-                      </label>&nbsp;
+                      </label>
                       <label>
                         <Input
                           type='radio'
@@ -86,7 +86,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Trello
-                      </label>&nbsp;
+                      </label>
                       <label>
                         <Input
                           type='radio'
@@ -95,7 +95,7 @@ const AddLinkComponent = () => {
                           onChange={handleClickRadioButton}
                         />
                         Slack
-                      </label>&nbsp;
+                      </label>
                       <label>
                         <Input
                           type='radio'
@@ -118,6 +118,9 @@ const AddLinkComponent = () => {
                     <Input
                       type='submit'
                       value='ADD'
+                      // onSubmit={(e) => {
+                      //   e.preventDefault;
+                      // }}
                       // onClick={handleURLInput}
                       className='bg-info font-semibold font-16 btn-rounded text-uppercase text-white text-center'
                     />

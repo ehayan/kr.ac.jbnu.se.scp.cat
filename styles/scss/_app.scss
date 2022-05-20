@@ -4,14 +4,10 @@ Author: wrappixel
 File: scss
 */
 
-
-
 /******************* 
 This is the font import from the google api 
 *******************/
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-
-
 
 /******************* 
 Global Styles 
@@ -666,8 +662,8 @@ Background Colors
   background-color: $yellow;
 }
 
-.bg-lightblue {
-  background-color: #48b3e9;
+.bg-probby-main {
+  background-color: #131a63;
 }
 
 .bg-facebook {
@@ -1134,31 +1130,27 @@ Buttons
   }
 }
 
-.btn-github{
-  background : transparent;
-  border : none;
+.btn-github {
+  background: transparent;
+  border: none;
 
-  &:hover{
+  &:hover {
     background: #c9c8c8;
     border-radius: 10px;
   }
 
-  &::after{
+  &::after {
     background-color: #000000;
     border-bottom: #76a7f0;
   }
-
 }
 
-.btn-copy{
+.btn-copy {
   width: 30px;
   height: 30px;
-  background : #c9c8c8;
+  background: #c9c8c8;
   border-radius: 5%;
-  border : none;
-
-
-
+  border: none;
 }
 
 .btn-themecolor,
@@ -1791,20 +1783,20 @@ a.btn-outline-success {
   box-shadow: none;
   transition: 0s;
   border-radius: $radius;
-  border-bottom-left-radius : 0px;
-  border-bottom-right-radius : 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
-.tool-selected{
+.tool-selected {
   background-color: white;
-  padding-top : 4px;
-  padding-bottom : 5px;
-  padding-left : 7px;
-  padding-right : 7px;
+  padding-top: 4px;
+  padding-bottom: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
   border-radius: 5px;
 }
 
-.board-card{
+.board-card {
   background-color: #ebecf0;
   width: 350px;
   padding: 20px;
@@ -1813,32 +1805,32 @@ a.btn-outline-success {
   margin-right: auto;
 }
 
-.board-add{
+.board-add {
   background-color: #ebecf0;
   border: hidden;
 
-  &.hober{
+  &.hober {
     background-color: #b9b9b9;
   }
 }
 
-.board-card-name{
+.board-card-name {
   padding: 20px;
   padding-bottom: 0;
   margin-right: auto;
 }
 
-.board-card-content{
+.board-card-content {
   padding: 0;
   margin-right: auto;
   margin-bottom: 0;
 }
 
-.board-align{
+.board-align {
   align-items: flex-start;
 }
 
-.v-a-m{
+.v-a-m {
   vertical-align: middle;
 }
 
@@ -1861,15 +1853,15 @@ a.btn-outline-success {
 }
 
 .helpinfo {
-  display : table-cell;
+  display: table-cell;
   vertical-align: middle;
 }
 
-.dashboard-btn{
+.dashboard-btn {
   border-radius: 5px;
 }
 
-.dashboard-member{
+.dashboard-member {
   background-color: #a5cbee;
   border-radius: 50%;
 }
@@ -1891,7 +1883,7 @@ a.btn-outline-success {
 Slack
 *******************/
 
-.slack-date{
+.slack-date {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
   padding-left: 0.75rem !important;
@@ -1903,32 +1895,32 @@ Slack
   text-align: justify;
 }
 
-.slack-pick-date-tri{
+.slack-pick-date-tri {
   background-color: transparent;
-  border-color:  transparent;
+  border-color: transparent;
 }
 
-.slack-member-profile{
+.slack-member-profile {
   border-radius: 5px;
   border-style: solid;
   border-width: thin;
   border-color: #999999;
 }
 
-.slack-float-profile{
+.slack-float-profile {
   float: left;
   width: 5%;
 }
 
-.slack-float-conversation{
+.slack-float-conversation {
   float: left;
   width: 95%;
 }
 
-.slack-font-name{
+.slack-font-name {
   font-size: 19px;
 }
 
-.slack-font-time{
+.slack-font-time {
   font-size: 14px;
 }

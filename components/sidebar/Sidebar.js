@@ -1,6 +1,6 @@
 import { Button, Nav, NavItem } from 'reactstrap';
 import Image from 'next/image';
-import logo from '../../assets/images/logos/cat_logo.png';
+import logo from '../../assets/images/logos/probby_logo.png';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { signIn, signOut, useSession } from 'next-auth/react';
@@ -8,13 +8,11 @@ import {
   FaClipboardList,
   FaRegPlusSquare,
   FaGithub,
-  FaRegBookmark,
   FaGoogleDrive,
   FaRegCalendarAlt,
   FaTrello,
   FaSlack,
 } from 'react-icons/fa';
-import { SiNotion } from 'react-icons/si';
 const navigation = [
   {
     title: 'Dashboard',
@@ -37,11 +35,6 @@ const navigation = [
     icon: <FaGoogleDrive />,
   },
   {
-    title: 'Notion',
-    href: '/project-notion',
-    icon: <SiNotion />,
-  },
-  {
     title: 'Trello',
     href: '/project-trello',
     icon: <FaTrello />,
@@ -50,11 +43,6 @@ const navigation = [
     title: 'Slack',
     href: '/project-slack',
     icon: <FaSlack />,
-  },
-  {
-    title: 'Tool Help',
-    href: '/toolhelp',
-    icon: <FaRegBookmark />,
   },
   {
     title: 'Calendar',
@@ -72,9 +60,8 @@ const Sidebar = () => {
     <div className='p-20'>
       <div className='d-flex align-items-center'>
         <a href='/'>
-          <Image src={logo} height={'60px'} width={'60px'} />
+          <Image src={logo} width='100px' height='60px' />
         </a>
-        <h4 className='m-l-5'>Cat</h4>
       </div>
       <div className='act-buttons pt-2 mt-2 m-l-15'>
         <button
@@ -95,7 +82,9 @@ const Sidebar = () => {
               <Link href={navi.href}>
                 <a
                   className={
-                    location === navi.href ? 'nav-link' : 'text-dark nav-link'
+                    location === navi.href
+                      ? 'nav-link text-warning'
+                      : ' nav-link'
                   }
                 >
                   <i>{navi.icon}</i>

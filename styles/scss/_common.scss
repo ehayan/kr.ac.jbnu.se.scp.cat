@@ -26,7 +26,7 @@ Header 6
     margin-left: auto !important;
   }
 
-  .mr-auto{
+  .mr-auto {
     margin-right: auto !important;
   }
 
@@ -39,7 +39,7 @@ Header 6
 
     .nav-item:hover .nav-link,
     .nav-item.active .nav-link {
-      color: rgb(97, 255, 176);
+      color: #efcb00;
     }
   }
 
@@ -70,7 +70,7 @@ Header 6
   min-height: 600px;
   display: flex;
 
-  background-color: #607df9;
+  background-color: #131a63;
 
   .title {
     color: $white;
@@ -184,12 +184,12 @@ card
   }
 }
 
-.card-width-300{
-  width:300px;
+.card-width-300 {
+  width: 300px;
 }
 
-.card-width-270{
-  width:270px;
+.card-width-270 {
+  width: 270px;
 }
 
 .card-group .card {

@@ -15,8 +15,8 @@ import {
 } from 'reactstrap'; //module
 import { signIn, signOut, useSession } from 'next-auth/react';
 // import { IoMail, IoMailUnread} from 'react-icons/io5';
-import {GoTriangleDown} from 'react-icons/go';
-import logo from '../../assets/images/logos/small_cat_logo.png';
+import { GoTriangleDown } from 'react-icons/go';
+import logo from '../../assets/images/logos/probby_logo.png';
 
 const Header = () => {
   const { data: session, status } = useSession();
@@ -35,9 +35,9 @@ const Header = () => {
         <Container className='po-relative'>
           <Navbar className='navbar-expand-lg h6-nav-bar'>
             <NavbarBrand href='/'>
-              <Image src={logo} />
+              <Image src={logo} width='100px' height='60px' />
             </NavbarBrand>
-            <h3>Cat</h3>
+
             <NavbarToggler onClick={toggle}>
               <span className='ti-menu'></span>
             </NavbarToggler>
@@ -101,7 +101,7 @@ const Header = () => {
                     if (session) {
                       signOut();
                     } else if (!session) {
-                      signIn("google");
+                      signIn('google');
                     }
                   }}
                 >
