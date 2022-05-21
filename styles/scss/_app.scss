@@ -564,6 +564,10 @@ Text Colors
   color: $white !important;
 }
 
+.text-gold {
+  color: #efcb00 !important;
+}
+
 .text-danger {
   color: $danger !important;
 }
@@ -643,7 +647,7 @@ Background Colors
 }
 
 .bg-info {
-  background-color: $info !important;
+  background-color: #efcb00 !important;
 }
 
 .bg-warning {
@@ -1191,20 +1195,20 @@ Buttons
 
 .btn-info,
 .btn-info.disabled {
-  background: $info;
-  border: 1px solid $info;
+  background: #131a63;
+  border: 1px solid #131a63;
 
   transition: 0.2s ease-in;
 
   &:hover {
-    background: $info-dark;
-    border: 1px solid $info-dark;
+    background: #000038;
+    border: 1px solid #000038;
   }
 
   &.active,
   &:active,
   &:focus {
-    background: $info-dark;
+    background: #000038;
   }
 }
 
@@ -1923,4 +1927,35 @@ Slack
 
 .slack-font-time {
   font-size: 14px;
+}
+
+/******************* 
+Link
+*******************/
+
+.link-container-bg{
+  background-color: #131a63;
+  border-radius: 5px;
+}
+
+/******************* 
+Gtihub
+*******************/
+
+.github-date-bg{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #131a63;
+  border-radius: 5px;
+}
+
+/******************* 
+Trello
+*******************/
+
+.trello-flex-nowrap{
+  display: flex;
+  flex-wrap: nowrap;
 }

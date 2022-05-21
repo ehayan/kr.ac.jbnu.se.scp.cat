@@ -35,28 +35,27 @@ const AddLinkComponent = () => {
 
   return (
     <div>
+      <div className="m-l-30">
+        <h2 className="title font-bold">ADD LINK</h2>
+        <p className="m-t-10">Please enter the link(url) you want to add</p>
+      </div>
       <div className="bg-light">
         <section>
           <div id="banner1">
             <Container>
-              <Row className="m-l-30 p-t-30">
+              <Row className="m-t-30 m-l-30 p-t-30">
                 <Col className="align-self-center">
-                  <h2 className="title font-bold">ADD LINK</h2>
-
-                  <p className="m-t-20 m-b-40">
-                    Please enter the link(url) you want to add
-                  </p>
-
                   <Form className="m-t-40" onSubmit={handleSubmit}>
                     <div className="m-b-20">
                       <Input
                         type="radio"
-                        value="1"
-                        checked={x === "1"}
-                        name="github"
+                        value="5"
+                        checked={x === "5"}
                         onChange={handleClickRadioButton}
                       />
-                      <label>GitHub</label>&nbsp;
+                      <label>GitHub</label>
+                    </div>
+                    <div>
                       <label>
                         <Input
                           type="radio"
@@ -66,6 +65,9 @@ const AddLinkComponent = () => {
                         />
                         GoogleDrive
                       </label>
+                    </div>
+                    <br />
+                    <div>
                       <label>
                         <Input
                           type="radio"
@@ -73,8 +75,11 @@ const AddLinkComponent = () => {
                           checked={x === "3"}
                           onChange={handleClickRadioButton}
                         />
-                        Trello
+                        Notion
                       </label>
+                    </div>
+                    <br />
+                    <div>
                       <label>
                         <Input
                           type="radio"
@@ -82,8 +87,11 @@ const AddLinkComponent = () => {
                           checked={x === "4"}
                           onChange={handleClickRadioButton}
                         />
-                        Slack
+                        Trello
                       </label>
+                    </div>
+                    <br />
+                    <div>
                       <label>
                         <Input
                           type="radio"
@@ -91,28 +99,42 @@ const AddLinkComponent = () => {
                           checked={x === "5"}
                           onChange={handleClickRadioButton}
                         />
+                        Slack
+                      </label>
+                    </div>
+                    <br />
+                    <div>
+                      <label>
+                        <Input
+                          type="radio"
+                          value="6"
+                          checked={x === "6"}
+                          onChange={handleClickRadioButton}
+                        />
                         etc
                       </label>
                     </div>
-
-                    <Input
-                      type="url"
-                      name="url"
-                      value={url}
-                      placeholder="Enter Link address"
-                      className="font-15"
-                      onChange={handleURLInput}
-                    />
-                    <Input
-                      type="submit"
-                      value="ADD"
-                      // onSubmit={(e) => {
-                      //   e.preventDefault;
-                      // }}
-                      // onClick={handleURLInput}
-                      className="bg-info font-semibold font-16 btn-rounded text-uppercase text-white text-center"
-                    />
-                    {/* <button type='submit'>ADD</button> */}
+                    <br />
+                    <div className="m-b-20">
+                      <Input
+                        type="url"
+                        name="url"
+                        value={url}
+                        placeholder="Enter Link address"
+                        className="font-15"
+                        onChange={handleURLInput}
+                      />
+                      <Input
+                        type="submit"
+                        value="ADD"
+                        // onSubmit={(e) => {
+                        //   e.preventDefault;
+                        // }}
+                        // onClick={handleURLInput}
+                        className="bg-info font-semibold font-16 btn-rounded text-uppercase text-black text-center"
+                      />
+                      {/* <button type='submit'>ADD</button> */}
+                    </div>
                   </Form>
                 </Col>
 

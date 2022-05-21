@@ -27,14 +27,14 @@ export async function getCommits(link) {
   );
   const json = await response.json();
   let returns = [];
-  for(let i=0; i<3; i++) {
+  for (let i = 0; i < 20; i++) {
     const value = {
-      name : json[i].commit.author.name,
-      avatar_url : json[i].author.avatar_url,
-      date : json[i].commit.author.date,
-      message : json[i].commit.message,
-      commit_url : `${link}/commit/${json[i].sha}`
-    }
+      name: json[i].commit.author.name,
+      avatar_url: json[i].author.avatar_url,
+      date: json[i].commit.author.date,
+      message: json[i].commit.message,
+      commit_url: `${link}/commit/${json[i].sha}`,
+    };
     returns.push(value);
   }
   return returns;

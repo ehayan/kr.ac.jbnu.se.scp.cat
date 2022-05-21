@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
-import { FormGroup, Input, FormText, Container, Button } from 'reactstrap';
-import Table from '../../basic/table';
+import React, { useState, useRef } from "react";
+import { FormGroup, Input, FormText, Container, Button } from "reactstrap";
+import Table from "../../basic/table";
 const Drivecomponent = () => {
   const [file, setFile] = useState([]);
 
@@ -18,7 +18,7 @@ const Drivecomponent = () => {
     };
 
     const onSave = () => {
-      console.log('save');
+      console.log("save");
     };
 
     return (
@@ -37,15 +37,19 @@ const Drivecomponent = () => {
   };
 
   return (
-    <Container className='m-t-10'>
-      <h3>Project GoogleDrive : link</h3>
-      <FormGroup>
-        <Input type='file' onChange={onSelectFile} />
-      </FormGroup>
-      <hr></hr>
-      <FileList file={file} setFile={setFile} />
-      <Table />
-    </Container>
+    <div>
+      <div className="m-l-30">
+        <h2 className="title">Project GoogleDrive : link</h2>
+      </div>
+      <Container className="m-t-30">
+        <FormGroup>
+          <Input type="file" onChange={onSelectFile} />
+        </FormGroup>
+        <hr></hr>
+        <FileList file={file} setFile={setFile} />
+        <Table />
+      </Container>
+    </div>
   );
 };
 export default Drivecomponent;

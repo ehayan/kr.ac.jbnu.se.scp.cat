@@ -12,6 +12,12 @@ import { Row, Col, Container, Card, CardBody } from "reactstrap";
 import * as Github from "../../../api/github";
 import { BiCopy } from "react-icons/bi";
 import { BsCheck2 } from "react-icons/bs";
+import {
+  Element,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 const GitCommitComponent = () => {
   const link = "https://github.com/gusdn6901/kr.ac.jbnu.se.scp.cat";
@@ -42,20 +48,19 @@ const GitCommitComponent = () => {
 
   return (
     <div>
-      <div className="pricing8 spacer b-t">
+      <div>
+        <div className="m-l-30">
+          <h2 className="title ">
+            Current commits of '{Github.getRepositoryName(link)}' repository
+          </h2>
+          <h6 className="subtitle">
+            가장 최근에 푸시된 커밋과 관련된 정보를 확인할 수 있습니다.
+          </h6>
+          <span className="subtitle">지정된 리포지토리 :&nbsp;</span>
+          <a href={link}>{link}</a>
+        </div>
         <Container>
           <Row className="justify-content-center">
-            <Col md="6" className="text-center">
-              <h2 className="title">
-                <span>Current commits of </span>
-                <p>'{Github.getRepositoryName(link)}' repository</p>
-              </h2>
-              <h6 className="subtitle">
-                가장 최근에 푸시된 커밋과 관련된 정보를 확인할 수 있습니다.
-              </h6>
-              <span className="subtitle">지정된 리포지토리 :&nbsp;</span>
-              <a href={link}>{link}</a>
-            </Col>
             <Col md="6" className="text-center">
               <h2 className="title">Clone</h2>
               <div>
@@ -66,8 +71,7 @@ const GitCommitComponent = () => {
                     setCloneBtn(1);
                   }}
                 >
-                  {" "}
-                  HTTPS{" "}
+                  HTTPS
                 </button>
                 &ensp;
                 <button
@@ -77,8 +81,7 @@ const GitCommitComponent = () => {
                     setCloneBtn(2);
                   }}
                 >
-                  {" "}
-                  SSH{" "}
+                  SSH
                 </button>
                 &ensp;
                 <button
@@ -88,8 +91,7 @@ const GitCommitComponent = () => {
                     setCloneBtn(3);
                   }}
                 >
-                  {" "}
-                  GitHub CLI{" "}
+                  GitHub CLI
                 </button>
               </div>
               <div>
@@ -146,82 +148,58 @@ const GitCommitComponent = () => {
               </div> */}
             </Col>
           </Row>
-          <Row className="m-t-60">
-            {commits.map((commit) => (
-              <Col md="4" className="ml-auto pricing-box align-self-center">
-                <Card className="b-all">
-                  <p className="commit-txt btn-info p-15 btn-arrow btn-block">
-                    {commit.date.split("T")[0]}{" "}
-                    {commit.date.split("T")[1].split("Z")[0]}
-                  </p>
-                  <CardBody className="p-30 text-center">
-                    <div
-                      style={{
-                        borderRadius: "50%",
-                        border: "2px solid white",
-                        display: "inline-block",
-                        width: 70,
-                        height: 70,
-                        overflow: "hidden",
-                      }}
-                    >
-                      <Image
-                        src={commit.avatar_url}
-                        width="70"
-                        height="70"
-                        objectFit="cover"
-                      />
-                    </div>
-                    <h5>{commit.name}</h5>
-                    <p className="m-t-40">
-                      <a href={commit.commit_url}>{commit.message}</a>
-                    </p>
-                  </CardBody>
-                </Card>
-              </Col>
-            ))}
-            {/* <Col md="4" className="ml-auto pricing-box align-self-center">
-              <Card className="b-all">
-                <p className="commit-txt btn-info p-15 btn-arrow btn-block">
-                date
-                </p>
-                <CardBody className="p-30 text-center">
-                  <Image src={GitLogo} />
-                  <h5>name</h5>
-                  <p className="m-t-40">
-                    commit message
-                  </p>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col md="4" className="ml-auto pricing-box align-self-center">
-              <Card className="b-all">
-                <p className="commit-txt btn-danger p-15 btn-arrow btn-block">
-                date
-                </p>
-                <CardBody className="p-30 text-center">
-                  <Image src={GitLogo}/>
-                  <h5>name</h5>
-                  <p className="m-t-40">
-                    commit message
-                  </p>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col md="4" className="ml-auto pricing-box align-self-center">
-              <Card className="b-all">
-                <p className="commit-txt btn-info p-15 btn-arrow btn-block">
-                date
-                </p>
-                <CardBody className="p-30 text-center">
-                  <Image src={GitLogo}/>
-                  name
-                  <p className="m-t-40">
-                    commit message
-                  </p>
-                </CardBody>
-              </Card>
-            </Col> */}
+
+          <Row className="m-t-40">
+            <Element
+              style={{
+                height: "600px",
+                overflow: "scroll",
+              }}
+            >
+              {commits.map((commit) => (
+                <Col md="12" className="ml-auto pricing-box align-self-center">
+                  <Card className="p-2">
+                    <Row>
+                      <Col md="2" className="align-self-center">
+                        <div>
+                          <p className="github-date-bg text-center text-white m-b-0">
+                            {commit.date.split("T")[0]}{" "}
+                            {commit.date.split("T")[1].split("Z")[0]}
+                          </p>
+                        </div>
+                      </Col>
+                      <Col md="2" className="text-center">
+                        <div
+                          style={{
+                            borderRadius: "50%",
+                            border: "2px solid white",
+                            display: "inline-block",
+                            width: 70,
+                            height: 70,
+                            overflow: "hidden",
+                          }}
+                        >
+                          <Image
+                            src={commit.avatar_url}
+                            width="70"
+                            height="70"
+                            objectFit="cover"
+                          />
+                        </div>
+                      </Col>
+                      <Col md="2" className="align-self-center">
+                        <h5 className="m-b-0">{commit.name}</h5>
+                      </Col>
+                      <Col md="6" className="align-self-center">
+                        <p className="m-b-0">
+                          <a href={commit.commit_url}>{commit.message}</a>
+                        </p>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Col>
+              ))}
+            </Element>
           </Row>
         </Container>
       </div>
