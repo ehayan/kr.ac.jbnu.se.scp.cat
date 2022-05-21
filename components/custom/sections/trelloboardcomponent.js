@@ -40,15 +40,15 @@ const TrelloBoardComponent = (prop) => {
                   <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
                     <p className="board-card-name m-b-0 ">{data.board.name}</p>
                     <CardBody>
-                      <Card className="card-width-270 b-all">
                         {
                           data.card.map((card) => (
+                            <Card className="card-width-270 b-all">
                             <CardBody >
                               <p className="board-card-content">{card.name}</p>
                             </CardBody>
+                            </Card>
                           ))
                         }
-                      </Card>
                     </CardBody>
                   </Card>
                 </Col>
