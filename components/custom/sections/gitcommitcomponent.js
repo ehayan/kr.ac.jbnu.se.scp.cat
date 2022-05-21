@@ -152,7 +152,7 @@ const GitCommitComponent = () => {
           <Row className="m-t-40">
             <Element
               style={{
-                height: "600px",
+                height: "500px",
                 overflow: "scroll",
               }}
             >

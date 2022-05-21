@@ -48,9 +48,9 @@ const AddLinkComponent = () => {
                   <Form className="m-t-40" onSubmit={handleSubmit}>
                     <div className="m-b-20">
                       <Input
-                        type="radio"
-                        value="5"
-                        checked={x === "5"}
+                        type="checkbox"
+                        value="1"
+                        checked={x === "1"}
                         onChange={handleClickRadioButton}
                       />
                       <label>GitHub</label>
@@ -58,7 +58,7 @@ const AddLinkComponent = () => {
                     <div>
                       <label>
                         <Input
-                          type="radio"
+                          type="checkbox"
                           value="2"
                           checked={x === "2"}
                           onChange={handleClickRadioButton}
@@ -70,21 +70,9 @@ const AddLinkComponent = () => {
                     <div>
                       <label>
                         <Input
-                          type="radio"
+                          type="checkbox"
                           value="3"
                           checked={x === "3"}
-                          onChange={handleClickRadioButton}
-                        />
-                        Notion
-                      </label>
-                    </div>
-                    <br />
-                    <div>
-                      <label>
-                        <Input
-                          type="radio"
-                          value="4"
-                          checked={x === "4"}
                           onChange={handleClickRadioButton}
                         />
                         Trello
@@ -94,9 +82,9 @@ const AddLinkComponent = () => {
                     <div>
                       <label>
                         <Input
-                          type="radio"
-                          value="5"
-                          checked={x === "5"}
+                          type="checkbox"
+                          value="4"
+                          checked={x === "4"}
                           onChange={handleClickRadioButton}
                         />
                         Slack
@@ -106,9 +94,9 @@ const AddLinkComponent = () => {
                     <div>
                       <label>
                         <Input
-                          type="radio"
-                          value="6"
-                          checked={x === "6"}
+                          type="checkbox"
+                          value="5"
+                          checked={x === "5"}
                           onChange={handleClickRadioButton}
                         />
                         etc

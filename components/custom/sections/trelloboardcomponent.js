@@ -36,18 +36,21 @@ const TrelloBoardComponent = (prop) => {
     <div>
       <div>
         <div className="m-l-30">
-          <h2 className="title">{Trello.getProjectName(link)}</h2>
+          <h2 className="title">
+            Trello Board : '{Trello.getProjectName(link)}'
+          </h2>
         </div>
         <Element
+          className="m-l-10"
           style={{
-            height: "600px",
+            height: "800px",
             overflow: "scroll",
           }}
         >
-          <Row className="m-t-30">
+          <Row className="m-l-10 m-t-30 trello-flex-nowrap">
             {trelloDatas.map((data) => (
               // <Col md="2" className="m-l-20 align-self-center">
-              <Card className="trello-flex-nowrap board-card board-align card-width-300 m-b-0 p-0 b-all">
+              <Card className=" board-card board-align card-width-300 m-b-0 p-0 b-all m-l-20">
                 <p className="board-card-name m-b-0 ">{data.board.name}</p>
                 <CardBody>
                   {data.card.map((card) => (
@@ -61,70 +64,6 @@ const TrelloBoardComponent = (prop) => {
               </Card>
               // </Col>
             ))}
-            {/* <Col md="2" className="m-l-20 align-self-center">
-              <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
-                <p className="board-card-name m-b-0 ">To Do	&#40;requirments&#41;</p>
-                <CardBody>
-                  <Card className="card-width-270 b-all">
-                      <CardBody >
-                          <p className="board-card-content">트렐로/노션/슬랙</p>
-                      </CardBody>
-                  </Card>
-                  <Card className="card-width-270 b-all">
-                      <CardBody >
-                          <p className="board-card-content">대시보드&#40;캘린더/참여자추가&#41;</p>
-                      </CardBody>
-                  </Card>
-                </CardBody>
-              </Card>
-            </Col> */}
-
-            {/* <Col md="2" className="m-l-20 align-self-center">
-              <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
-                <p className="board-card-name m-b-0 ">Done	&#40;requirments&#41;</p>
-                <CardBody>
-                  <Card className="card-width-270 b-all">
-                      <CardBody >
-                          <p className="board-card-content">깃허브 연동</p>
-                      </CardBody>
-                  </Card>
-                  <Card className="card-width-270 b-all">
-                      <CardBody >
-                          <p className="board-card-content">구글 계정 로그인</p>
-                      </CardBody>
-                  </Card>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col md="2" className="m-l-20 align-self-center">
-              <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
-                <p className="board-card-name m-b-0 ">To Do	&#40;assignments&#41;</p>
-                <CardBody>
-                  <Card className="card-width-270 b-all">
-                      <CardBody >
-                          <p className="board-card-content">12차 과제&#40;과제 진행 사항 발표&#41;</p>
-                      </CardBody>
-                  </Card>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col md="2" className="m-l-20 align-self-center">
-              <Card className="board-card board-align card-width-300 m-b-0 p-0 b-all">
-                <p className="board-card-name m-b-0 ">Done	&#40;assignments&#41;</p>
-                <CardBody>
-                  <Card className=" card-width-270 b-all">
-                      <CardBody >
-                          <p className="board-card-content">1차 과제&#40;브레인스토밍&#41;</p>
-                      </CardBody>
-                  </Card>
-                  <Card className=" card-width-270 b-all">
-                      <CardBody >
-                          <p className="board-card-content">2차 과제&#40;아이디어 선정&#41;</p>
-                      </CardBody>
-                  </Card>
-                </CardBody>
-              </Card>
-            </Col> */}
           </Row>
         </Element>
       </div>

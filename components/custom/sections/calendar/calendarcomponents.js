@@ -4,9 +4,6 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import { useRef, useState } from "react";
 import { Row, Col } from "reactstrap";
 
-
-
-
 const CalendarFunction = ({ events, setEvents }) => {
   const calendarRef = useRef(null);
 
@@ -26,48 +23,47 @@ const CalendarFunction = ({ events, setEvents }) => {
   //   calendar.unselect();
   // }
   function eventClick(event) {
-    if(confirm("일정을 삭제하시겠습니까?")) {
+    if (confirm("일정을 삭제하시겠습니까?")) {
       const startDate = event.event.startStr;
-      const endDate = event.event.endStr == ""? event.event.startStr : event.event.endStr;
+      const endDate =
+        event.event.endStr == "" ? event.event.startStr : event.event.endStr;
       const title = event.event.title;
       let returns = [];
       events.forEach((event) => {
-        if(event.title == title
-          && event.start == startDate
-          && event.end == endDate) return;
+        if (
+          event.title == title &&
+          event.start == startDate &&
+          event.end == endDate
+        )
+          return;
         returns.push(event);
-      })
+      });
       setEvents(returns);
-    } 
+    }
   }
   return (
-    <div>
-        <div id="events">
-
-        </div>
-          <FullCalendar
-            innerRef={calendarRef}
-            plugins={[dayGridPlugin, interactionPlugin]}
-            // editable  
-            navlinks={true}
-            selectable
-            eventClick={eventClick}
-            // select ={selectEvent}
-            headerToolbar = {
-              {
-                left : 'prevYear,prev,next,nextYear',
-                center : 'title',
-                right : 'today dayGridMonth,dayGridWeek,dayGridDay'
-              }
-            }
-            events = {events}
-          />
+    <div className="m-t-40">
+      <div id="events"></div>
+      <FullCalendar
+        innerRef={calendarRef}
+        plugins={[dayGridPlugin, interactionPlugin]}
+        // editable
+        navlinks={true}
+        selectable
+        eventClick={eventClick}
+        // select ={selectEvent}
+        headerToolbar={{
+          left: "prevYear,prev,next,nextYear",
+          center: "title",
+          right: "today dayGridMonth,dayGridWeek,dayGridDay",
+        }}
+        events={events}
+      />
     </div>
   );
 };
 
-export default CalendarFunction; 
-
+export default CalendarFunction;
 
 // function selectEvent(arg) {
 //   console.log(arg.start + arg.end)
@@ -98,9 +94,7 @@ export default CalendarFunction;
 //     }
 //   });
 
-
 //   return(
 //     calendar.render()
 //   );
 // };
-
