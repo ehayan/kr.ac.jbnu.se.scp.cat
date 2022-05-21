@@ -6,7 +6,7 @@ export default function ToolHelpGit() {
   return (
     <div>
       <Head>
-        <title>CAT | Help | Github</title>
+        <title>PROBBY | Help | Github</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <HelpBannerComponent />

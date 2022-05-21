@@ -6,7 +6,7 @@ export default function ToolHelpSlack() {
   return (
     <div>
       <Head>
-        <title>CAT | Help | Slack</title>
+        <title>PROBBY | Help | Slack</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <HelpBannerComponent />

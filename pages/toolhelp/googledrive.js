@@ -6,7 +6,7 @@ export default function ToolHelpGit() {
   return (
     <div>
       <Head>
-        <title>CAT | Help | GoogleDrive</title>
+        <title>PROBBY | Help | GoogleDrive</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <HelpBannerComponent />

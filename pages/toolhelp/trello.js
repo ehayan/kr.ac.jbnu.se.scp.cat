@@ -6,7 +6,7 @@ export default function ToolHelpTrello() {
   return (
     <div>
       <Head>
-        <title>CAT | Help | Trello</title>
+        <title>PROBBY | Help | Trello</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <HelpBannerComponent />
