@@ -1,5 +1,5 @@
 import { Nav, NavItem } from 'reactstrap';
-import { Button } from 'react-bootstrap';
+import { Badge, Button } from 'react-bootstrap';
 import Image from 'next/image';
 import logo from '../../assets/images/logos/probby_logo.png';
 import Link from 'next/link';
@@ -64,10 +64,15 @@ const Sidebar = () => {
           <Image src={logo} width='125px' height='75px' />
         </a>
       </div>
-      <div className='act-buttons pt-2 mt-2 m-l-15'>
+
+      <Badge bg='primary' style={{ fontSize: 15 }} className='m-l-20 m-t-10'>
+        Project 1
+      </Badge>
+
+      <div className='act-buttons m-t-20 m-l-20'>
         <Button
           variant='warning'
-          className='font-14 '
+          className='font-14'
           onClick={() => {
             if (session) {
               signOut();
@@ -77,6 +82,7 @@ const Sidebar = () => {
           {session ? 'Logout' : 'Login'}
         </Button>
       </div>
+
       <div className='pt-2 mt-2'>
         <Nav vertical className='sidebarNav'>
           {navigation.map((navi, index) => (

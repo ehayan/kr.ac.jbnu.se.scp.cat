@@ -5,7 +5,7 @@ const ProjectLayout = ({ children }) => {
   return (
     <main>
       <div className='d-flex'>
-        <aside className='sidebarArea bg-probby-main'>
+        <aside className='sidebarArea sidebarShadow bg-probby-main m-r-10'>
           <SideBar />
         </aside>
 

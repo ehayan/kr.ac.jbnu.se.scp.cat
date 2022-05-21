@@ -1542,6 +1542,9 @@ Sidebar
 .sidebarArea {
   height: 100vh;
 }
+.sidebarShadow {
+  box-shadow: 0 0.5rem 1rem grey;
+}
 .sidenav-bg:hover {
   background-color: #484191;
   border-radius: $border-radius;
@@ -1550,5 +1553,3 @@ Sidebar
   height: 100vh;
   background-color: #f6f6f6;
 }
-
-
