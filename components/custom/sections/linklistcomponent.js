@@ -35,28 +35,22 @@ const ListData = [
     id: 2,
   },
   {
-    title: 'Notion',
-    icon: <SiNotion />,
-    link: '',
-    id: 3,
-  },
-  {
     title: 'Trello',
     icon: <FaTrello />,
     link: '',
-    id: 4,
+    id: 3,
   },
   {
     title: 'Slack',
     icon: <FaSlack />,
     link: '',
-    id: 5,
+    id: 4,
   },
   {
     title: 'etc',
     icon: <FaDiaspora />,
     link: '',
-    id: 6,
+    id: 5,
   },
 ];
 

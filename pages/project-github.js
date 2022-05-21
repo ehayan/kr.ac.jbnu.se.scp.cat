@@ -5,7 +5,7 @@ const Dashboard = (page) => {
   return (
     <div>
       <Head>
-        <title>CAT | Project | GitHub</title>
+        <title>PROBBY | GitHub</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <GitCommitComponent />

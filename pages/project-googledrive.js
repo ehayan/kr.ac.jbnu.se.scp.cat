@@ -5,7 +5,7 @@ const GoogleDrive = (page) => {
   return (
     <div>
       <Head>
-        <title>CAT | Project | GoogleDrive</title>
+        <title>PROBBY | GoogleDrive</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Drivecomponent />

@@ -5,7 +5,7 @@ const Slack = (page) => {
   return (
     <div>
       <Head>
-        <title>CAT | Project | Slack</title>
+        <title>PROBBY | Slack</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <SlackComponent />

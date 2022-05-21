@@ -15,7 +15,6 @@ import {
 } from 'reactstrap'; //module
 import { signIn, signOut, useSession } from 'next-auth/react';
 // import { IoMail, IoMailUnread} from 'react-icons/io5';
-import { GoTriangleDown } from 'react-icons/go';
 import logo from '../../assets/images/logos/probby_logo.png';
 
 const Header = () => {
@@ -35,7 +34,7 @@ const Header = () => {
         <Container className='po-relative'>
           <Navbar className='navbar-expand-lg h6-nav-bar'>
             <NavbarBrand href='/'>
-              <Image src={logo} width='100px' height='60px' />
+              <Image src={logo} width='125px' height='70px' />
             </NavbarBrand>
 
             <NavbarToggler onClick={toggle}>
@@ -75,25 +74,6 @@ const Header = () => {
                   </Link>
                 </NavItem>
               </Nav>
-              {/* <div className={session ? '' : 'hide'}>
-                <details open className='m-l-10 m-r-15'>
-                  <summary className='alarm-bell alarm-background' type='button' onClick={() => {
-                    if(!read){
-                      setRead(true);
-                    } else if(read){
-                      setRead(true);
-                    }
-                  }}>
-                    {read ? <IoMail size={25} /> : <IoMailUnread size={25}/>}
-                  </summary>
-                  <details-menu role="menu">
-                    <ul className='alarm-content'>
-                      <li>alarm 1</li>
-                      <li>alarm 2</li>
-                    </ul>
-                  </details-menu>
-                </details>
-              </div> */}
               <div className='act-buttons'>
                 <button
                   className='btn btn-light font-14'

@@ -5,7 +5,7 @@ const Trello = (page) => {
   return (
     <div>
       <Head>
-        <title>CAT | Project | Trello</title>
+        <title>PROBBY | Trello</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <TrelloBoardComponent />
