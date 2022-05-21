@@ -84,7 +84,7 @@ const Sidebar = () => {
                   className={
                     location === navi.href
                       ? 'nav-link text-warning'
-                      : ' nav-link'
+                      : ' nav-link text-white'
                   }
                 >
                   <i>{navi.icon}</i>
