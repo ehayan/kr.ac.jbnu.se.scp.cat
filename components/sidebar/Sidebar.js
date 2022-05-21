@@ -21,7 +21,7 @@ const navigation = [
   },
   {
     title: 'Link',
-    href: '/link',
+    href: '/project-link',
     icon: <FaRegPlusSquare />,
   },
   {

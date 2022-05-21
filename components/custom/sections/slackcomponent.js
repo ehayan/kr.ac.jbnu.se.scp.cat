@@ -18,11 +18,11 @@ const SlackComponent = () => {
                     </Col>
                     <Col md="12">
                         <Card body className='card-shadow'>
-                            <div className='align-self-center'>
-                                <span className=' slack-date' >2022년 5월 17일 화요일
+                            <div className='m-t-20 m-b-20 align-self-center'>
+                                <span className='slack-date' >2022년 5월 17일 화요일
                                     {/* <button className='slack-pick-date-tri p-0 m-l-5'><GoTriangleDown /></button> */}
                                 </span>
-                            </div><br/>
+                            </div>
                             <div className='text-left'>
                                 <div className='slack-float-profile'>
                                     <Image src={member1} width={50} height={50} />

@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Card,
   CardBody,
@@ -15,9 +15,11 @@ import {
   FaSlack,
   FaDiaspora,
 } from 'react-icons/fa';
+import { TiDelete } from 'react-icons/ti';
 import { SiNotion } from 'react-icons/si';
 
 // const [link, setLink] = useState([ListData]);
+// const linkId = useRef(1);
 
 const ListData = [
   {
@@ -64,49 +66,54 @@ const ListData = [
 
 const List = () => {
   return (
-    <Suspense fallback={<h1>Loading LinkList...</h1>}>
-      <Card className='m-r-10'>
-        <CardBody>
-          <CardTitle tag='h5'>Registered Link</CardTitle>
-          <CardSubtitle className='mb-2 text-muted' tag='h6'>
-            클릭시 해당 링크로 이동합니다
-          </CardSubtitle>
-          <ListGroup flush>
-            {ListData.map((list) => (
-              <ListGroupItem
-                key={list.id}
-                action
-                href={list.link}
-                tag='a'
-                className='d-flex align-items-center p-3 border-0'
-              >
-                <div>
-                  <i className='m-r-5'> {list.icon} </i>
-                  {list.title} :
-                  <a
-                    id={list.id}
-                    className={list.link === '#' ? 'hide' : 'm-l-5'}
-                  >
-                    {list.link}
-                  </a>
-                  <button
-                    className={list.link === '' ? 'hide' : 'm-l-5'}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      list.link = '';
-                      const link = document.getElementById(list.id);
-                      link.remove();
-                    }}
-                  >
-                    ❌
-                  </button>
-                </div>
-              </ListGroupItem>
-            ))}
-          </ListGroup>
-        </CardBody>
-      </Card>
-    </Suspense>
+    <Card className='m-r-10'>
+      <CardBody>
+        <CardTitle tag='h5'>Registered Link</CardTitle>
+        <CardSubtitle className='mb-2 text-muted' tag='h6'>
+          클릭시 해당 링크로 이동합니다
+        </CardSubtitle>
+        <ListGroup flush>
+          {ListData.map((list) => (
+            <ListGroupItem
+              key={list.id}
+              action
+              href={list.link}
+              tag='a'
+              className='d-flex align-items-center p-3 border-0'
+            >
+              <div>
+                <i className='m-r-5'> {list.icon} </i>
+                {list.title} :
+                
+                <a id={list.id} className={list.link === '' ? 'hide' : 'm-l-5'}>
+                  {list.link}
+                </a>
+                <button
+                  id={`delete-btn${list.id}`}
+                  className={ list.link === '' ? 'hide' : 'm-l-5'}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    list.link = '';
+                    const link = document.getElementById(list.id);
+                    link.remove();
+                  }}
+                >
+                  <TiDelete size={20} />
+                </button>
+                <style jsx>{`
+                  button{
+                    background-color: transparent;
+                    border-color: transparent;
+                  }
+                `}</style>
+              </div>
+            </ListGroupItem>
+          ))}
+          
+        </ListGroup>
+        
+      </CardBody>
+    </Card>
   );
 };
 

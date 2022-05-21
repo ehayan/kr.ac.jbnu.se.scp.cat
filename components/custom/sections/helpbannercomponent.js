@@ -27,34 +27,34 @@ const HelpBannerComponent = () => {
                 CAT이 제공하는 도움말을 통해 사용법을 익혀보세요.
               </h6>
               <br />
-              <FaGithub className="m-b-20" size={80}/>&emsp;
-              <FaTrello className="m-b-20" size={80}/>&emsp; 
-              <FaSlack className="m-b-20" size={80}/>&emsp;
-              <SiNotion className="m-b-20" size={80}/>&emsp;
-              <FaGoogleDrive className="m-b-20" size={80}/>
               <br />
               <Link href="/toolhelp/github"  >
                 <a className={router.pathname === "/toolhelp/github" ? "tool-selected" : ""}>
+                  <FaGithub  size={20}/>
                   GitHub
                 </a>
-              </Link>&emsp;&emsp;
+              </Link>
               <Link href="/toolhelp/trello">
                 <a className={router.pathname === "/toolhelp/trello" ? "tool-selected" : ""}>
+                  <FaTrello  size={20}/>  
                   Trello
                 </a>
-              </Link>&emsp;&emsp;
+              </Link>
               <Link href="/toolhelp/slack">
                 <a className={router.pathname === "/toolhelp/slack" ? "tool-selected" : ""}>
+                  <FaSlack  size={20}/>
                   Slack
                 </a>
-              </Link>&emsp;&emsp;
+              </Link>
               <Link href="/toolhelp/notion">
                 <a className={router.pathname === "/toolhelp/notion" ? "tool-selected" : ""}>
+                  <SiNotion  size={20}/>
                   Notion
                 </a>
-              </Link>&emsp;&emsp;
+              </Link>
               <Link href="/toolhelp/googledrive">
                 <a className={router.pathname === "/toolhelp/googledrive" ? "tool-selected" : ""}>
+                  <FaGoogleDrive  size={20}/>
                   Google Drive
                 </a>
               </Link>
