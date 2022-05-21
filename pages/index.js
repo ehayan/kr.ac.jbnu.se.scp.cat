@@ -10,14 +10,15 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>CAT</title>
+        <title>PROBBY</title>
         <meta name='description' content='CAT' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       {session ? <AfterLoginBanner /> : <BeforeLoginBanner />}
       {session ? (
         <div className='spacer'>
-          <h2 className='text-center'>Registered Project & Add new Project</h2>
+          <h2 className='text-center'>PROJECT LIST</h2>
+          <p className='text-center'>프로젝트 관리(등록/수정/삭제/추가)</p>
           <Project_Setting />
         </div>
       ) : (

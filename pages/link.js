@@ -5,7 +5,7 @@ const Link = (page) => {
   return (
     <div>
       <Head>
-        <title>CAT | Project | Link</title>
+        <title>PROBBY | Link</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <AddLinkComponent />

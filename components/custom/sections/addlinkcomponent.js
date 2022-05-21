@@ -41,10 +41,7 @@ const AddLinkComponent = () => {
             <Container>
               <Row className='m-l-30 p-t-30'>
                 <Col className='align-self-center'>
-                  <h2 className='title font-bold'>
-                    ADD LINK
-                    <Image src={bannerimg} width='200px' height='200px' />
-                  </h2>
+                  <h2 className='title font-bold'>ADD LINK</h2>
 
                   <p className='m-t-20 m-b-40'>
                     Please enter the link(url) you want to add
@@ -76,7 +73,7 @@ const AddLinkComponent = () => {
                           checked={x === '3'}
                           onChange={handleClickRadioButton}
                         />
-                        Notion
+                        Trello
                       </label>
                       <label>
                         <Input
@@ -85,22 +82,13 @@ const AddLinkComponent = () => {
                           checked={x === '4'}
                           onChange={handleClickRadioButton}
                         />
-                        Trello
+                        Slack
                       </label>
                       <label>
                         <Input
                           type='radio'
                           value='5'
                           checked={x === '5'}
-                          onChange={handleClickRadioButton}
-                        />
-                        Slack
-                      </label>
-                      <label>
-                        <Input
-                          type='radio'
-                          value='6'
-                          checked={x === '6'}
                           onChange={handleClickRadioButton}
                         />
                         etc

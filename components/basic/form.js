@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   Row,
@@ -16,17 +16,14 @@ const PageForm = () => {
     <div>
       <Container>
         <Row>
-          <Col md='4'>
-            <Card>프로젝트 미리보기 화면</Card>
-          </Col>
-          <Col md='8'>
+          <Col md='10'>
             <Form>
               <FormGroup>
                 <Label htmlFor='name'>Project Name</Label>
                 <Input
                   type='text'
                   className='form-control'
-                  id='name'
+                  id='projectName'
                   placeholder='Enter Project Name'
                 />
               </FormGroup>
@@ -41,7 +38,7 @@ const PageForm = () => {
               </FormGroup>
               <Col md='12'>
                 <Button
-                  // type='submit'
+                  type='submit'
                   className='btn btn-success waves-effect waves-light m-r-10'
                 >
                   Submit

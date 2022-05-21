@@ -1,4 +1,4 @@
-import { Badge } from 'reactstrap';
+import { Badge, Button } from 'reactstrap';
 import { Accordion } from 'react-bootstrap';
 
 const ProjectList = () => {
@@ -11,7 +11,13 @@ const ProjectList = () => {
             프로젝트 생성날짜
           </Badge>
         </Accordion.Header>
-        <Accordion.Body>참여자 이름, 등록된 도구 갯수</Accordion.Body>
+        <Accordion.Body>
+          <div>
+            <p>참여자 이름</p>
+            <p>등록된 도구 갯수</p>
+            <Button color='danger'>Delete</Button>
+          </div>
+        </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey='1'>
         <Accordion.Header>
@@ -20,7 +26,13 @@ const ProjectList = () => {
             프로젝트 생성날짜
           </Badge>
         </Accordion.Header>
-        <Accordion.Body>참여자 이름, 등록된 도구 갯수</Accordion.Body>
+        <Accordion.Body>
+          <div>
+            <p>참여자 이름</p>
+            <p>등록된 도구 갯수</p>
+            <Button color='danger'>Delete</Button>
+          </div>
+        </Accordion.Body>
       </Accordion.Item>
     </Accordion>
   );

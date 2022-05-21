@@ -8,7 +8,7 @@ export default function Toolhelp() {
   return (
     <div>
       <Head>
-        <title>CAT | Tool Help</title>
+        <title>PROBBY | ToolHelp</title>
         <meta name='description' content='CAT' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
