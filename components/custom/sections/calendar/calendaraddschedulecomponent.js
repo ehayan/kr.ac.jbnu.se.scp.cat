@@ -20,7 +20,9 @@ const AddScheduleComponent = ({ events, setEvents }) => {
 
   return (
     <div className="m-t-40">
-      <h3 className="m-t-5 m-l-20">Add Schedules</h3>
+      <h3 className="text-center m-t-5 m-b-20 p-2 text-black bg-gold">
+        Add Schedules
+      </h3>
       <span className="m-l-20">start date</span>
       <input id="startDate" type="date" className="m-b-20 m-l-10"></input>
       <br />
@@ -35,20 +37,22 @@ const AddScheduleComponent = ({ events, setEvents }) => {
         className="m-b-20 m-l-10"
       ></input>
       <br />
-      <button className="m-l-20" onClick={addEvent}>
+      <button className="cal-add-btn btn-warning text-black" onClick={addEvent}>
         add
       </button>
       <style jsx>{`
         div {
-          background-color: #f7f2d7;
+          background-color: #131a63;
           padding: 10px;
           border-radius: 5px;
         }
         span {
-          color: #000000;
+          color: #ffffff;
         }
         button {
           border-radius: 5px;
+          background-color: #efcb00;
+          border-color: #efcb00;
         }
       `}</style>
     </div>

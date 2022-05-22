@@ -48,6 +48,16 @@ const Cards = () => {
                 <button className="m-l-5 dashboard-btn">add</button>
               </div>
             </Card>
+            <Card body className="card-shadow">
+              <h3>Registered Link</h3>
+              <p>현재 등록된 링크</p>
+              <div className="m-b-5">
+                <p className="m-t-10">Github : ##</p>
+                <p className="m-t-10 ">Slack : ##</p>
+                <p className="m-t-10 ">Trello : ##</p>
+                <p className="m-t-10 ">Etc : ##</p>
+              </div>
+            </Card>
           </Col>
         </Row>
       </Container>
