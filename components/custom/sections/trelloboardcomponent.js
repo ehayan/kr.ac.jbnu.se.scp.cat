@@ -41,13 +41,13 @@ const TrelloBoardComponent = (prop) => {
           </h2>
         </div>
         <Element
-          className="m-l-10"
           style={{
+            width: "1700px",
             height: "800px",
             overflow: "scroll",
           }}
         >
-          <Row className="m-l-10 m-t-30 trello-flex-nowrap">
+          <Row className="m-l-5 m-t-30 trello-flex-nowrap">
             {trelloDatas.map((data) => (
               // <Col md="2" className="m-l-20 align-self-center">
               <Card className=" board-card board-align card-width-300 m-b-0 p-0 b-all m-l-20">
