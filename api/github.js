@@ -23,11 +23,11 @@ export async function getCommits(link) {
   const repos = link.split("/")[4];
 
   const response = await fetch(
-    `https://api.github.com/repos/${owner}/${repos}/commits`
+    `https://api.github.com/repos/${owner}/${repos}/commits?per_page=100`
   );
   const json = await response.json();
   let returns = [];
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < json.length; i++) {
     const value = {
       name: json[i].commit.author.name,
       avatar_url: json[i].author.avatar_url,
