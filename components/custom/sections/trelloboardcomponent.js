@@ -15,10 +15,12 @@ const TrelloBoardComponent = (prop) => {
   const TOKEN =
     "4081aef89869ef47cd712c6366d7882f7b8f20fc53239e9fd8f6b44bba648d68";
   const [trelloDatas, setTrelloDatas] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     Trello.getDatas(link, API_KEY, TOKEN).then((datas) => {
       setTrelloDatas(datas);
+      setLoading(false);
       // let cardLists = [];
       // datas.forEach((board) => {
       //   Trello.getCards(board.id, API_KEY, TOKEN).then((data)=> {
@@ -37,8 +39,10 @@ const TrelloBoardComponent = (prop) => {
       <div>
         <div className="m-l-30">
           <h2 className="title">
-            Trello Board : '{Trello.getProjectName(link)}'
+            Trello Board : {Trello.getProjectName(link)}
           </h2>
+          <span>지정된 보드 :</span>&nbsp;
+          <a href={link}>{link}</a>
         </div>
         <Element
           style={{
@@ -48,22 +52,27 @@ const TrelloBoardComponent = (prop) => {
           }}
         >
           <Row className="m-l-5 m-t-30 trello-flex-nowrap">
-            {trelloDatas.map((data) => (
-              // <Col md="2" className="m-l-20 align-self-center">
-              <Card className=" board-card board-align card-width-300 m-b-0 p-0 b-all m-l-20">
-                <p className="board-card-name m-b-0 ">{data.board.name}</p>
-                <CardBody>
-                  {data.card.map((card) => (
-                    <Card className="card-width-270 b-all">
-                      <CardBody>
-                        <p className="board-card-content">{card.name}</p>
-                      </CardBody>
-                    </Card>
-                  ))}
-                </CardBody>
-              </Card>
-              // </Col>
-            ))}
+            {loading ? (
+              <div class="box">
+                <p className="m-t-12p"></p>
+                <div class="loader9"></div>
+              </div>
+            ) : (
+              trelloDatas.map((data) => (
+                <Card className=" board-card board-align card-width-300 m-b-0 p-0 b-all m-l-20">
+                  <p className="board-card-name m-b-0 ">{data.board.name}</p>
+                  <CardBody>
+                    {data.card.map((card) => (
+                      <Card className="card-width-270 b-all">
+                        <CardBody>
+                          <p className="board-card-content">{card.name}</p>
+                        </CardBody>
+                      </Card>
+                    ))}
+                  </CardBody>
+                </Card>
+              ))
+            )}
           </Row>
         </Element>
       </div>

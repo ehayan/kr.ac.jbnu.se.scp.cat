@@ -37,7 +37,7 @@ const AddLinkComponent = () => {
     <div>
       <div className="m-l-30">
         <h2 className="title font-bold">ADD LINK</h2>
-        <p className="m-t-10">Please enter the link(url) you want to add</p>
+        <p className="m-t-10">프로젝트에 추가하고 싶은 도구를 선택한 후 url을 입력해주세요</p>
       </div>
       <div className="bg-light">
         <section>

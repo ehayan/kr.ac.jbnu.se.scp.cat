@@ -1,6 +1,6 @@
 /* eslint-disable */
 import CalendarFunction from "../custom/sections/calendar/calendarcomponents";
-import React from "react";
+import React, {useState} from "react";
 import {
   Card,
   Button,
@@ -12,6 +12,25 @@ import {
 } from "reactstrap";
 
 const Cards = () => {
+
+  const [email, setEmail] = useState("");
+  const handleAddMember = ({ target: { value } }) => {
+    setEmail(value);
+    console.log(value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (email == "") {
+      alert("이메일을 입력하세요");
+    } else if (email == "##") {
+      alert("존재하지 않거나 잘못된 이메일입니다");
+    } else {
+      alert(`${email}님에게 초대장을 전송하였습니다`);
+    }
+  };
+
   return (
     <div>
       <Container className="m-t-40">
@@ -44,8 +63,8 @@ const Cards = () => {
               <h4>Add Another Member</h4>
               <p>추가하려는 팀원의 구글 메일 주소를 입력해주세요</p>
               <div>
-                <input type="text" placeholder="ex@gmail.com" size={25}></input>
-                <button className="m-l-5 dashboard-btn">add</button>
+                <input type="text" placeholder="ex@gmail.com" size={25} value={email} onChange={handleAddMember}></input>
+                <button type="submit" className="m-l-5 dashboard-btn" onClick={handleSubmit}>add</button>
               </div>
             </Card>
             <Card body className="card-shadow">
