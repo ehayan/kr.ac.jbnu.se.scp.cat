@@ -37,7 +37,9 @@ const AddLinkComponent = () => {
     <div>
       <div className="m-l-30">
         <h2 className="title font-bold">ADD LINK</h2>
-        <p className="m-t-10">프로젝트에 추가하고 싶은 도구를 선택한 후 url을 입력해주세요</p>
+        <p className="m-t-10">
+          프로젝트에 추가하고 싶은 도구를 선택한 후 url을 입력해주세요
+        </p>
       </div>
       <div className="bg-light">
         <section>
@@ -46,15 +48,20 @@ const AddLinkComponent = () => {
               <Row className="m-t-30 m-l-30 p-t-30">
                 <Col className="align-self-center">
                   <Form className="m-t-40" onSubmit={handleSubmit}>
-                    <div className="m-b-20">
+                    <div className="">
                       <Input
                         type="checkbox"
                         value="1"
                         checked={x === "1"}
                         onChange={handleClickRadioButton}
+                        style={{
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                        }}
                       />
                       <label>GitHub</label>
                     </div>
+                    <br />
                     <div>
                       <label>
                         <Input
@@ -62,6 +69,10 @@ const AddLinkComponent = () => {
                           value="2"
                           checked={x === "2"}
                           onChange={handleClickRadioButton}
+                          style={{
+                            display: "inline-block",
+                            verticalAlign: "middle",
+                          }}
                         />
                         GoogleDrive
                       </label>
@@ -74,6 +85,10 @@ const AddLinkComponent = () => {
                           value="3"
                           checked={x === "3"}
                           onChange={handleClickRadioButton}
+                          style={{
+                            display: "inline-block",
+                            verticalAlign: "middle",
+                          }}
                         />
                         Trello
                       </label>
@@ -86,6 +101,10 @@ const AddLinkComponent = () => {
                           value="4"
                           checked={x === "4"}
                           onChange={handleClickRadioButton}
+                          style={{
+                            display: "inline-block",
+                            verticalAlign: "middle",
+                          }}
                         />
                         Slack
                       </label>
@@ -98,6 +117,10 @@ const AddLinkComponent = () => {
                           value="5"
                           checked={x === "5"}
                           onChange={handleClickRadioButton}
+                          style={{
+                            display: "inline-block",
+                            verticalAlign: "middle",
+                          }}
                         />
                         etc
                       </label>
