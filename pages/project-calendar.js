@@ -30,11 +30,14 @@ const Dashboard = (page) => {
         <title>PROBBY | Calendar</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <div className="m-l-30">
+      <div className="m-l-30">
         <h2 className="title font-bold">Calendar</h2>
-        <p className="m-t-10 m-b-0">Probby가 제공하는 프로젝트만을 위한</p>
-        <p className="m-t-5 p-0 m-b-0">캘린더를 활용해 스케줄을 관리해보세요</p>
-      </div> */}
+        <p className="m-t-10 p-b-0 m-b-0">
+          Probby가 제공하는 프로젝트만을 위한 캘린더를 활용해 스케줄을
+          관리해보세요
+        </p>
+        {/* <p className="m-t-5 p-0 m-b-0"></p> */}
+      </div>
       <Container className="container-width-l m-t-20">
         <Row>
           <Col md="3" className="m-t-60">
