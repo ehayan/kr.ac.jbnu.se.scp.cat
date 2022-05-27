@@ -10,6 +10,13 @@ const BeforeLoginBanner = () => {
         <Row>
           <Col className='align-self-center'>
             <h1 className='title'>안녕하세요</h1>
+            <style jsx>{`
+              h1,
+              h4 {
+                font-family: 'Lotte';
+              }
+            `}</style>
+
             <h4 className='subtitle font-light'>
               협업 지원 도구 통합
               <br /> PROBBY

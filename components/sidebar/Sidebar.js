@@ -103,6 +103,11 @@ const Sidebar = () => {
           ))}
         </Nav>
       </div>
+      <style jsx>{`
+        a {
+          font-family: 'Spoca_R';
+        }
+      `}</style>
     </div>
   );
 };

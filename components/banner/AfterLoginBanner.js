@@ -10,6 +10,11 @@ const Banner = () => {
         <Row>
           <Col className='align-self-center'>
             <h1 className='title'>어서오세요 ##님</h1>
+            <style jsx>{`
+              h1 {
+                font-family: 'Lotte';
+              }
+            `}</style>
           </Col>
           <Col>
             <Image src={bannerimg} />

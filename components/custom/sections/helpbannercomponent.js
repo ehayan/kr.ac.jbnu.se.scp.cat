@@ -76,7 +76,16 @@ const HelpBannerComponent = () => {
           </Col>
         </Row>
         <style jsx>{`
+          h1 {
+            font-family: 'Baskin_R';
+          }
+
+          h6 {
+            font-family: 'RIDI';
+          }
+
           a {
+            font-family: 'Spoca_R';
             text-decoration: none;
             color: black;
             font-size: large;

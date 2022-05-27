@@ -359,7 +359,6 @@ html body {
     margin-top: 15px;
   }
 
-  
   .m-t-12p {
     margin-top: 12%;
   }
@@ -375,7 +374,6 @@ html body {
   .m-t-40 {
     margin-top: 40px;
   }
-
 
   .m-t-60 {
     margin-top: 60px;
@@ -1966,18 +1964,18 @@ Trello
   flex-wrap: nowrap;
 }
 
-.loader9:before{
-  content: "";
+.loader9:before {
+  content: '';
   position: absolute;
   top: 0px;
   height: 12px;
   width: 12px;
   border-radius: 12px;
   -webkit-animation: loader9g 3s ease-in-out infinite;
-      animation: loader9g 3s ease-in-out infinite;
+  animation: loader9g 3s ease-in-out infinite;
 }
 
-.loader9{
+.loader9 {
   position: relative;
   width: 12px;
   height: 12px;
@@ -1987,52 +1985,112 @@ Trello
   background-color: #efcb00;
 }
 
-
-.loader9:after{
-  content: "";
+.loader9:after {
+  content: '';
   position: absolute;
   top: 0px;
   height: 12px;
   width: 12px;
   border-radius: 12px;
   -webkit-animation: loader9d 3s ease-in-out infinite;
-      animation: loader9d 3s ease-in-out infinite;
+  animation: loader9d 3s ease-in-out infinite;
 }
 
-@-webkit-keyframes loader9g{
-  0%{ left: -25px; background-color: #fffe50; }
-  50%{ left: 0px; background-color: #efcb00;}
-  100%{ left:-25px; background-color: #fffe50; }
+@-webkit-keyframes loader9g {
+  0% {
+    left: -25px;
+    background-color: #fffe50;
+  }
+  50% {
+    left: 0px;
+    background-color: #efcb00;
+  }
+  100% {
+    left: -25px;
+    background-color: #fffe50;
+  }
 }
-@keyframes loader9g{
-  0%{ left: -25px; background-color: #fffe50; }
-  50%{ left: 0px; background-color: #efcb00;}
-  100%{ left:-25px; background-color: #fffe50; }
+@keyframes loader9g {
+  0% {
+    left: -25px;
+    background-color: #fffe50;
+  }
+  50% {
+    left: 0px;
+    background-color: #efcb00;
+  }
+  100% {
+    left: -25px;
+    background-color: #fffe50;
+  }
 }
 
-
-@-webkit-keyframes loader9d{
-  0%{ left: 25px; background-color: #fffe50; }
-  50%{ left: 0px; background-color: #efcb00;}
-  100%{ left:25px; background-color: #fffe50; }
+@-webkit-keyframes loader9d {
+  0% {
+    left: 25px;
+    background-color: #fffe50;
+  }
+  50% {
+    left: 0px;
+    background-color: #efcb00;
+  }
+  100% {
+    left: 25px;
+    background-color: #fffe50;
+  }
 }
-@keyframes loader9d{
-  0%{ left: 25px; background-color: #fffe50; }
-  50%{ left: 0px; background-color: #efcb00;}
-  100%{ left:25px; background-color: #fffe50; }
+@keyframes loader9d {
+  0% {
+    left: 25px;
+    background-color: #fffe50;
+  }
+  50% {
+    left: 0px;
+    background-color: #efcb00;
+  }
+  100% {
+    left: 25px;
+    background-color: #fffe50;
+  }
 }
 
 /******************* 
 Calendar
 *******************/
-.bg-gold{
+.bg-gold {
   background-color: #efcb00;
   border-radius: 5px;
 }
 
-.cal-add-btn{
+.cal-add-btn {
   display: block;
   margin: auto;
 }
 
-
+/******************* 
+Font
+*******************/
+@font-face {
+  font-family: 'Baskin_B';
+  src: url('../../assets/fonts/Baskinrobbins-Bold.ttf');
+}
+@font-face {
+  font-family: 'Baskin_R';
+  src: url('../../assets/fonts/Baskinrobbins-Regular.ttf');
+}
+@font-face {
+  font-family: 'Lotte';
+  src: url('../../assets/fonts/LottemartHappy-Bold.ttf');
+}
+@font-face {
+  font-family: 'RIDI';
+  src: url('../../assets/fonts/RIDIBatang.ttf');
+}
+@font-face {
+  font-family: 'Spoca_B';
+  src: url('../../assets/fonts/SpoqaHanSansNeo-Bold.ttf');
+}
+@font-face {
+  font-family: 'Spoca_R';
+  src: url('../../assets/fonts/SpoqaHanSansNeo-Regular.ttf');
+}

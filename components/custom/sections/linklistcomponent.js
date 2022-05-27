@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
 import {
   Card,
   CardBody,
@@ -6,7 +6,7 @@ import {
   ListGroup,
   CardSubtitle,
   ListGroupItem,
-} from "reactstrap";
+} from 'reactstrap';
 
 import {
   FaGithub,
@@ -14,42 +14,42 @@ import {
   FaTrello,
   FaSlack,
   FaDiaspora,
-} from "react-icons/fa";
-import { TiDelete } from "react-icons/ti";
-import { SiNotion } from "react-icons/si";
+} from 'react-icons/fa';
+import { TiDelete } from 'react-icons/ti';
+import { SiNotion } from 'react-icons/si';
 
 // const [link, setLink] = useState([ListData]);
 // const linkId = useRef(1);
 
 const ListData = [
   {
-    title: "GitHub",
+    title: 'GitHub',
     icon: <FaGithub />,
-    link: "https://github.com/gusdn6901/kr.ac.jbnu.se.scp.cat",
+    link: 'https://github.com/gusdn6901/kr.ac.jbnu.se.scp.cat',
     id: 1,
   },
   {
-    title: "GoogleDrive",
+    title: 'GoogleDrive',
     icon: <FaGoogleDrive />,
-    link: "aaaaaaaaaa",
+    link: 'aaaaaaaaaa',
     id: 2,
   },
   {
-    title: "Trello",
+    title: 'Trello',
     icon: <FaTrello />,
-    link: "",
+    link: '',
     id: 3,
   },
   {
-    title: "Slack",
+    title: 'Slack',
     icon: <FaSlack />,
-    link: "",
+    link: '',
     id: 4,
   },
   {
-    title: "etc",
+    title: 'etc',
     icon: <FaDiaspora />,
-    link: "",
+    link: '',
     id: 5,
   },
 ];
@@ -60,10 +60,21 @@ const ListData = [
 
 const List = () => {
   return (
-    <Card className="m-r-10">
+    <Card className='m-r-10'>
       <CardBody>
-        <CardTitle tag="h5">Registered Link</CardTitle>
-        <CardSubtitle className="mb-2 text-muted" tag="h6">
+        <CardTitle
+          style={{
+            fontFamily: 'Spoca_B',
+          }}
+        >
+          Registered Link
+        </CardTitle>
+        <CardSubtitle
+          className='mb-2 text-muted'
+          style={{
+            fontFamily: 'RIDI',
+          }}
+        >
           클릭시 해당 링크로 이동합니다
         </CardSubtitle>
         <ListGroup flush>
@@ -72,21 +83,21 @@ const List = () => {
               key={list.id}
               action
               href={list.link}
-              tag="a"
-              className="d-flex align-items-center p-3 border-0"
+              tag='a'
+              className='d-flex align-items-center p-3 border-0'
             >
               <div>
-                <i className="m-r-5"> {list.icon} </i>
+                <i className='m-r-5'> {list.icon} </i>
                 {list.title} :
-                <a id={list.id} className={list.link === "" ? "hide" : "m-l-5"}>
+                <a id={list.id} className={list.link === '' ? 'hide' : 'm-l-5'}>
                   {list.link}
                 </a>
                 <button
                   id={`delete-btn${list.id}`}
-                  className={list.link === "" ? "hide" : "m-l-5"}
+                  className={list.link === '' ? 'hide' : 'm-l-5'}
                   onClick={(e) => {
                     e.preventDefault();
-                    list.link = "";
+                    list.link = '';
                     const link = document.getElementById(list.id);
                     link.remove();
                   }}

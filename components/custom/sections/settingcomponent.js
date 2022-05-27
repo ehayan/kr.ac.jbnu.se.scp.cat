@@ -15,17 +15,17 @@ const Setting = () => {
           <Nav navbar className='mt-2'>
             <NavItem className='active'>
               <NavLink onClick={() => setContent(ProjectList)}>
-                Registerd Projects
+                <p>Registerd Projects</p>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink onClick={() => setContent(Form)}>
-                Add New Project
+                <p>Add New Project</p>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink onClick={() => setContent(Invitation)}>
-                Project Invitation
+                <p>Project Invitation</p>
               </NavLink>
             </NavItem>
           </Nav>
@@ -34,6 +34,11 @@ const Setting = () => {
         {/* main */}
         <div children={Content} />
       </div>
+      <style jsx>{`
+        p {
+          font-family: 'Spoca_B';
+        }
+      `}</style>
     </Container>
   );
 };
