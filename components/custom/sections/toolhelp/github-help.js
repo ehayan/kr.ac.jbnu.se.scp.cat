@@ -12,16 +12,16 @@ const GitHubHelp = () => {
           <Row className='justify-content-center'>
             <Col md='10' className='align-self-center '>
               <h1 className='title'>GitHub</h1>
-              <h5 className='subtitle op-8'>
+              <h5 className='subtitle'>
                 버전 관리 및 협업을 위한 코드 호스팅 플랫폼
               </h5>
               <br />
-              <h6>
-                *해당 내용은 GitHub 문서의 내용을 바탕으로 작성되었습니다.
-              </h6>
+
+              <p>*해당 내용은 GitHub 문서의 내용을 바탕으로 작성되었습니다.</p>
               <Link href='https://docs.github.com/en/get-started/quickstart/hello-world#creating-a-branch'>
                 <a>원문 보기</a>
               </Link>
+
               <br />
               <br />
               <p>
@@ -86,6 +86,12 @@ const GitHubHelp = () => {
               <br />
 
               <style jsx>{`
+                h1 {
+                  font-family: 'Baskin_R';
+                }
+                h5 {
+                  font-family: 'RIDI';
+                }
                 a {
                   color: #3f4bf0;
                   text-decoration: underline;

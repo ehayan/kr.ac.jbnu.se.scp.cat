@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Head>
         <title>PROBBY</title>
-        <meta name='description' content='CAT' />
+        <meta name='description' content='PROBBY' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

@@ -185,7 +185,7 @@ const GitCommitComponent = () => {
       }
       
       p{
-        font-family: 'Spoca_R'
+        font-family: 'RIDI'
       }
 
       input{

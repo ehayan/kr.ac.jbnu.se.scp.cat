@@ -25,7 +25,7 @@ const PortfolioComponent = () => {
                   font-family: 'Baskin_B';
                 }
                 h6 {
-                  font-family: 'Spoca_R';
+                  font-family: 'RIDI';
                 }
               `}</style>
             </Col>

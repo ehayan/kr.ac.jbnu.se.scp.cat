@@ -35,7 +35,6 @@ const Dashboard = (page) => {
         <p className='m-t-10 p-b-0 m-b-0'>
           프로젝트만을 위한 캘린더를 활용해 스케줄을 관리해보세요
         </p>
-        {/* <p className="m-t-5 p-0 m-b-0"></p> */}
       </div>
       <Container className='container-width-l m-t-20'>
         <Row>
@@ -52,7 +51,7 @@ const Dashboard = (page) => {
           font-family: 'Spoca_B';
         }
         p {
-          font-family: 'Spoca_R';
+          font-family: 'RIDI';
         }
       `}</style>
     </div>

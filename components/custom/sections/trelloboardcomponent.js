@@ -80,8 +80,9 @@ const TrelloBoardComponent = (prop) => {
         h2 {
           font-family: 'Spoca_B';
         }
+        span,
         p {
-          font-family: 'Spoca_R';
+          font-family: 'RIDI';
         }
       `}</style>
     </div>
