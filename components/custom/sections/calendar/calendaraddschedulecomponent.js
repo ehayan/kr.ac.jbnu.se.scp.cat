@@ -1,4 +1,5 @@
-import { Row, Col } from "reactstrap";
+import { Button } from 'react-bootstrap';
+import { Row, Col } from 'reactstrap';
 
 const AddScheduleComponent = ({ events, setEvents }) => {
   const addEvent = (event) => {
@@ -13,40 +14,58 @@ const AddScheduleComponent = ({ events, setEvents }) => {
       end: endDate,
     };
     setEvents([...events, schedule]);
-    event.target.parentElement.children[2].value = "";
-    event.target.parentElement.children[5].value = "";
-    event.target.parentElement.children[8].value = "";
+    event.target.parentElement.children[2].value = '';
+    event.target.parentElement.children[5].value = '';
+    event.target.parentElement.children[8].value = '';
   };
 
   return (
-    <div className="m-t-40">
-      <h3 className="text-center m-t-5 m-b-20 p-2 text-black bg-gold">
-        Add Schedules
+    <div id='scheduleCard' className='m-t-40'>
+      <h3 className='text-center m-t-5 m-b-20 p-2 text-black bg-gold'>
+        ADD Schedules
       </h3>
-      <span className="m-l-20">start date</span>
-      <input id="startDate" type="date" className="m-b-20 m-l-10"></input>
+
+      <div className='d-flex m-l-20'>
+        <span>Start Date</span>
+        <input id='startDate' type='date' className='ml-auto'></input>
+      </div>
       <br />
-      <span className="m-l-20">end date</span>
-      <input id="endDate" type="date" className="m-b-20 m-l-10"></input>
+
+      <div className='d-flex m-l-20'>
+        <span>End Date</span>
+        <input id='endDate' type='date' className='ml-auto'></input>
+      </div>
       <br />
-      <span className="m-l-20">name</span>
-      <input
-        id="scheduleName"
-        type="text"
-        placeholder="schedule name"
-        className="m-b-20 m-l-10"
-      ></input>
+
+      <div className='d-flex m-l-20'>
+        <span>Name</span>
+        <input
+          id='scheduleName'
+          type='text'
+          placeholder='schedule name'
+          className='ml-auto'
+        ></input>
+      </div>
       <br />
-      <button className="cal-add-btn btn-warning text-black" onClick={addEvent}>
-        add
-      </button>
+
+      <Button
+        className='cal-add-btn btn-warning bg-gold text-black'
+        onClick={addEvent}
+      >
+        ADD
+      </Button>
       <style jsx>{`
-        div {
+        #scheduleCard {
           background-color: #131a63;
           padding: 10px;
           border-radius: 5px;
         }
+        h3 {
+          font-family: 'Spoca_B';
+        }
         span {
+          font-family: 'Spoca_R';
+          font-size: 17px;
           color: #ffffff;
         }
         button {

@@ -10,7 +10,7 @@ const SlackComponent = () => {
     <div>
       <div className='m-l-30'>
         <h2 className='title font-bold'>Slack</h2>
-        <span>URL : link </span>
+        <p>URL : link </p>
         {/* <a href={link}>{link}</a> */}
       </div>
       <div className='align-self-center m-t-40'>
@@ -73,7 +73,7 @@ const SlackComponent = () => {
           font-family: 'Spoca_B';
         }
         p {
-          font-family: 'Spoca_R';
+          font-family: 'RIDI';
         }
       `}</style>
     </div>

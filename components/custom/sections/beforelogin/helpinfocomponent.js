@@ -1,18 +1,18 @@
-import Image from "next/image";
-import { Row, Col, Container } from "reactstrap";
-import toolhelpimg from "../../../../assets/images/beforelogin/toolhelp.png";
-import addlinkimg from "../../../../assets/images/beforelogin/addlink.png";
-import calendarimg from "../../../../assets/images/beforelogin/calendar.png";
+import Image from 'next/image';
+import { Row, Col, Container } from 'reactstrap';
+import toolhelpimg from '../../../../assets/images/beforelogin/toolhelp.png';
+import addlinkimg from '../../../../assets/images/beforelogin/addlink.png';
+import calendarimg from '../../../../assets/images/beforelogin/calendar.png';
 
 const HelpInfoComponent = () => {
   return (
-    <Container className="container-width-m">
-      <Row className="m-t-30">
-        <Col md="6">
+    <Container className='container-width-m'>
+      <Row className='m-t-30'>
+        <Col md='6'>
           <Image src={addlinkimg} />
         </Col>
-        <Col md="6" className="m-t-30">
-          <div className="text-left align-self-justify">
+        <Col md='6' className='m-t-30'>
+          <div className='text-left align-self-justify'>
             <h2>
               <b>편리한 링크 추가 기능</b>
             </h2>
@@ -25,9 +25,9 @@ const HelpInfoComponent = () => {
           </div>
         </Col>
       </Row>
-      <Row className="m-t-60">
-        <Col md="6" className="m-t-30">
-          <div className="text-left align-self-justify">
+      <Row className='m-t-60'>
+        <Col md='6' className='m-t-30'>
+          <div className='text-left align-self-justify'>
             <br />
             <br />
             <h2>
@@ -35,22 +35,22 @@ const HelpInfoComponent = () => {
             </h2>
             <br />
             <span>
-              여러 프로젝트 일정이 등록된 캘린더를 사용해 불편함을 겪으신다면,{" "}
+              여러 프로젝트 일정이 등록된 캘린더를 사용해 불편함을 겪으신다면,{' '}
               <br />
               프로젝트마다 존재하는 캘린더를 통해 일정을 관리해보세요 <br />
             </span>
           </div>
         </Col>
-        <Col md="6" className=" m-t-40">
+        <Col md='6' className=' m-t-40'>
           <Image src={calendarimg} />
         </Col>
       </Row>
-      <Row className="m-t-60  m-b-30">
-        <Col md="6" className=" m-t-40">
+      <Row className='m-t-60  m-b-30'>
+        <Col md='6' className=' m-t-40'>
           <Image src={toolhelpimg} />
         </Col>
-        <Col md="6" className="m-t-30 ">
-          <div className="text-left align-self-justify">
+        <Col md='6' className='m-t-30 '>
+          <div className='text-left align-self-justify'>
             <br />
             <br />
             <h2>
@@ -66,11 +66,11 @@ const HelpInfoComponent = () => {
       </Row>
       <style jsx>{`
         h2 {
-          font-family: "Spoca_R";
+          font-family: 'RIDI';
         }
         span {
           font-size: 15px;
-          font-family: "RIDI";
+          font-family: 'RIDI';
         }
       `}</style>
     </Container>

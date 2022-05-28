@@ -16,6 +16,7 @@ import {
 import { signIn, signOut, useSession } from 'next-auth/react';
 // import { IoMail, IoMailUnread} from 'react-icons/io5';
 import logo from '../../assets/images/logos/probby_logo.png';
+import { Button } from 'react-bootstrap';
 
 const Header = () => {
   const { data: session, status } = useSession();
@@ -75,8 +76,8 @@ const Header = () => {
                 </NavItem>
               </Nav>
               <div className='act-buttons'>
-                <button
-                  className='btn btn-light font-14'
+                <Button
+                  variant='outline-warning'
                   onClick={() => {
                     if (session) {
                       signOut();
@@ -86,12 +87,13 @@ const Header = () => {
                   }}
                 >
                   {session ? 'Logout' : 'Login'}
-                </button>
+                </Button>
               </div>
             </Collapse>
             <style jsx>{`
-              h3 {
-                color: white;
+              a {
+                font-family: 'Baskin_R';
+                font-size: 15px;
               }
             `}</style>
           </Navbar>

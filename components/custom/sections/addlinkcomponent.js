@@ -10,7 +10,7 @@ const AddLinkComponent = () => {
     setX(e.target.value);
   };
 
-  // URL;
+  //URL
   const [url, setURL] = useState("");
   const handleURLInput = ({ target: { value } }) => {
     setURL(value);
@@ -19,6 +19,7 @@ const AddLinkComponent = () => {
   //click ADD Button
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (x == "") {
       alert("도구를 선택하세요");
     } else if (url == "") {
@@ -182,6 +183,15 @@ const AddLinkComponent = () => {
           </div>
         </section>
       </div>
+
+      <style jsx>{`
+        h2 {
+          font-family: "Spoca_B";
+        }
+        p {
+          font-family: "RIDI";
+        }
+      `}</style>
     </div>
   );
 };
