@@ -1,50 +1,85 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Container, Form, Input } from "reactstrap";
-import Image from "next/image";
-import RegisteredList from "./linklistcomponent";
+import { db } from "../../../pages/firebase";
 
 const AddLinkComponent = () => {
   const [x, setX] = useState([]);
+
   //RadioButton select
   const handleClickRadioButton = (e) => {
-    console.log(e.target.value);
     setX(e.target.value);
   };
 
-  //URL
+  // URL;
   const [url, setURL] = useState("");
   const handleURLInput = ({ target: { value } }) => {
     setURL(value);
-    console.log(value);
   };
 
   //click ADD Button
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (x == "") {
       alert("도구를 선택하세요");
     } else if (url == "") {
       alert("링크를 입력하세요");
     } else {
-      console.log(`${x} : ${url}`);
-      alert(`${x} : ${url}`);
+      const links = db.collection("registered_link");
+      switch (x) {
+        case "1": {
+          links.doc("github").set({
+            title: "Github",
+            name: "github",
+            url: { url },
+          });
+          break;
+        }
+        case "2": {
+          links.doc("googledrive").set({
+            title: "GoogleDrive",
+            name: "google drive",
+            url: { url },
+          });
+          break;
+        }
+        case "3": {
+          links.doc("trello").set({
+            title: "Trello",
+            name: "trello",
+            url: { url },
+          });
+          break;
+        }
+        case "4": {
+          links.doc("slack").set({
+            title: "Slack",
+            name: "slack",
+            url: { url },
+          });
+          break;
+        }
+        case "5": {
+          links.add({
+            title: "Etc",
+            name: "etc",
+            url: { url },
+          });
+          break;
+        }
+      }
+      alert("저장되었습니다");
+      setURL("");
+      setX([]);
     }
   };
 
   return (
     <div>
-      <div className="m-l-30">
-        <h2 className="title">ADD LINK</h2>
-        <p className="m-t-10">
-          프로젝트에 추가하고 싶은 도구를 선택한 후 url을 입력해주세요
-        </p>
-      </div>
       <div className="bg-light">
         <section>
           <div id="banner1">
             <Container>
-              <Row className="m-t-30 m-l-30 p-t-30">
+              <Row className="m-t-30 m-l-30 ">
                 <Col className="align-self-center">
                   <Form className="m-t-40" onSubmit={handleSubmit}>
                     <div className="">
@@ -54,6 +89,7 @@ const AddLinkComponent = () => {
                         checked={x === "1"}
                         onChange={handleClickRadioButton}
                         style={{
+                          marginBottom: "2px",
                           display: "inline-block",
                           verticalAlign: "middle",
                         }}
@@ -62,73 +98,70 @@ const AddLinkComponent = () => {
                     </div>
                     <br />
                     <div>
-                      <label>
-                        <Input
-                          type="checkbox"
-                          value="2"
-                          checked={x === "2"}
-                          onChange={handleClickRadioButton}
-                          style={{
-                            display: "inline-block",
-                            verticalAlign: "middle",
-                          }}
-                        />
-                        GoogleDrive
-                      </label>
+                      <Input
+                        type="checkbox"
+                        value="2"
+                        checked={x === "2"}
+                        onChange={handleClickRadioButton}
+                        style={{
+                          marginBottom: "2px",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                        }}
+                      />
+                      <label className="m-l-5">GoogleDrive</label>
                     </div>
                     <br />
                     <div>
-                      <label>
-                        <Input
-                          type="checkbox"
-                          value="3"
-                          checked={x === "3"}
-                          onChange={handleClickRadioButton}
-                          style={{
-                            display: "inline-block",
-                            verticalAlign: "middle",
-                          }}
-                        />
-                        Trello
-                      </label>
+                      <Input
+                        type="checkbox"
+                        value="3"
+                        checked={x === "3"}
+                        onChange={handleClickRadioButton}
+                        style={{
+                          marginBottom: "2px",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                        }}
+                      />
+                      <label className="m-l-5">Trello</label>
                     </div>
                     <br />
                     <div>
-                      <label>
-                        <Input
-                          type="checkbox"
-                          value="4"
-                          checked={x === "4"}
-                          onChange={handleClickRadioButton}
-                          style={{
-                            display: "inline-block",
-                            verticalAlign: "middle",
-                          }}
-                        />
-                        Slack
-                      </label>
+                      <Input
+                        type="checkbox"
+                        value="4"
+                        checked={x === "4"}
+                        onChange={handleClickRadioButton}
+                        style={{
+                          marginBottom: "2px",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                        }}
+                      />
+                      <label className="m-l-5">Slack</label>
                     </div>
                     <br />
                     <div>
-                      <label>
-                        <Input
-                          type="checkbox"
-                          value="5"
-                          checked={x === "5"}
-                          onChange={handleClickRadioButton}
-                          style={{
-                            display: "inline-block",
-                            verticalAlign: "middle",
-                          }}
-                        />
-                        etc
-                      </label>
+                      <Input
+                        type="checkbox"
+                        value="5"
+                        checked={x === "5"}
+                        onChange={handleClickRadioButton}
+                        style={{
+                          marginBottom: "2px",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                        }}
+                      />
+                      <label className="m-l-5">etc</label>
                     </div>
                     <br />
                     <div className="m-b-20">
                       <Input
                         type="url"
                         name="url"
+                        id="link-input"
                         value={url}
                         placeholder="Enter Link address"
                         className="font-15"
@@ -137,34 +170,18 @@ const AddLinkComponent = () => {
                       <Input
                         type="submit"
                         value="ADD"
-                        // onSubmit={(e) => {
-                        //   e.preventDefault;
-                        // }}
-                        // onClick={handleURLInput}
+                        onClick={handleSubmit}
                         className="bg-info font-semibold font-16 btn-rounded text-uppercase text-black text-center"
                       />
                       {/* <button type='submit'>ADD</button> */}
                     </div>
                   </Form>
                 </Col>
-
-                <Col className="align-self-center">
-                  <RegisteredList />
-                </Col>
               </Row>
             </Container>
           </div>
         </section>
       </div>
-
-      <style jsx>{`
-        h2 {
-          font-family: "Spoca_B";
-        }
-        p {
-          font-family: "Spoca_R";
-        }
-      `}</style>
     </div>
   );
 };

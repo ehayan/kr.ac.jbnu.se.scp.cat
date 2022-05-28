@@ -10,8 +10,8 @@ const withTM = require("next-transpile-modules")([
 ]);
 
 module.exports = withTM({
-  reactStrictMode: true,
+  reactStrictMode: false,
   images: {
-      domains: ['avatars.githubusercontent.com'],
+    domains: ["avatars.githubusercontent.com"],
   },
 });
