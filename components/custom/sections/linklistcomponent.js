@@ -45,9 +45,9 @@ const List = () => {
   console.log(link);
 
   return (
-    <Card className="m-r-10 m-t-60">
-      <CardBody>
-        <CardTitle tag="h5">Registered Link</CardTitle>
+    <Card className="m-r-10">
+      <CardBody className="">
+        <h3 style={{ fontFamily: "Spoca_B" }}>Registered Link</h3>
         {dbIsEmpty ? (
           <div>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -93,6 +93,10 @@ const List = () => {
                   <TiDelete size={20} />
                 </button>
                 <style jsx>{`
+                  h3 {
+                    font-family: "Spoca_B";
+                  }
+
                   button {
                     background-color: transparent;
                     border-color: transparent;
