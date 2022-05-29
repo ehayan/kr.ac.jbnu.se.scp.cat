@@ -93,6 +93,7 @@ const AddLinkComponent = () => {
                           marginBottom: "2px",
                           display: "inline-block",
                           verticalAlign: "middle",
+                          backgroundColor: "#efcb00",
                         }}
                       />
                       <label className="m-l-5">GitHub</label>
@@ -108,6 +109,7 @@ const AddLinkComponent = () => {
                           marginBottom: "2px",
                           display: "inline-block",
                           verticalAlign: "middle",
+                          backgroundColor: "#efcb00",
                         }}
                       />
                       <label className="m-l-5">GoogleDrive</label>
@@ -123,6 +125,7 @@ const AddLinkComponent = () => {
                           marginBottom: "2px",
                           display: "inline-block",
                           verticalAlign: "middle",
+                          backgroundColor: "#efcb00",
                         }}
                       />
                       <label className="m-l-5">Trello</label>
@@ -138,6 +141,7 @@ const AddLinkComponent = () => {
                           marginBottom: "2px",
                           display: "inline-block",
                           verticalAlign: "middle",
+                          backgroundColor: "#efcb00",
                         }}
                       />
                       <label className="m-l-5">Slack</label>
@@ -153,6 +157,7 @@ const AddLinkComponent = () => {
                           marginBottom: "2px",
                           display: "inline-block",
                           verticalAlign: "middle",
+                          backgroundColor: "#efcb00",
                         }}
                       />
                       <label className="m-l-5">etc</label>

@@ -47,16 +47,24 @@ const List = () => {
   return (
     <Card className="m-r-10">
       <CardBody className="">
-        <h3 style={{ fontFamily: "Spoca_B" }}>Registered Link</h3>
+        <h3 className="m-b-15" style={{ fontFamily: "Spoca_B" }}>
+          Registered Link
+        </h3>
         {dbIsEmpty ? (
           <div>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
+            <CardSubtitle
+              className="mb-2 text-muted"
+              style={{ fontFamily: "RIDI" }}
+            >
               등록된 링크가 없습니다
             </CardSubtitle>
           </div>
         ) : (
           <div>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
+            <CardSubtitle
+              className="mb-2 text-muted"
+              style={{ fontFamily: "RIDI" }}
+            >
               클릭시 해당 링크로 이동합니다
             </CardSubtitle>
           </div>
@@ -96,7 +104,6 @@ const List = () => {
                   h3 {
                     font-family: "Spoca_B";
                   }
-
                   button {
                     background-color: transparent;
                     border-color: transparent;
