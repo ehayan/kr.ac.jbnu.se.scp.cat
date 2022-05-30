@@ -5,14 +5,22 @@ import member1 from "../../../assets/images/slack-member/ex1.png";
 import member2 from "../../../assets/images/slack-member/ex2.png";
 import member3 from "../../../assets/images/slack-member/ex3.png";
 import { useState } from "react";
+import { sendMessage } from "../../../api/slack";
 
 const SlackComponent = () => {
   const [message, setMessage] = useState("");
+  const webhook = "https://hooks.slack.com/services/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";
   const handleMessageInput = ({ target: { value } }) => {
     setMessage(value);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const msgInput = event.target.parentElement.children[0];
+    const msg = msgInput.value;
+    sendMessage(webhook, msg);
+    msgInput.value = "";
+  };
 
   return (
     <div>
