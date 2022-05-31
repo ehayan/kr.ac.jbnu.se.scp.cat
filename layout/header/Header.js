@@ -16,10 +16,7 @@ import {
 import { signIn, signOut, useSession } from "next-auth/react";
 // import { IoMail, IoMailUnread} from 'react-icons/io5';
 import logo from "../../assets/images/logos/probby_logo.png";
-<<<<<<< HEAD
-=======
 import { Button } from "react-bootstrap";
->>>>>>> 73780f45f4bc18e33971a4054c5babb77f8e22b0
 
 const Header = () => {
   const { data: session, status } = useSession();
@@ -28,13 +25,10 @@ const Header = () => {
   const router = useRouter();
   const toggle = () => setIsOpen(!isOpen);
 
-<<<<<<< HEAD
-=======
   if (status === "loading") {
     return <p>Loading...</p>;
   }
 
->>>>>>> 73780f45f4bc18e33971a4054c5babb77f8e22b0
   return (
     <div className="topbar" id="top">
       <div className="header6">
@@ -54,11 +48,7 @@ const Header = () => {
               id="h6-info"
             >
               <Nav navbar className="ml-auto">
-<<<<<<< HEAD
-                <NavItem className={session ? "" : "hide"}>
-=======
                 {/* <NavItem className={session ? "" : "hide"}>
->>>>>>> 73780f45f4bc18e33971a4054c5babb77f8e22b0
                   <Link href="/project-dashboard">
                     <a
                       className={
@@ -86,13 +76,8 @@ const Header = () => {
                 </NavItem>
               </Nav>
               <div className="act-buttons">
-<<<<<<< HEAD
-                <button
-                  className="btn btn-light font-14"
-=======
                 <Button
                   variant="outline-warning"
->>>>>>> 73780f45f4bc18e33971a4054c5babb77f8e22b0
                   onClick={() => {
                     if (session) {
                       signOut();
@@ -102,11 +87,7 @@ const Header = () => {
                   }}
                 >
                   {session ? "Logout" : "Login"}
-<<<<<<< HEAD
-                </button>
-=======
                 </Button>
->>>>>>> 73780f45f4bc18e33971a4054c5babb77f8e22b0
               </div>
             </Collapse>
             <style jsx>{`

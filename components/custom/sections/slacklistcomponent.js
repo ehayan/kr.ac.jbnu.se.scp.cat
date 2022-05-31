@@ -17,12 +17,6 @@ const SlackComponent = () => {
       <div className="align-self-center m-t-40">
         <Container className="m-t-20 p-0">
           <Row>
-            <Col md="12">
-              <Card body className="card-shadow">
-                <h3>#일반</h3>
-                <p className="m-l-10 m-b-0">채널 설명</p>
-              </Card>
-            </Col>
             <Element
               style={{
                 height: "500px",

@@ -55,6 +55,7 @@ const AddLinkComponent = () => {
             title: "Slack",
             name: "slack",
             url: { url },
+            webhook: "",
           });
           break;
         }

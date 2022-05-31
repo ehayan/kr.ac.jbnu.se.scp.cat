@@ -1,15 +1,10 @@
 import { Form, Input, Row, Col, Card, CardText, Container } from "reactstrap";
-import { GoTriangleDown } from "react-icons/go";
-import Image from "next/image";
-import member1 from "../../../assets/images/slack-member/ex1.png";
-import member2 from "../../../assets/images/slack-member/ex2.png";
-import member3 from "../../../assets/images/slack-member/ex3.png";
 import { useState } from "react";
 import { sendMessage } from "../../../api/slack";
 
-const SlackComponent = () => {
+const SlackComponent = (props) => {
   const [message, setMessage] = useState("");
-  const webhook = "https://hooks.slack.com/services/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";
+  const webhook = props.value;
   const handleMessageInput = ({ target: { value } }) => {
     setMessage(value);
   };
