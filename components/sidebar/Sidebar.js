@@ -59,20 +59,20 @@ const Sidebar = () => {
 
   return (
     <div className='p-20'>
-      <div className='d-flex align-items-center'>
+      <div className='d-flex justify-content-center'>
         <a href='/'>
           <Image src={logo} width='125px' height='75px' />
         </a>
       </div>
+      <div className='d-flex justify-content-center m-t-10'>
+        <Badge bg='dark' style={{ fontSize: 14, fontFamily: 'Spoca_R' }}>
+          Project 1
+        </Badge>
+      </div>
 
-      <Badge bg='primary' style={{ fontSize: 15 }} className='m-l-20 m-t-10'>
-        Project 1
-      </Badge>
-
-      <div className='act-buttons m-t-20 m-l-20'>
+      <div className='d-flex act-buttons justify-content-center m-t-20'>
         <Button
-          variant='warning'
-          className='font-14'
+          variant='outline-warning'
           onClick={() => {
             if (session) {
               signOut();
@@ -83,7 +83,7 @@ const Sidebar = () => {
         </Button>
       </div>
 
-      <div className='pt-2 mt-2'>
+      <div className='pt-2 m-t-10'>
         <Nav vertical className='sidebarNav'>
           {navigation.map((navi, index) => (
             <NavItem key={index} className='sidenav-bg'>
@@ -103,6 +103,12 @@ const Sidebar = () => {
           ))}
         </Nav>
       </div>
+
+      <style jsx>{`
+        a {
+          font-family: 'Spoca_R';
+        }
+      `}</style>
     </div>
   );
 };

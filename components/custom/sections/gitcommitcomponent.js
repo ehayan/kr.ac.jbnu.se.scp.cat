@@ -50,13 +50,15 @@ const GitCommitComponent = () => {
   return (
     <div>
       <div>
-        <div className="m-l-30">
-          <h2 className="title ">Github</h2>
-          <h3>Repository : {Github.getRepositoryName(link)}</h3>
-          <h6 className="subtitle">
-            가장 최근에 푸시된 커밋 100개와 관련된 정보를 확인할 수 있습니다.
-          </h6>
-          <span className="subtitle">지정된 리포지토리 :&nbsp;</span>
+        <div className="m-l-30 m-b-0">
+          <h2 className="title">GitHub : {Github.getRepositoryName(link)}</h2>
+          <p className="subtitle m-b-0">
+            가장 최근 커밋 100개를 확인할 수 있습니다.
+          </p>
+          <p className="subtitle">
+            커밋 메시지를 클릭해 자세한 내용을 확인해보세요.
+          </p>
+          <span className="subtitle">URL : </span>
           <a href={link}>{link}</a>
         </div>
         <Container>
@@ -94,6 +96,7 @@ const GitCommitComponent = () => {
                   GitHub CLI
                 </button>
               </div>
+
               <div>
                 <input
                   id="clone-address"
@@ -112,40 +115,7 @@ const GitCommitComponent = () => {
                 >
                   <BiCopy />
                 </button>
-                <style jsx>{`
-                  input{
-                    border-radius: 5px;
-                    border-top-right-radius: 0px;
-                    border-bottom-right-radius: 0px;
-                    margin-top: 10px;
-                    margin-left: 15px;
-                    width: 230px;
-                    font-size:15px;
-                  }
-                  button{
-                    margin-top: 10px;
-                    width: 40px:
-                    height:28px;
-                    border-radius: 5px;
-                    border-top-left-radius: 0px;
-                    border-bottom-left-radius: 0px;
-                  }
-                `}</style>
               </div>
-              {/* <div>
-                  <span>Copied!</span>
-                  <style jsx>{`
-                    div{
-                      margin-top: 10px;
-                      margin-left: 250px;
-                    }
-                    span{
-                      padding: 7px;
-                      background-color : #87caeb;
-                      border-radius:5px;
-                    }
-                  `}</style>
-              </div> */}
             </Col>
           </Row>
 
@@ -213,6 +183,34 @@ const GitCommitComponent = () => {
           </Row>
         </Container>
       </div>
+      <style jsx>{`
+      h2{
+        font-family: 'Spoca_B'
+      }
+      
+      p{
+        font-family: 'RIDI'
+      }
+
+      input{
+        border-radius: 5px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 10px;
+        margin-left: 15px;
+        width: 230px;
+        font-size:15px;
+      }
+        
+      button{
+        margin-top: 10px;
+        width: 40px:
+        height:28px;
+        border-radius: 5px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+     `}</style>
     </div>
   );
 };

@@ -22,11 +22,19 @@ const Link = (page) => {
           <Col md="6">
             <AddLinkComponent />
           </Col>
-          <Col md="6">
+          <Col md="6" className="m-t-60">
             <RegisteredList />
           </Col>
         </Row>
       </Container>
+      <style jsx>{`
+        h2 {
+          font-family: "Spoca_B";
+        }
+        p {
+          font-family: "RIDI";
+        }
+      `}</style>
     </div>
   );
 };

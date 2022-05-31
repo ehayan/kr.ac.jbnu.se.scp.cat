@@ -19,7 +19,14 @@ const PageForm = () => {
           <Col md='10'>
             <Form>
               <FormGroup>
-                <Label htmlFor='name'>Project Name</Label>
+                <Label
+                  htmlFor='name'
+                  style={{
+                    fontFamily: 'Spoca_B',
+                  }}
+                >
+                  Project Name
+                </Label>
                 <Input
                   type='text'
                   className='form-control'
@@ -28,7 +35,14 @@ const PageForm = () => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label htmlFor='explanation'>Project explanation</Label>
+                <Label
+                  htmlFor='explanation'
+                  style={{
+                    fontFamily: 'Spoca_B',
+                  }}
+                >
+                  Project explanation
+                </Label>
                 <Input
                   type='text'
                   className='form-control'

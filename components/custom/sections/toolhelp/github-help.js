@@ -1,28 +1,20 @@
 /* eslint-disable */
-import React from 'react';
-import Image from 'next/image';
-import { Row, Col, Container } from 'reactstrap';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import { Row, Col, Container } from "reactstrap";
+import Link from "next/link";
 
 const GitHubHelp = () => {
   return (
     <div>
-      <div className='static-slider10'>
+      <div className="static-slider10">
         <Container>
-          <Row className='justify-content-center'>
-            <Col md='10' className='align-self-center '>
-              <h1 className='title'>GitHub</h1>
-              <h5 className='subtitle op-8'>
+          <Row className="justify-content-center">
+            <Col md="10" className="align-self-center ">
+              <h1 className="title">GitHub</h1>
+              <h5 className="subtitle op-8">
                 버전 관리 및 협업을 위한 코드 호스팅 플랫폼
               </h5>
-              <br />
-              <h6>
-                *해당 내용은 GitHub 문서의 내용을 바탕으로 작성되었습니다.
-              </h6>
-              <Link href='https://docs.github.com/en/get-started/quickstart/hello-world#creating-a-branch'>
-                <a>원문 보기</a>
-              </Link>
-              <br />
               <br />
               <p>
                 GtiHub는 버전 관리 및 협업을 위한 코드 호스팅 플랫폼입니다.
@@ -31,15 +23,26 @@ const GitHubHelp = () => {
                 사용됩니다.
               </p>
               <br />
-              <li>리포지토리(repository) 생성 및 사용</li>
+              <span>
+                *해당 내용은 GitHub 문서의 내용을 바탕으로 작성되었습니다.
+              </span>
+              <span className="m-l-10">
+                <Link href="https://docs.github.com/en/get-started/quickstart/hello-world#creating-a-branch">
+                  <a>원문 보기</a>
+                </Link>
+              </span>
+              <br />
+              <br />
+              <br />
+              {/* <li>리포지토리(repository) 생성 및 사용</li>
               <li>새 분기(branch) 시작 및 관리</li>
               <li>커밋으로 GitHub에 푸시</li>
               <li>풀 리퀘스트(pull request) 열기 및 병합(merge)</li>
               <br />
-              <br />
-              <h3>
+              <br /> */}
+              <li className="m-b-10" style={{ fontSize: "18px" }}>
                 <b>리포지토리(repository) 생성</b>
-              </h3>
+              </li>
               <br />
               <p>1. 오른쪽 상단의 + 메뉴의 'New repository'를 선택합니다</p>
               <p>
@@ -56,13 +59,10 @@ const GitHubHelp = () => {
               <p>6. 아래의 'Create repository'를 클릭합니다</p>
               <br />
               <br />
-              <h3>
+              <li className="m-b-10" style={{ fontSize: "18px" }}>
                 <b>분기(branch) 만들기</b>
-              </h3>
+              </li>
               <br />
-              <h5>
-                <b>브랜치(branch)에 대해</b>
-              </h5>
               <p>
                 분기(branch)란 리포지토리의 병렬(parallel) 버전입니다. 이 분기는
                 저장소 내에 존재하지만 원래의 버전에 영향을 주지 않고 변경할 수
@@ -86,9 +86,21 @@ const GitHubHelp = () => {
               <br />
 
               <style jsx>{`
+                h1 {
+                  font-family: "Baskin_R";
+                }
+                h5,
+                b,
+                li,
+                h3,
+                p,
+                span {
+                  font-family: "RIDI";
+                }
                 a {
                   color: #3f4bf0;
-                  text-decoration: underline;
+                  text-decoration: none;
+                  font-family: "RIDI";
                 }
               `}</style>
             </Col>

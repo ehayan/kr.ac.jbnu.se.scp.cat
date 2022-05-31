@@ -16,9 +16,18 @@ const PortfolioComponent = () => {
                 <strong>Project + Lobby</strong> <br></br>
                 개발 협업 시, 취향에 따라 목적에 따라 다양한 협업 도구들을
                 사용합니다. <br></br>
-                <strong>'협업도구의 산재'</strong>로부터 PROBBY는
+                <strong>'협업도구의 산재' </strong>로부터 PROBBY는
                 출발하였습니다.
               </h6>
+
+              <style jsx>{`
+                h1 {
+                  font-family: 'Baskin_B';
+                }
+                h6 {
+                  font-family: 'RIDI';
+                }
+              `}</style>
             </Col>
           </Row>
         </Container>

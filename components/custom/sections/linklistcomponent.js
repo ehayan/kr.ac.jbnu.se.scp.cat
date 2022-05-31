@@ -45,18 +45,26 @@ const List = () => {
   console.log(link);
 
   return (
-    <Card className="m-r-10 m-t-60">
-      <CardBody>
-        <CardTitle tag="h5">Registered Link</CardTitle>
+    <Card className="m-r-10">
+      <CardBody className="">
+        <h3 className="m-b-15" style={{ fontFamily: "Spoca_B" }}>
+          Registered Link
+        </h3>
         {dbIsEmpty ? (
           <div>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
+            <CardSubtitle
+              className="mb-2 text-muted"
+              style={{ fontFamily: "RIDI" }}
+            >
               등록된 링크가 없습니다
             </CardSubtitle>
           </div>
         ) : (
           <div>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
+            <CardSubtitle
+              className="mb-2 text-muted"
+              style={{ fontFamily: "RIDI" }}
+            >
               클릭시 해당 링크로 이동합니다
             </CardSubtitle>
           </div>
@@ -93,6 +101,9 @@ const List = () => {
                   <TiDelete size={20} />
                 </button>
                 <style jsx>{`
+                  h3 {
+                    font-family: "Spoca_B";
+                  }
                   button {
                     background-color: transparent;
                     border-color: transparent;

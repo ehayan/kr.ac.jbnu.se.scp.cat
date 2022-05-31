@@ -38,10 +38,10 @@ const TrelloBoardComponent = (prop) => {
     <div>
       <div>
         <div className="m-l-30">
-          <h2 className="title">
-            Trello Board : {Trello.getProjectName(link)}
+          <h2 className="title font-bold">
+            Trello : {Trello.getProjectName(link)}
           </h2>
-          <span>지정된 보드 :</span>&nbsp;
+          <span className="subtitle">URL : </span>
           <a href={link}>{link}</a>
         </div>
         <Element
@@ -55,7 +55,7 @@ const TrelloBoardComponent = (prop) => {
             {loading ? (
               <div class="box">
                 <p className="m-t-12p"></p>
-                <div class="loader9"></div>
+                <div className="loader9"></div>
               </div>
             ) : (
               trelloDatas.map((data) => (
@@ -76,6 +76,15 @@ const TrelloBoardComponent = (prop) => {
           </Row>
         </Element>
       </div>
+      <style jsx>{`
+        h2 {
+          font-family: "Spoca_B";
+        }
+        span,
+        p {
+          font-family: "RIDI";
+        }
+      `}</style>
     </div>
   );
 };

@@ -34,6 +34,14 @@ const Invitation = () => {
           </div>
         </Card>
       </Card>
+      <style jsx>{`
+        h5 {
+          font-family: 'Spoca_B';
+        }
+        p {
+          font-family: 'Spoca_R';
+        }
+      `}</style>
     </Container>
   );
 };

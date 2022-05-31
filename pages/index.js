@@ -12,9 +12,10 @@ export default function Home() {
     <div>
       <Head>
         <title>PROBBY</title>
-        <meta name="description" content="CAT" />
+        <meta name="description" content="PROBBY" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       {session ? <AfterLoginBanner /> : <BeforeLoginBanner />}
       {session ? (
         <div className="spacer">
@@ -25,6 +26,15 @@ export default function Home() {
       ) : (
         <CustomComponents />
       )}
+
+      <style jsx>{`
+        h2 {
+          font-family: "Baskin_R";
+        }
+        p {
+          font-family: "RIDI";
+        }
+      `}</style>
     </div>
   );
 }

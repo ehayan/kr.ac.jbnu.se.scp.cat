@@ -1,23 +1,15 @@
 /* eslint-disable */
 import CalendarFunction from "../custom/sections/calendar/calendarcomponents";
-import React, {useState} from "react";
-import {
-  Card,
-  Button,
-  CardTitle,
-  CardText,
-  Row,
-  Col,
-  Container,
-} from "reactstrap";
+import React, { useState } from "react";
+import { Card, Row, Col, Container } from "reactstrap";
+import RegisteredLink from "../custom/sections/linklistcomponent";
 
 const Cards = () => {
-
   const [email, setEmail] = useState("");
   const handleAddMember = ({ target: { value } }) => {
     setEmail(value);
     console.log(value);
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,26 +52,40 @@ const Cards = () => {
                 </span>
               </div>
               <hr />
-              <h4>Add Another Member</h4>
+              <h3>Add Another Member</h3>
               <p>추가하려는 팀원의 구글 메일 주소를 입력해주세요</p>
               <div>
-                <input type="text" placeholder="ex@gmail.com" size={25} value={email} onChange={handleAddMember}></input>
-                <button type="submit" className="m-l-5 dashboard-btn" onClick={handleSubmit}>add</button>
+                <input
+                  type="text"
+                  placeholder="ex@gmail.com"
+                  size={25}
+                  value={email}
+                  onChange={handleAddMember}
+                ></input>
+                <button
+                  type="submit"
+                  className="m-l-5 dashboard-btn"
+                  onClick={handleSubmit}
+                >
+                  add
+                </button>
               </div>
             </Card>
-            <Card body className="card-shadow">
-              <h3>Registered Link</h3>
-              <p>현재 등록된 링크</p>
-              <div className="m-b-5">
-                <p className="m-t-10">Github : ##</p>
-                <p className="m-t-10 ">Slack : ##</p>
-                <p className="m-t-10 ">Trello : ##</p>
-                <p className="m-t-10 ">Etc : ##</p>
-              </div>
+            <Card body className="card-shadow p-0">
+              <RegisteredLink />
             </Card>
           </Col>
         </Row>
       </Container>
+      <style jsx>{`
+        h3 {
+          font-family: "Spoca_B";
+        }
+
+        p {
+          font-family: "RIDI";
+        }
+      `}</style>
     </div>
   );
 };
