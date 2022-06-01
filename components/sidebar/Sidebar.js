@@ -66,7 +66,7 @@ const Sidebar = () => {
       </div>
       <div className='d-flex justify-content-center m-t-10'>
         <Badge bg='dark' style={{ fontSize: 14, fontFamily: 'Spoca_R' }}>
-          Project 1
+          2022 CAPSTONE
         </Badge>
       </div>
 

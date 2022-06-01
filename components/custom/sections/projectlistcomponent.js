@@ -1,16 +1,16 @@
-import { Badge, Button } from "reactstrap";
-import { Accordion } from "react-bootstrap";
-import Link from "next/link";
+import { Badge, Button } from 'reactstrap';
+import { Accordion } from 'react-bootstrap';
+import Link from 'next/link';
 
 const ProjectList = () => {
   return (
     <div>
       <Accordion>
-        <Accordion.Item eventKey="0">
+        <Accordion.Item eventKey='0'>
           <Accordion.Header>
             <div>
               2022 CAPSTONE
-              <Badge className="m-l-10" pill color="primary">
+              <Badge className='m-l-10' pill color='primary'>
                 3/16
               </Badge>
             </div>
@@ -18,19 +18,19 @@ const ProjectList = () => {
           <Accordion.Body>
             <p>Member : </p>
             <p>Registered Tools : </p>
-            <Button color="primary" className="m-r-10  m-t-10">
-              <Link href="/project-dashboard">Enter</Link>
+            <Button color='primary' className='m-r-10  m-t-10'>
+              <Link href='/project-dashboard'>Enter</Link>
             </Button>
-            <Button color="danger" className="m-t-10 ">
+            <Button color='danger' className='m-t-10 '>
               Delete
             </Button>
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item eventKey="1">
+        <Accordion.Item eventKey='1'>
           <Accordion.Header>
             <div>
               Project 2
-              <Badge className="m-l-10" pill color="primary">
+              <Badge className='m-l-10' pill color='primary'>
                 5/20
               </Badge>
             </div>
@@ -38,10 +38,10 @@ const ProjectList = () => {
           <Accordion.Body>
             <p>Member : </p>
             <p>Registered Tools : </p>
-            <Button color="primary" className="m-r-10 m-t-10">
+            <Button color='primary' className='m-r-10 m-t-10'>
               Enter
             </Button>
-            <Button color="danger" className="m-t-10">
+            <Button color='danger' className='m-t-10'>
               Delete
             </Button>
           </Accordion.Body>
@@ -50,11 +50,11 @@ const ProjectList = () => {
 
       <style jsx>{`
         p {
-          font-family: "Spoca_R";
+          font-family: 'Spoca_R';
         }
 
         div {
-          font-family: "Spoca_B";
+          font-family: 'Spoca_B';
         }
       `}</style>
     </div>

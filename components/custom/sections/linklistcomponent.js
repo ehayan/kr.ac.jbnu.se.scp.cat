@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
-import { db } from "../../../pages/firebase";
+import React, { useRef, useEffect, useState } from 'react';
+import { db } from '../../../pages/firebase';
 import {
   Card,
   CardBody,
@@ -7,7 +7,7 @@ import {
   ListGroup,
   CardSubtitle,
   ListGroupItem,
-} from "reactstrap";
+} from 'reactstrap';
 
 import {
   FaGithub,
@@ -15,13 +15,13 @@ import {
   FaTrello,
   FaSlack,
   FaDiaspora,
-} from "react-icons/fa";
-import { TiDelete } from "react-icons/ti";
+} from 'react-icons/fa';
+import { TiDelete } from 'react-icons/ti';
 
 const List = () => {
   const [dbIsEmpty, setDbIsEmpty] = useState(true);
   const [link, setLink] = useState([]);
-  const linkData = db.collection("registered_link");
+  const linkData = db.collection('registered_link');
   const linkId = useRef(1);
 
   useEffect(() => {
@@ -45,16 +45,16 @@ const List = () => {
   console.log(link);
 
   return (
-    <Card className="m-r-10">
-      <CardBody className="">
-        <h3 className="m-b-15" style={{ fontFamily: "Spoca_B" }}>
+    <Card className='m-r-10'>
+      <CardBody className=''>
+        <h3 className='m-b-15' style={{ fontFamily: 'Spoca_B' }}>
           Registered Link
         </h3>
         {dbIsEmpty ? (
           <div>
             <CardSubtitle
-              className="mb-2 text-muted"
-              style={{ fontFamily: "RIDI" }}
+              className='mb-2 text-muted'
+              style={{ fontFamily: 'RIDI' }}
             >
               등록된 링크가 없습니다
             </CardSubtitle>
@@ -62,8 +62,8 @@ const List = () => {
         ) : (
           <div>
             <CardSubtitle
-              className="mb-2 text-muted"
-              style={{ fontFamily: "RIDI" }}
+              className='mb-2 text-muted'
+              style={{ fontFamily: 'RIDI' }}
             >
               클릭시 해당 링크로 이동합니다
             </CardSubtitle>
@@ -75,24 +75,23 @@ const List = () => {
               key={list.id}
               action
               href={list.url}
-              tag="a"
-              className="d-flex align-items-center p-3 border-0"
+              tag='a'
+              className='d-flex align-items-center p-3 border-0'
             >
               <div>
                 {/* <i className="m-r-5">{list.icon}</i> */}
                 {list.title} :
                 <a
                   id={list.name}
-                  className={list.url === "" ? "hide" : "m-l-5"}
+                  className={list.url === '' ? 'hide' : 'm-l-5'}
                 >
                   {list.url}
                 </a>
                 <button
                   id={`delete-btn${list.name}`}
-                  className=""
                   onClick={(e) => {
                     e.preventDefault();
-                    list.url = "";
+                    list.url = '';
                     const print_url = document.getElementById(list.name);
                     print_url.remove();
                     linkData.doc(list.name).delete();
@@ -102,7 +101,7 @@ const List = () => {
                 </button>
                 <style jsx>{`
                   h3 {
-                    font-family: "Spoca_B";
+                    font-family: 'Spoca_B';
                   }
                   button {
                     background-color: transparent;

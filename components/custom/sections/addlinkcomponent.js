@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Container, Form, Input } from "reactstrap";
-import { db } from "../../../pages/firebase";
+import React, { useState, useEffect } from 'react';
+import { Row, Col, Container, Form, Input } from 'reactstrap';
+import { db } from '../../../pages/firebase';
 
 const AddLinkComponent = () => {
   const [x, setX] = useState([]);
@@ -11,7 +11,7 @@ const AddLinkComponent = () => {
   };
 
   // URL;
-  const [url, setURL] = useState("");
+  const [url, setURL] = useState('');
   const handleURLInput = ({ target: { value } }) => {
     setURL(value);
   };
@@ -19,164 +19,166 @@ const AddLinkComponent = () => {
   //click ADD Button
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (x == "") {
-      alert("도구를 선택하세요");
-    } else if (url == "") {
-      alert("링크를 입력하세요");
+    if (x == '') {
+      alert('도구를 선택하세요');
+    } else if (url == '') {
+      alert('링크를 입력하세요');
     } else {
-      const links = db.collection("registered_link");
+      const links = db.collection('registered_link');
       switch (x) {
-        case "1": {
-          links.doc("github").set({
-            title: "Github",
-            name: "github",
+        case '1': {
+          links.doc('github').set({
+            title: 'Github',
+            name: 'github',
             url: { url },
           });
           break;
         }
-        case "2": {
-          links.doc("googledrive").set({
-            title: "GoogleDrive",
-            name: "google drive",
+        case '2': {
+          links.doc('googledrive').set({
+            title: 'GoogleDrive',
+            name: 'google drive',
             url: { url },
           });
           break;
         }
-        case "3": {
-          links.doc("trello").set({
-            title: "Trello",
-            name: "trello",
+        case '3': {
+          links.doc('trello').set({
+            title: 'Trello',
+            name: 'trello',
+            APIkey: '',
+            token: '',
             url: { url },
           });
           break;
         }
-        case "4": {
-          links.doc("slack").set({
-            title: "Slack",
-            name: "slack",
+        case '4': {
+          links.doc('slack').set({
+            title: 'Slack',
+            name: 'slack',
             url: { url },
-            webhook: "",
+            webhook: '',
           });
           break;
         }
-        case "5": {
+        case '5': {
           links.add({
-            title: "Etc",
-            name: "etc",
+            title: 'Etc',
+            name: 'etc',
             url: { url },
           });
           break;
         }
       }
-      alert("저장되었습니다");
-      setURL("");
+      alert('저장되었습니다');
+      setURL('');
       setX([]);
     }
   };
 
   return (
     <div>
-      <div className="bg-light">
-        <div id="banner1">
+      <div className='bg-light'>
+        <div id='banner1'>
           <Container>
-            <Row className="m-t-30 m-l-30 ">
-              <Col className="align-self-center">
-                <Form className="m-t-40" onSubmit={handleSubmit}>
-                  <div className="">
+            <Row className='m-t-30 m-l-30 '>
+              <Col className='align-self-center'>
+                <Form className='m-t-40' onSubmit={handleSubmit}>
+                  <div className=''>
                     <Input
-                      type="checkbox"
-                      value="1"
-                      checked={x === "1"}
+                      type='checkbox'
+                      value='1'
+                      checked={x === '1'}
                       onChange={handleClickRadioButton}
                       style={{
-                        marginBottom: "2px",
-                        display: "inline-block",
-                        verticalAlign: "middle",
-                        backgroundColor: "#efcb00",
+                        marginBottom: '2px',
+                        display: 'inline-block',
+                        verticalAlign: 'middle',
+                        backgroundColor: '#efcb00',
                       }}
                     />
-                    <label className="m-l-5">GitHub</label>
+                    <label className='m-l-5'>GitHub</label>
                   </div>
                   <br />
                   <div>
                     <Input
-                      type="checkbox"
-                      value="2"
-                      checked={x === "2"}
+                      type='checkbox'
+                      value='2'
+                      checked={x === '2'}
                       onChange={handleClickRadioButton}
                       style={{
-                        marginBottom: "2px",
-                        display: "inline-block",
-                        verticalAlign: "middle",
-                        backgroundColor: "#efcb00",
+                        marginBottom: '2px',
+                        display: 'inline-block',
+                        verticalAlign: 'middle',
+                        backgroundColor: '#efcb00',
                       }}
                     />
-                    <label className="m-l-5">GoogleDrive</label>
+                    <label className='m-l-5'>GoogleDrive</label>
                   </div>
                   <br />
                   <div>
                     <Input
-                      type="checkbox"
-                      value="3"
-                      checked={x === "3"}
+                      type='checkbox'
+                      value='3'
+                      checked={x === '3'}
                       onChange={handleClickRadioButton}
                       style={{
-                        marginBottom: "2px",
-                        display: "inline-block",
-                        verticalAlign: "middle",
-                        backgroundColor: "#efcb00",
+                        marginBottom: '2px',
+                        display: 'inline-block',
+                        verticalAlign: 'middle',
+                        backgroundColor: '#efcb00',
                       }}
                     />
-                    <label className="m-l-5">Trello</label>
+                    <label className='m-l-5'>Trello</label>
                   </div>
                   <br />
                   <div>
                     <Input
-                      type="checkbox"
-                      value="4"
-                      checked={x === "4"}
+                      type='checkbox'
+                      value='4'
+                      checked={x === '4'}
                       onChange={handleClickRadioButton}
                       style={{
-                        marginBottom: "2px",
-                        display: "inline-block",
-                        verticalAlign: "middle",
-                        backgroundColor: "#efcb00",
+                        marginBottom: '2px',
+                        display: 'inline-block',
+                        verticalAlign: 'middle',
+                        backgroundColor: '#efcb00',
                       }}
                     />
-                    <label className="m-l-5">Slack</label>
+                    <label className='m-l-5'>Slack</label>
                   </div>
                   <br />
                   <div>
                     <Input
-                      type="checkbox"
-                      value="5"
-                      checked={x === "5"}
+                      type='checkbox'
+                      value='5'
+                      checked={x === '5'}
                       onChange={handleClickRadioButton}
                       style={{
-                        marginBottom: "2px",
-                        display: "inline-block",
-                        verticalAlign: "middle",
-                        backgroundColor: "#efcb00",
+                        marginBottom: '2px',
+                        display: 'inline-block',
+                        verticalAlign: 'middle',
+                        backgroundColor: '#efcb00',
                       }}
                     />
-                    <label className="m-l-5">etc</label>
+                    <label className='m-l-5'>etc</label>
                   </div>
                   <br />
-                  <div className="m-b-20">
+                  <div className='m-b-20'>
                     <Input
-                      type="url"
-                      name="url"
-                      id="link-input"
+                      type='url'
+                      name='url'
+                      id='link-input'
                       value={url}
-                      placeholder="Enter Link address"
-                      className="font-15"
+                      placeholder='Enter Link address'
+                      className='font-15'
                       onChange={handleURLInput}
                     />
                     <Input
-                      type="submit"
-                      value="ADD"
+                      type='submit'
+                      value='ADD'
                       onClick={handleSubmit}
-                      className="bg-info font-semibold font-16 btn-rounded text-uppercase text-black text-center"
+                      className='bg-info font-semibold font-16 btn-rounded text-uppercase text-black text-center'
                     />
                     {/* <button type='submit'>ADD</button> */}
                   </div>
@@ -189,10 +191,10 @@ const AddLinkComponent = () => {
 
       <style jsx>{`
         h2 {
-          font-family: "Spoca_B";
+          font-family: 'Spoca_B';
         }
         p {
-          font-family: "RIDI";
+          font-family: 'RIDI';
         }
       `}</style>
     </div>
