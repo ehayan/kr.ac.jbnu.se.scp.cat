@@ -10,26 +10,22 @@ const Slack = (page) => {
   const [hasWebhook, setHasWebhook] = useState(false);
   const [url, setUrl] = useState("");
   const [webhook, setWebhook] = useState("");
-  const link = db.collection("registered_link");
 
   useEffect(() => {
-    link.get().then((docs) => {
-      docs.forEach((doc) => {
-        if (doc.exists) {
-          if (doc.data().title === "Slack") {
-            setUrl(doc.data().url.url);
-            if (doc.data().webhook != "") {
-              // console.log(doc.data().webhook.webhook);
-              setHasWebhook(true);
-              setWebhook(doc.data().webhook);
-            }
+    db.collection("registered_link")
+      .doc("slack")
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists) {
+          setUrl(snapshot.data().url.url);
+          if (snapshot.data().webhook != "") {
+            // console.log(doc.data().webhook.webhook);
+            setHasWebhook(true);
+            setWebhook(snapshot.data().webhook);
           }
         }
       });
-    });
   }, []);
-
-  console.log(url);
 
   return (
     <div>

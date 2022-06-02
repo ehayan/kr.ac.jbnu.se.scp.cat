@@ -25,9 +25,9 @@ const Header = () => {
   const router = useRouter();
   const toggle = () => setIsOpen(!isOpen);
 
-  if (status === "loading") {
-    return <p>Loading...</p>;
-  }
+  // if (status === "loading") {
+  //   return <p>Loading...</p>;
+  // }
 
   return (
     <div className="topbar" id="top">

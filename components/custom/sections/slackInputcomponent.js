@@ -6,19 +6,19 @@ const SlackInputComponent = () => {
   // const [hasUrl, setHasUrl] = useState(false);
   const [hasSlack, setHasSlack] = useState(false);
   const [url, setUrl] = useState("");
-  const links = db.collection("registered_link");
 
   useEffect(() => {
-    links.get().then((docs) => {
-      docs.forEach((doc) => {
-        if (doc.exists) {
-          if (doc.data().title === "Slack") {
-            setUrl(doc.data().url.url);
+    db.collection("registered_link")
+      .doc("slack")
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists) {
+          if (snapshot.data().title === "Slack") {
+            setUrl(snapshot.data().url.url);
             setHasSlack(true);
           }
         }
       });
-    });
   }, []);
 
   const [webhook, setWebhook] = useState("");
