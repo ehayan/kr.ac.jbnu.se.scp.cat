@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   Container,
   Row,
@@ -11,13 +10,35 @@ import {
   Card,
 } from 'reactstrap';
 
-const PageForm = () => {
+const PageForm = ({session}) => {
+  const handlePost = async (e) =>{
+    const title = e.target[0].value;
+    const content = e.target[1].value;
+
+    let project = {
+      title,
+      content,
+      users : session,
+      createdAt: new Date().toISOString(),
+    };
+
+    //save the post
+    let response = await fetch('/api/addproject', {
+      method: 'POST',
+      body: JSON.stringify(project),
+    });
+
+    // get the data
+    let data = await response.json();
+    console.log(data)
+  }
+
   return (
     <div>
       <Container>
         <Row>
           <Col md='10'>
-            <Form>
+            <Form onSubmit={handlePost}>
               <FormGroup>
                 <Label
                   htmlFor='name'
@@ -51,12 +72,14 @@ const PageForm = () => {
                 />
               </FormGroup>
               <Col md='12'>
+                <div>
                 <Button
                   type='submit'
                   className='btn btn-success waves-effect waves-light m-r-10'
                 >
                   Submit
                 </Button>
+                </div>
               </Col>
             </Form>
           </Col>

@@ -1,59 +1,59 @@
 import { Badge, Button } from "reactstrap";
 import { Accordion } from "react-bootstrap";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 
-const ProjectList = () => {
+const ProjectList = ({ router, session, projects }) => {
+  const enterClick = (e) => {
+    router.push({pathname: "/project-dashboard",
+     query: {
+        projectId : e.target.id
+    }
+    })
+  }
+  const deleteClick = async (e) => {
+    const projectId = e.target.id;
+    await fetch('/api/addproject',({
+      method:'DELETE',
+      body: projectId,
+    }))
+    window.location.reload();
+  }
   return (
     <div>
       <Accordion>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>
-            <div>
-              2022 CAPSTONE
-              <Badge className="m-l-10" pill color="primary">
-                3/16
-              </Badge>
-            </div>
-          </Accordion.Header>
-          <Accordion.Body>
-            <p>Member : </p>
-            <p>Registered Tools : </p>
-            <Button
-              color="primary"
-              className="m-r-10  m-t-10"
-              onClick={(e) => {
-                e.preventDefault();
-                document.location.href = "/project-dashboard";
-              }}
-            >
-              Enter
-            </Button>
-            <Button color="danger" className="m-t-10 ">
-              Delete
-            </Button>
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>
-            <div>
-              Project 2
-              <Badge className="m-l-10" pill color="primary">
-                5/20
-              </Badge>
-            </div>
-          </Accordion.Header>
-          <Accordion.Body>
-            <p>Member : </p>
-            <p>Registered Tools : </p>
-            <Button color="primary" className="m-r-10 m-t-10">
-              Enter
-            </Button>
-            <Button color="danger" className="m-t-10">
-              Delete
-            </Button>
-          </Accordion.Body>
-        </Accordion.Item>
+        {
+          projects.map((project, i) => (
+            <Accordion.Item eventKey={i}>
+              <Accordion.Header>
+                <div>
+                  {project.title}
+                  <Badge className="m-l-10" pill color="primary">
+                    {project.createdAt}
+                  </Badge>
+                </div>
+              </Accordion.Header>
+              <Accordion.Body>
+                <p>Member : {project.users.user.name}</p>
+                <p>Registered Tools : </p>
+                <Button
+                  id={project._id}
+                  color="primary"
+                  className="m-r-10  m-t-10"
+                  onClick={enterClick}
+                >
+                  Enter
+                </Button>
+                <Button id={project._id} onClick={deleteClick} color="danger" className="m-t-10 ">
+                  Delete
+                </Button>
+              </Accordion.Body>
+            </Accordion.Item>
+          ))
+        }
       </Accordion>
+
 
       <style jsx>{`
         p {
@@ -65,7 +65,8 @@ const ProjectList = () => {
         }
       `}</style>
     </div>
+
   );
 };
 
-export default ProjectList;
+export default ProjectList;    

@@ -21,7 +21,7 @@ export default function Home() {
         <div className="spacer">
           <h2 className="text-center">PROJECT LIST</h2>
           <p className="text-center">프로젝트 관리(등록/수정/삭제/추가)</p>
-          <Project_Setting />
+          <Project_Setting session={session} />
         </div>
       ) : (
         <CustomComponents />
