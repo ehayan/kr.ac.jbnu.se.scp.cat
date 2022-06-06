@@ -27,6 +27,12 @@ const GitCommitComponent = () => {
   const [cloneBtn, setCloneBtn] = useState(0);
   const [loading, setLoading] = useState(true);
 
+  Github.getCommits(link).then((data) => {
+    setCommits(data);
+    setLoading(false);
+    setCloneBtn(1);
+  });
+
   useEffect(() => {
     const getResponse = async () => {
       const response = await fetch('/api/addlinks');
@@ -39,11 +45,6 @@ const GitCommitComponent = () => {
       const projectLinks = filteredLinks.length == 0 ? {} : filteredLinks[0];
       const githubLink = projectLinks.github;
       setLink(githubLink);
-      Github.getCommits(link).then((data) => {
-        setCommits(data);
-      });
-      setLoading(false);
-      setCloneBtn(1);
     })
   }, []);
 
