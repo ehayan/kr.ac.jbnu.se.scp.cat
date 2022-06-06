@@ -12,7 +12,6 @@ const Setting = ({session}) => {
   const router = useRouter();
 
   useEffect(() => {
-    //save the post\
     const getResponse = async () => {
       const response = await fetch('/api/addproject');
       const data = await response.json();
@@ -22,7 +21,7 @@ const Setting = ({session}) => {
       setProjects(data.message);
     })
   }, []);
-
+  
   return (
     <Container>
       <div className='px-4'>

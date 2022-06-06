@@ -17,19 +17,34 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+import { useRouter } from "next/router";
 
 const GitCommitComponent = () => {
-  const link = "https://github.com/gusdn6901/kr.ac.jbnu.se.scp.cat";
+  const router = useRouter();
+  const projectId = router.query.projectId;
+  const [link, setLink] = useState("");
   const [commits, setCommits] = useState([]);
   const [cloneBtn, setCloneBtn] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Github.getCommits(link).then((data) => {
-      setCommits(data);
-    });
-    setLoading(false);
-    setCloneBtn(1);
+    const getResponse = async () => {
+      const response = await fetch('/api/addlinks');
+      const data = await response.json();
+      return data;
+    }
+    getResponse().then((data) => {
+      const allLinks = data.message;
+      const filteredLinks = allLinks.filter((link)=>(link.projectId == projectId));
+      const projectLinks = filteredLinks.length == 0 ? {} : filteredLinks[0];
+      const githubLink = projectLinks.github;
+      setLink(githubLink);
+      Github.getCommits(link).then((data) => {
+        setCommits(data);
+      });
+      setLoading(false);
+      setCloneBtn(1);
+    })
   }, []);
 
   function cloneAddress() {

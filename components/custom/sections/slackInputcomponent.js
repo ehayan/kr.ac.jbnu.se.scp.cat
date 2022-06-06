@@ -2,36 +2,33 @@ import { Form, Input, Row, Col, Card, CardText, Container } from "reactstrap";
 import { useState, useEffect, useRef } from "react";
 import { db } from "../../../pages/firebase";
 
-const SlackInputComponent = () => {
+const SlackInputComponent = ({ router, link }) => {
   // const [hasUrl, setHasUrl] = useState(false);
-  const [hasSlack, setHasSlack] = useState(false);
-  const [url, setUrl] = useState("");
-
-  useEffect(() => {
-    db.collection("registered_link")
-      .doc("slack")
-      .get()
-      .then((snapshot) => {
-        if (snapshot.exists) {
-          if (snapshot.data().title === "Slack") {
-            setUrl(snapshot.data().url.url);
-            setHasSlack(true);
-          }
-        }
-      });
-  }, []);
-
+  const [hasSlack, setHasSlack] = useState(true);
+  const [url, setUrl] = useState(link);
   const [webhook, setWebhook] = useState("");
+  const projectId = router.query.projectId;
+
   const handleURLInput = ({ target: { value } }) => {
     setWebhook(value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    links.doc("slack").update({ webhook: webhook });
-    // setHasUrl(true);
-    setWebhook("");
-    alert("저장되었습니다");
+    const data = { "projectId" : projectId, "slackWebhook" : webhook }
+    let response = await fetch('/api/additionalLinkData', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    }).then(()=> {
+      setWebhook("");
+      alert("저장되었습니다");   
+      router.push({
+        pathname: '/project-dashboard',
+        query: {
+          projectId: projectId,
+        },
+      });
+    });
   };
 
   return (

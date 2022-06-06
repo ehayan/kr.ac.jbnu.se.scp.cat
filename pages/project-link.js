@@ -2,9 +2,12 @@ import Head from "next/head";
 import AddLinkComponent from "../components/custom/sections/addlinkcomponent";
 import RegisteredList from "../components/custom/sections/linklistcomponent";
 import { Container, Row, Col } from "reactstrap";
+import { useRouter } from "next/router";
 // import { useRef, useState } from "react";
 
 const Link = (page) => {
+  const router = useRouter();
+  const projectId = router.query.projectId;
   return (
     <div>
       <Head>
@@ -20,10 +23,10 @@ const Link = (page) => {
       <Container>
         <Row className="m-t-30">
           <Col md="6">
-            <AddLinkComponent />
+            <AddLinkComponent projectId={projectId} />
           </Col>
           <Col md="6" className="m-t-60">
-            <RegisteredList />
+            <RegisteredList projectId={projectId} />
           </Col>
         </Row>
       </Container>

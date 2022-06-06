@@ -14,11 +14,14 @@ const PageForm = ({session}) => {
   const handlePost = async (e) =>{
     const title = e.target[0].value;
     const content = e.target[1].value;
-
+    
     let project = {
       title,
       content,
-      users : session,
+      users : [{
+        "name" : session.user.name,
+        "email" : session.user.email
+      }],
       createdAt: new Date().toISOString(),
     };
 

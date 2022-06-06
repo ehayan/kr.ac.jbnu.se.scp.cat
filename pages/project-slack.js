@@ -5,26 +5,32 @@ import SlackInputComponent from "../components/custom/sections/slackinputcompone
 import SlackAddComponent from "../components/custom/sections/slackaddcomponent";
 import { db } from "./firebase";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
-const Slack = (page) => {
+const Slack = () => {
+  const router = useRouter();
+  const projectId = router.query.projectId;
   const [hasWebhook, setHasWebhook] = useState(false);
   const [url, setUrl] = useState("");
   const [webhook, setWebhook] = useState("");
 
   useEffect(() => {
-    db.collection("registered_link")
-      .doc("slack")
-      .get()
-      .then((snapshot) => {
-        if (snapshot.exists) {
-          setUrl(snapshot.data().url.url);
-          if (snapshot.data().webhook != "") {
-            // console.log(doc.data().webhook.webhook);
-            setHasWebhook(true);
-            setWebhook(snapshot.data().webhook);
-          }
-        }
-      });
+    const getResponse = async () => {
+      const response = await fetch('/api/addlinks');
+      const data = await response.json();
+      return data;
+    }
+    getResponse().then((data) => {
+      const allLinks = data.message;
+      const filteredLinks = allLinks.filter((link)=>(link.projectId == projectId));
+      const projectLinks = filteredLinks.length == 0 ? {} : filteredLinks[0];
+      const slackLink = projectLinks.slack;
+      const webhook = projectLinks.slackWebhook;
+      setUrl(slackLink);
+      setWebhook(webhook);
+      if(webhook != undefined && webhook != "")
+        setHasWebhook(true);
+    })
   }, []);
 
   return (
@@ -40,8 +46,7 @@ const Slack = (page) => {
           {url}
         </a>
       </div>
-
-      {hasWebhook ? (
+        {hasWebhook ? (
         <Container>
           <Row>
             <Col md="6">
@@ -52,9 +57,9 @@ const Slack = (page) => {
             </Col>
           </Row>
         </Container>
-      ) : (
-        <SlackInputComponent />
-      )}
+        ) : (
+          <SlackInputComponent link={url} router={router}/>
+          )}
     </div>
   );
 };

@@ -1,10 +1,28 @@
 /* eslint-disable */
 import CalendarFunction from "../custom/sections/calendar/calendarcomponents";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Row, Col, Container } from "reactstrap";
 import RegisteredLink from "../custom/sections/linklistcomponent";
+import { useRouter } from "next/router";
 
-const Cards = () => {
+const Cards = ({projects}) => {
+  const router = useRouter();
+  const projectId = router.query.projectId;
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const getResponse = async () => {
+      const response = await fetch('/api/addproject');
+      const data = await response.json();
+      return data;
+    }
+    getResponse().then((data) => {
+      const projects = data.message;
+      const project = projects.filter((project) => (project._id == projectId))[0];
+      setUsers(project.users);
+    })
+  }, []);
+
   const [email, setEmail] = useState("");
   const handleAddMember = ({ target: { value } }) => {
     setEmail(value);
@@ -38,19 +56,14 @@ const Cards = () => {
               <h3>Project Member</h3>
               <p>현재 프로젝트의 참여중인 팀원</p>
               <div className="m-b-5">
+                {users.map((user, i) => (
                 <span className="m-r-10 p-t-10 p-b-10 dashboard-member">
-                  최성우
+                  {user.name}
                 </span>
-                <span className="m-r-10 p-t-10 p-b-10 dashboard-member">
-                  김현우
-                </span>
-                <span className="m-r-10 p-t-10 p-b-10 dashboard-member">
-                  이유정
-                </span>
-                <span className="m-r-10 p-t-10 p-b-10 dashboard-member">
-                  이하얀
-                </span>
+                ))
+              }
               </div>
+          
               <hr />
               <h3>Add Another Member</h3>
               <p>추가하려는 팀원의 구글 메일 주소를 입력해주세요</p>
@@ -72,7 +85,7 @@ const Cards = () => {
               </div>
             </Card>
             <Card body className="card-shadow p-0">
-              <RegisteredLink />
+              <RegisteredLink projectId={projectId} />
             </Card>
           </Col>
         </Row>

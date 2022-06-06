@@ -3,7 +3,7 @@ import { Button, Form, Modal } from "react-bootstrap";
 import { Input } from "reactstrap";
 import { db } from "../../../pages/firebase";
 
-const TrelloInfoModal = () => {
+const TrelloInfoModal = ({ router }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -11,7 +11,9 @@ const TrelloInfoModal = () => {
   const [API, setAPI] = useState("");
   const [token, setToken] = useState("");
 
-  const handleSave = () => {
+  const projectId = router.query.projectId;
+
+  const handleSave = async () => {
     if (API == "" && token == "") {
       alert("API key와 Token을 입력해주세요");
     } else if (API == "") {
@@ -19,10 +21,20 @@ const TrelloInfoModal = () => {
     } else if (token == "") {
       alert("TOKEN을 입력해주세요");
     } else {
-      const trelloData = db.collection("registered_link");
-      trelloData.doc("trello").update({ APIkey: API, token: token });
-      alert("등록되었습니다");
-      handleClose();
+      const data = { "projectId" : projectId, "trelloAPIKey" : API, "trelloToken" : token}
+      let response = await fetch('/api/additionalLinkData', {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      }).then(()=> {
+        alert("등록되었습니다");
+        handleClose();
+        router.push({
+          pathname: '/project-dashboard',
+          query: {
+            projectId: projectId,
+          },
+        });
+      });
     }
   };
   const handleAPIkey = ({ target: { value } }) => {

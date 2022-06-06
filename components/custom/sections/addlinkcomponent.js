@@ -1,8 +1,10 @@
+import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import { Row, Col, Container, Form, Input } from "reactstrap";
 import { db } from "../../../pages/firebase";
 
-const AddLinkComponent = () => {
+const AddLinkComponent = ({ projectId }) => {
+  const router = useRouter();
   const [x, setX] = useState([]);
 
   //RadioButton select
@@ -17,7 +19,7 @@ const AddLinkComponent = () => {
   };
 
   //click ADD Button
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (x == "") {
       alert("도구를 선택하세요");
@@ -27,45 +29,42 @@ const AddLinkComponent = () => {
       const links = db.collection("registered_link");
       switch (x) {
         case "1": {
-          links.doc("github").set({
-            title: "Github",
-            name: "github",
-            url: { url },
+          const data = { "name" : "github", "projectId" : projectId, "link" : url}
+          let response = await fetch('/api/addlinks', {
+          method: 'POST',
+          body: JSON.stringify(data),
           });
           break;
         }
         case "2": {
-          links.doc("googledrive").set({
-            title: "GoogleDrive",
-            name: "google drive",
-            url: { url },
+          const data = { "name" : "googledrive", "projectId" : projectId, "link" : url}
+          let response = await fetch('/api/addlinks', {
+          method: 'POST',
+          body: JSON.stringify(data),
           });
           break;
         }
         case "3": {
-          links.doc("trello").set({
-            title: "Trello",
-            name: "trello",
-            APIkey: "",
-            token: "",
-            url: { url },
+          const data = { "name" : "trello", "projectId" : projectId, "link" : url}
+          let response = await fetch('/api/addlinks', {
+          method: 'POST',
+          body: JSON.stringify(data),
           });
           break;
         }
         case "4": {
-          links.doc("slack").set({
-            title: "Slack",
-            name: "slack",
-            url: { url },
-            webhook: "",
+          const data = { "name" : "slack", "projectId" : projectId, "link" : url}
+          let response = await fetch('/api/addlinks', {
+          method: 'POST',
+          body: JSON.stringify(data),
           });
           break;
         }
         case "5": {
-          links.add({
-            title: "Etc",
-            name: "etc",
-            url: { url },
+          const data = { "name" : etc, "projectId" : projectId, "link" : url}
+          let response = await fetch('/api/addlinks', {
+          method: 'POST',
+          body: JSON.stringify(data),
           });
           break;
         }
@@ -73,6 +72,12 @@ const AddLinkComponent = () => {
       alert("저장되었습니다");
       setURL("");
       setX([]);
+      router.push({
+        pathname: '/project-dashboard',
+        query: {
+          projectId: projectId,
+        },
+      });
     }
   };
 

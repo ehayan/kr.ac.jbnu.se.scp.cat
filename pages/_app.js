@@ -9,7 +9,11 @@ import "@fullcalendar/daygrid/main.css";
 function MyApp({ Component, pageProps }) {
   let NestedLayout = Component.length;
   if (NestedLayout == 0) {
-    NestedLayout = Layout;
+    if(Component.name == "Slack") {
+      NestedLayout = ProjectLayout;
+    } else {
+      NestedLayout = Layout;
+    }
   } else {
     NestedLayout = ProjectLayout;
   }

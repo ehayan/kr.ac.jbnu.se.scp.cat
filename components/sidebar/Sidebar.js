@@ -14,48 +14,66 @@ import {
   FaTrello,
   FaSlack,
 } from 'react-icons/fa';
-const navigation = [
-  {
-    title: 'Dashboard',
-    href: '/project-dashboard',
-    icon: <FaClipboardList />,
-  },
-  {
-    title: 'Link',
-    href: '/project-link',
-    icon: <FaRegPlusSquare />,
-  },
-  {
-    title: 'GitHub',
-    href: '/project-github',
-    icon: <FaGithub />,
-  },
-  {
-    title: 'GoogleDrive',
-    href: '/project-googledrive',
-    icon: <FaGoogleDrive />,
-  },
-  {
-    title: 'Trello',
-    href: '/project-trello',
-    icon: <FaTrello />,
-  },
-  {
-    title: 'Slack',
-    href: '/project-slack',
-    icon: <FaSlack />,
-  },
-  {
-    title: 'Calendar',
-    href: '/project-calendar',
-    icon: <FaRegCalendarAlt />,
-  },
-];
+import { useEffect, useState } from 'react';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   const { data: session } = useSession();
   let curl = useRouter();
   const location = curl.pathname;
+  const projectId = curl.query.projectId;
+  const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    //save the post\
+    const getResponse = async () => {
+      const response = await fetch('/api/addproject');
+      const data = await response.json();
+      return data;
+    }
+    getResponse().then((data) => {
+      const projects = data.message;
+      const project = projects.filter((project) => (project._id == projectId))[0];
+      setTitle(project.title)
+    })
+  }, []);
+
+  const navigation = [
+    {
+      title: 'Dashboard',
+      href: '/project-dashboard?projectId='+projectId,
+      icon: <FaClipboardList />,
+    },
+    {
+      title: 'Link',
+      href: '/project-link?projectId='+projectId,
+      icon: <FaRegPlusSquare />,
+    },
+    {
+      title: 'GitHub',
+      href: '/project-github?projectId='+projectId,
+      icon: <FaGithub />,
+    },
+    {
+      title: 'GoogleDrive',
+      href: '/project-googledrive?projectId='+projectId,
+      icon: <FaGoogleDrive />,
+    },
+    {
+      title: 'Trello',
+      href: '/project-trello?projectId='+projectId,
+      icon: <FaTrello />,
+    },
+    {
+      title: 'Slack',
+      href: '/project-slack?projectId='+projectId,
+      icon: <FaSlack />,
+    },
+    {
+      title: 'Calendar',
+      href: '/project-calendar?projectId='+projectId,
+      icon: <FaRegCalendarAlt />,
+    },
+  ];
 
   return (
     <div className='p-20'>
@@ -66,7 +84,7 @@ const Sidebar = () => {
       </div>
       <div className='d-flex justify-content-center m-t-10'>
         <Badge bg='dark' style={{ fontSize: 14, fontFamily: 'Spoca_R' }}>
-          2022 CAPSTONE
+          {title}
         </Badge>
       </div>
 

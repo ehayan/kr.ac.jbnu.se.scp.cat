@@ -35,8 +35,8 @@ const ProjectList = ({ router, session, projects }) => {
               </div>
             </Accordion.Header>
             <Accordion.Body>
-              <p>Member : {project.users.user.name}</p>
-              <p>Project Explanation : </p>
+              <p>Member : {project.users.map((user)=>(user.name + ' '))}</p>
+              <p>Project Explanation : {project.content}</p>
               <Button
                 id={project._id}
                 color='primary'
