@@ -48,10 +48,22 @@ export default async function handler(req, res) {
             // connect to the database
             let { db } = await connectToDatabase();
             // add the post
-            await db.collection('projects').insertOne(JSON.parse(req.body));
+            const collection = await db.collection('projects').insertOne(JSON.parse(req.body));
+            const projectId = collection.insertedId;
+            const linkCollection = {
+                "projectId": projectId.toString(),
+                "github": "",
+                "trello": "",
+                "googledrive": "",
+                "slack": "",
+                "trelloAPIKey": "",
+                "trelloToken": "",
+                "slackWebhook": ""
+            }
+            await db.collection('links').insertOne(linkCollection);
             // return a message
             return res.json({
-                message: 'Post added successfully',
+                message: JSON.parse(JSON.stringify(projectId)),
                 success: true,
             });
         }
