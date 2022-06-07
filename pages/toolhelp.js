@@ -10,7 +10,7 @@ export default function Toolhelp() {
       <Head>
         <title>PROBBY | ToolHelp</title>
         <meta name="description" content="CAT" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/probby_logo.png" />
       </Head>
       <HelpBannerComponent />
       <HelpMainComponent />

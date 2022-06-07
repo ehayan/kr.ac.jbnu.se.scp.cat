@@ -7,7 +7,7 @@ export default function ToolHelpTrello() {
     <div>
       <Head>
         <title>PROBBY | Help | Trello</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/probby_logo.png' />
       </Head>
       <HelpBannerComponent />
       <TrelloHelp />

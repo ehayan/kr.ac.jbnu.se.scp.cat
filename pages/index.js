@@ -13,7 +13,7 @@ export default function Home() {
       <Head>
         <title>PROBBY</title>
         <meta name="description" content="PROBBY" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/probby_logo.png" />
       </Head>
 
       {session ? <AfterLoginBanner /> : <BeforeLoginBanner />}

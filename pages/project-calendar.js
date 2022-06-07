@@ -28,7 +28,7 @@ const Dashboard = (page) => {
     <div>
       <Head>
         <title>PROBBY | Calendar</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/probby_logo.png' />
       </Head>
       <div className='m-l-30'>
         <h2 className='title font-bold'>Calendar</h2>

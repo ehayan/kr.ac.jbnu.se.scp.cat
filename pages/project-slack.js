@@ -37,7 +37,7 @@ const Slack = () => {
     <div>
       <Head>
         <title>PROBBY | Slack</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/probby_logo.png" />
       </Head>
       <div className="m-l-30">
         <h2 className="title font-bold">Slack</h2>

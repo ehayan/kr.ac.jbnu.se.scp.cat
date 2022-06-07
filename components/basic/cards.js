@@ -26,10 +26,9 @@ const Cards = ({projects}) => {
   const [email, setEmail] = useState("");
   const handleAddMember = ({ target: { value } }) => {
     setEmail(value);
-    console.log(value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (email == "") {
@@ -37,6 +36,10 @@ const Cards = ({projects}) => {
     } else if (email == "##") {
       alert("존재하지 않거나 잘못된 이메일입니다");
     } else {
+      // await fetch('/api/addproject', {
+      //   method: 'DELETE',
+      //   body: {"projectId" : projectId, "sender" : , "reciever" :   },
+      // });
       alert(`${email}님에게 초대장을 전송하였습니다`);
     }
   };

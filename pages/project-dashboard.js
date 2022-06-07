@@ -6,7 +6,7 @@ const ProjectPage = (page) => {
     <div>
       <Head>
         <title>PROBBY | Dashboard</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/probby_logo.png' />
       </Head>
 
       <div>

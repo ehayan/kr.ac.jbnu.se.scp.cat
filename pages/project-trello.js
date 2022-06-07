@@ -43,7 +43,7 @@ const Trello = ({ }) => {
     <div>
       <Head>
         <title>PROBBY | Trello</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/probby_logo.png" />
       </Head>
 
       <div>

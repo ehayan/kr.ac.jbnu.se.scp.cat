@@ -6,7 +6,7 @@ const GoogleDrive = (page) => {
     <div>
       <Head>
         <title>PROBBY | GoogleDrive</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/probby_logo.png' />
       </Head>
       <Drivecomponent />
     </div>

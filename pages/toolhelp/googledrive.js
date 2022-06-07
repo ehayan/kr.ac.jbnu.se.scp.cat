@@ -7,7 +7,7 @@ export default function ToolHelpGit() {
     <div>
       <Head>
         <title>PROBBY | Help | GoogleDrive</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/probby_logo.png' />
       </Head>
       <HelpBannerComponent />
       <GoogleDriveHelp />
