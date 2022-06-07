@@ -18,7 +18,15 @@ const Setting = ({session}) => {
       return data;
     }
     getResponse().then((data) => {
-      setProjects(data.message);
+      const allProjects = data.message;
+      let userProjects = [];
+      allProjects.forEach(element => {
+        element.users.forEach((user) => {
+          if(session.user.email == user.email)
+            userProjects.push(element);
+        })
+      });
+      setProjects(userProjects);
     })
   }, []);
   
