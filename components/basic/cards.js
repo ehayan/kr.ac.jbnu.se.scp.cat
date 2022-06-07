@@ -44,11 +44,18 @@ const Cards = ({projects}) => {
       const receiver = email;
       const dateForm = new Date();
       const date = dateForm.getFullYear() + "." + (dateForm.getMonth()+1) + "." + dateForm.getDate();
-
-      await fetch('/api/invitation', {
+      const requestBody = { 
+        "projectId" : projectId,
+        "sender" : sender,
+        "receiver" : receiver,
+        "date" : date,
+        "projectName" : projectName
+      }
+      const response = await fetch('/api/invitation', {
         method: 'POST',
-        body: {"projectId" : projectId, "sender" : sender, "receiver" : receiver, "date" : date, "projectName" : projectName },
+        body: JSON.stringify(requestBody),
       });
+      console.log(response.json());
       setEmail("")
       alert(`${email}님에게 초대장을 전송하였습니다`);
     }

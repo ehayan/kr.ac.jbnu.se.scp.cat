@@ -47,35 +47,42 @@ export default async function handler(req, res) {
         async function addPost(req,res){
             // connect to the database
             let { db } = await connectToDatabase();
+            const collection = JSON.parse(req.body);
             // add the post
-            await db.collection('invitations').insertOne(JSON.parse(req.body));
+            await db.collection('invitations').insertOne(collection);
             // return a message
             return res.json({
-                message: 'Post added successfully',
+                message: JSON.parse(JSON.stringify(collection)),
                 success: true,
             });
         }
 
         async function updatePost(req, res) {
             let { db } = await connectToDatabase();
+            const id = JSON.parse(req.body).projectId;
             const projectId = JSON.parse(req.body).projectId;
             const name = JSON.parse(req.body).name;
             const email = JSON.parse(req.body).email;
             const user = {"name": name, "email": email}
             let project = await db
                     .collection('projects')
-                    .find({_id : projectId});
-            const users = project.users;
+                    .find({_id : new ObjectId(projectId)})
+                    .toArray();
+            const users = project[0].users;
+            users.push(user)
             // update the published status of the post
             await db.collection('projects').updateOne(
                 {
-                    _id: projectId,
+                    _id: new ObjectId(projectId),
                 },
-                { $set: { "users": users.push(user) } }//click butten, change published true
+                { $set: { "users": users } }//click butten, change published true
             );
+            await db.collection('invitations').deleteOne({
+                _id: new ObjectId(id),
+            });
             // return a message
             return res.json({
-                message: 'Post updated successfully',
+                message: JSON.stringify(users),
                 success: true,
             });
         }
@@ -86,12 +93,12 @@ export default async function handler(req, res) {
             const id = JSON.parse(req.body)
             // Deleting the post
             await db.collection('invitations').deleteOne({
-                _id: id,
+                _id: new ObjectId(id),
             });
         
-            // returning a message
+            //returning a message
             return res.json({
-                message: 'Post deleted successfully',
+                message: id,
                 success: true,
             });
         }
