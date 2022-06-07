@@ -22,7 +22,7 @@ const PageForm = ({session}) => {
         "name" : session.user.name,
         "email" : session.user.email
       }],
-      createdAt: new Date().toISOString(),
+      createdAt: new Date().toISOString().slice(0, 10),
     };
 
     //save the post
