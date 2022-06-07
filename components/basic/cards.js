@@ -4,11 +4,14 @@ import React, { useEffect, useState } from "react";
 import { Card, Row, Col, Container } from "reactstrap";
 import RegisteredLink from "../custom/sections/linklistcomponent";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 
 const Cards = ({projects}) => {
   const router = useRouter();
   const projectId = router.query.projectId;
+  const { data: session } = useSession();
   const [users, setUsers] = useState([]);
+  const [projectName, setProjectName] = useState("");
 
   useEffect(() => {
     const getResponse = async () => {
@@ -20,6 +23,7 @@ const Cards = ({projects}) => {
       const projects = data.message;
       const project = projects.filter((project) => (project._id == projectId))[0];
       setUsers(project.users);
+      setProjectName(project.title);
     })
   }, []);
 
@@ -36,14 +40,20 @@ const Cards = ({projects}) => {
     } else if (email == "##") {
       alert("존재하지 않거나 잘못된 이메일입니다");
     } else {
-      // await fetch('/api/addproject', {
-      //   method: 'DELETE',
-      //   body: {"projectId" : projectId, "sender" : , "reciever" :   },
-      // });
+      const sender = session.user.email;
+      const receiver = email;
+      const dateForm = new Date();
+      const date = dateForm.getFullYear() + "." + (dateForm.getMonth()+1) + "." + dateForm.getDate();
+
+      await fetch('/api/invitation', {
+        method: 'POST',
+        body: {"projectId" : projectId, "sender" : sender, "receiver" : receiver, "date" : date, "projectName" : projectName },
+      });
+      setEmail("")
       alert(`${email}님에게 초대장을 전송하였습니다`);
     }
   };
-
+  
   return (
     <div>
       <Container className="m-t-40">

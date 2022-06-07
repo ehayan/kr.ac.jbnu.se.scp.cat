@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 const Setting = ({session}) => {
   const [Content, setContent] = useState("list");
   const [projects, setProjects] = useState([]);
+  const [invitations, setInvitations] = useState([]);
   const router = useRouter();
 
   useEffect(() => {
@@ -23,11 +24,27 @@ const Setting = ({session}) => {
       allProjects.forEach(element => {
         element.users.forEach((user) => {
           if(session.user.email == user.email)
-            userProjects.push(element);
+          userProjects.push(element);
         })
       });
       setProjects(userProjects);
-    })
+    });
+    
+    const getInvitationResponse = async () => {
+      const response = await fetch('/api/invitation');
+      const data = await response.json();
+      return data;
+    }
+    getInvitationResponse().then((data) => {
+      const allInvitations = data.message;
+      const receiver = session.user.email;
+      let userInvitations = [];
+      allInvitations.forEach(element => {
+        if(element.receiver == receiver)
+        userInvitations.push(element);
+      });
+      setInvitations(userInvitations);
+    });
   }, []);
   
   return (
@@ -59,7 +76,7 @@ const Setting = ({session}) => {
           {
             (Content=="list") ? <ProjectList router = {router} session={session} projects={projects}/> :
             (Content=="add") ? <Form session={session} /> :
-            (Content=="invitation") ? <Invitation /> : null
+            (Content=="invitation") ? <Invitation invitations={invitations} session={session} /> : null
             
           }
         </div>

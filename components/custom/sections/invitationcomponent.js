@@ -1,42 +1,50 @@
 import { Container, Card, Button } from 'reactstrap';
-import { useState } from 'react';
 
-const Invitation =  () => {
+const Invitation =  ({ invitations, session }) => {
+  const onAcceptClink = async () => {
+    const projectId = e.target.id;
+    const name = session.user.name;
+    const email = session.user.email;
+    await fetch('/api/invitation', {
+      method: 'UPDATE',
+      body: { "projectId": projectId, "name": name, "email": email},
+    });
+    window.location.reload();
+  }
 
-  
+  const onRefuseClink = async (e) => {
+    const id = e.target.id;
+    await fetch('/api/invitation', {
+      method: 'DELETE',
+      body: id,
+    });
+    window.location.reload();
+  }
 
   return (
     <Container>
       <Card body className='card-shadow'>
-        <Card body className='card-shadow'>
-          <div>
-            <h5 className='text-left'>INVITOR</h5>
-            <p>aaa</p>
-            <h5 className='text-left'>PROJECT</h5>
-            <p>bbb</p>
-            <h5 className='text-left'>DATE</h5>
-            <p>2022-04-20</p>
-            <Button color='primary'>Accept</Button>
-            <Button className='m-l-10' color='danger'>
-              Refuse
-            </Button>
-          </div>
-        </Card>
-
-        <Card body className='card-shadow'>
-          <div>
-            <h5 className='text-left'>INVITOR</h5>
-            <p>ccc</p>
-            <h5 className='text-left'>PROJECT</h5>
-            <p>ddd</p>
-            <h5 className='text-left'>DATE</h5>
-            <p>2022-05-12</p>
-            <Button color='primary'>Accept</Button>
-            <Button className='m-l-10' color='danger'>
-              Refuse
-            </Button>
-          </div>
-        </Card>
+        {
+          invitations.length==0 ? 
+          <p>초대가 없습니다.</p>
+          :
+          invitations.map((invitation) => (
+            <Card body className='card-shadow'>
+              <div>
+                <h5 className='text-left'>INVITOR</h5>
+                <p>{invitation.sender}</p>
+                <h5 className='text-left'>PROJECT</h5>
+                <p>{invitation.projectName}</p>
+                <h5 className='text-left'>DATE</h5>
+                <p>{invitation.date}</p>
+                <Button id={invitation.projectId}color='primary' onClick={onAcceptClink}>Accept</Button>
+                <Button id={invitation._id} className='m-l-10' onClick={onRefuseClink} color='danger'>
+                  Refuse
+                </Button>
+              </div>
+            </Card>
+          ))
+        }
       </Card>
       <style jsx>{`
         h5 {
