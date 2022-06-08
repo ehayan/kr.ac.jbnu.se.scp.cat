@@ -2,7 +2,8 @@ import Head from 'next/head';
 import CalendarComponent from '../components/custom/sections/calendar/calendarcomponents';
 import AddScheduleComponent from '../components/custom/sections/calendar/calendaraddschedulecomponent';
 import { Row, Col, Container } from 'reactstrap';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from "next/router";
 
 const Dashboard = (page) => {
   const schedules = [
@@ -22,7 +23,23 @@ const Dashboard = (page) => {
       end: '2022-05-11',
     },
   ];
+  const router = useRouter();
+  const projectId = router.query.projectId;
   const [events, setEvents] = useState(schedules);
+
+  // useEffect(() => {
+  //   const getResponse = async () => {
+  //     const response = await fetch('/api/calendar');
+  //     const data = await response.json();
+  //     return data;
+  //   }
+  //   getResponse().then((data) => {
+  //     const allSchedules = data.message;
+  //     const scheduleDatas = allSchedules.filter((schedule) => (schedule.projectId == projectId))[0];
+  //     const schedules = scheduleDatas.schedules;
+  //     setEvents(schedules);
+  //   })
+  // }, []);
 
   return (
     <div>
@@ -39,10 +56,10 @@ const Dashboard = (page) => {
       <Container className='container-width-l m-t-20'>
         <Row>
           <Col md='3' className='m-t-60'>
-            <AddScheduleComponent events={events} setEvents={setEvents} />
+            <AddScheduleComponent events={events} setEvents={setEvents} projectId={projectId} />
           </Col>
           <Col md='9'>
-            <CalendarComponent events={events} setEvents={setEvents} />
+            <CalendarComponent events={events} setEvents={setEvents} projectId={projectId} isDashboard={false} />
           </Col>
         </Row>
       </Container>

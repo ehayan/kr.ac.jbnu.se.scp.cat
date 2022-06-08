@@ -1,8 +1,8 @@
 import { Button } from 'react-bootstrap';
 import { Row, Col } from 'reactstrap';
 
-const AddScheduleComponent = ({ events, setEvents }) => {
-  const addEvent = (event) => {
+const AddScheduleComponent = ({ events, setEvents, projectId }) => {
+  const addEvent = async (event) => {
     const startDate = event.target.parentElement.children[1].children[1].value;
     let end = new Date(event.target.parentElement.children[3].children[1].value);
     end.setDate(end.getDate() + 1);
@@ -13,6 +13,14 @@ const AddScheduleComponent = ({ events, setEvents }) => {
       start: startDate,
       end: endDate,
     };
+    const requestBody = {
+      "projectId" : projectId,
+      "schedule" : schedule
+    }
+    await fetch('/api/calendar', {
+      method: 'PUT',
+      body: JSON.stringify(requestBody),
+    });
     setEvents([...events, schedule]);
     event.target.parentElement.children[1].children[1].value = '';
     event.target.parentElement.children[3].children[1].value = '';

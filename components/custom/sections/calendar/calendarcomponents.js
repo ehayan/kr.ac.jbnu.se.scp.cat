@@ -4,25 +4,12 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import { useRef, useState } from "react";
 import { Row, Col } from "reactstrap";
 
-const CalendarFunction = ({ events, setEvents }) => {
+const CalendarFunction = ({ events, setEvents, projectId, isDashboard }) => {
   const calendarRef = useRef(null);
 
-  //---addEvent function---
-  // function selectEvent(arg) {
-  //   console.log(arg.start + arg.end)
-  //   const title = prompt('Event Title:');
-  //   const calendar = new FullCalendar.Calendar();
-  //     if (title) {
-  //       calendar.addEvent({
-  //         title: title,
-  //         start: arg.start,
-  //         end: arg.end,
-  //         allDay: arg.allDay
-  //       })
-  //     };
-  //   calendar.unselect();
-  // }
-  function eventClick(event) {
+  async function eventClick(event) {
+    if(isDashboard)
+      return
     if (confirm("일정을 삭제하시겠습니까?")) {
       const startDate = event.event.startStr;
       const endDate =
@@ -37,6 +24,10 @@ const CalendarFunction = ({ events, setEvents }) => {
         )
           return;
         returns.push(event);
+      });
+      await fetch('/api/calendar', {
+        method: 'DELETE',
+        body: JSON.stringify({"projectId" : projectId, "schedules" : returns}),
       });
       setEvents(returns);
     }

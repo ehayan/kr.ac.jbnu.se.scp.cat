@@ -26,7 +26,7 @@ export default async function handler(req, res) {
                 let { db } = await connectToDatabase();
                 // fetch the posts
                 let projects = await db
-                    .collection('projects')
+                    .collection('calendars')
                     .find({})
                     .toArray();
                 // return the posts
@@ -47,41 +47,34 @@ export default async function handler(req, res) {
         async function addPost(req,res){
             // connect to the database
             let { db } = await connectToDatabase();
-            // add the post
-            const collection = await db.collection('projects').insertOne(JSON.parse(req.body));
-            const projectId = collection.insertedId;
-            const linkCollection = {
-                "projectId": projectId.toString(),
-                "github": "",
-                "trello": "",
-                "googledrive": "",
-                "slack": "",
-                "trelloAPIKey": "",
-                "trelloToken": "",
-                "slackWebhook": ""
+            const projectId = JSON.parse(req.body);
+            const body = {
+              "projectId" : projectId
             }
-            await db.collection('links').insertOne(linkCollection);
-            const calendarCollection = {
-                "projectId": projectId.toString(),
-                "schedules": []
-            }
-            await db.collection('calendar').insertOne(calendarCollection);
+            await db.collection('calendars').insertOne(linkCollection);
             // return a message
             return res.json({
-                message: JSON.parse(JSON.stringify(projectId)),
+                message: JSON.parse(JSON.stringify(body)),
                 success: true,
             });
         }
 
         async function updatePost(req, res) {
             let { db } = await connectToDatabase();
-        
+            const projectId = JSON.parse(req.body).projectId;
+            const schedule = JSON.parse(req.body).schedule;
+            let project = await db
+                    .collection('calendars')
+                    .find({_id : new ObjectId(projectId)})
+                    .toArray();
+            const schedules = project[0].schedules
+            schedules.push(schedule)
             // update the published status of the post
-            await db.collection('projects').updateOne(
+            await db.collection('calendars').updateOne(
                 {
-                    _id: new ObjectId(req.body),
+                    projectId: new ObjectId(projectId),
                 },
-                { $set: { published: true } }//click butten, change published true
+                { $set: { schedules: schedules } }//click butten, change published true
             );
             // return a message
             return res.json({
@@ -93,11 +86,16 @@ export default async function handler(req, res) {
         async function deletePost(req, res) {
             // Connecting to the database
             let { db } = await connectToDatabase();
+            const projectId = JSON.parse(req.body).projectId;
+            const schedules = JSON.parse(req.body).schedules;
         
             // Deleting the post
-            await db.collection('projects').deleteOne({
-                _id: new ObjectId(req.body),
-            });
+            await db.collection('calendars').updateOne(
+              {
+                  projectId: new ObjectId(projectId),
+              },
+              { $set: { schedules: schedules } }//click butten, change published true
+          );
         
             // returning a message
             return res.json({
