@@ -18,12 +18,9 @@ export function getRepositoryName(link) {
     commit_url : commit page url
   }
 */
-export async function getCommits(link) {
-  const owner = link.split("/")[3];
-  const repos = link.split("/")[4];
-
+export async function getCommits(link, owner, repos) {
   const response = await fetch(
-    `https://api.github.com/repos/${owner}/${repos}/commits`
+    `https://api.github.com/repos/${owner}/${repos}/commits?per_page=100`
   );
   const json = await response.json();
   let returns = [];
