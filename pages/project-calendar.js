@@ -53,7 +53,7 @@ const Dashboard = (page) => {
           프로젝트만을 위한 캘린더를 활용해 스케줄을 관리해보세요
         </p>
       </div>
-      <Container className='container-width-l m-t-20'>
+      <Container className='container-width-l'>
         <Row>
           <Col md='3' className='m-t-60'>
             <AddScheduleComponent events={events} setEvents={setEvents} projectId={projectId} />

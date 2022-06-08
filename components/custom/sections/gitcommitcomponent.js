@@ -8,45 +8,28 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Row, Col, Container, Card, CardBody } from "reactstrap";
-import * as Github from "../../../api/github";
 import { BiCopy } from "react-icons/bi";
 import { BsCheck2 } from "react-icons/bs";
+import * as Github from "../../../api/github"
 import {
   Element,
   animateScroll as scroll,
   scrollSpy,
   scroller,
 } from "react-scroll";
-import { useRouter } from "next/router";
 
-const GitCommitComponent = () => {
-  const router = useRouter();
-  const projectId = router.query.projectId;
-  const [link, setLink] = useState("");
-  const [commits, setCommits] = useState([]);
-  const [cloneBtn, setCloneBtn] = useState(0);
+const GitCommitComponent = ({ link }) => {
+  const [cloneBtn, setCloneBtn] = useState(1);
   const [loading, setLoading] = useState(true);
-
-  Github.getCommits(link).then((data) => {
-    setCommits(data);
-    setLoading(false);
-    setCloneBtn(1);
-  });
-
+  
+  const [commits, setCommits] = useState([]);
   useEffect(() => {
-    const getResponse = async () => {
-      const response = await fetch('/api/addlinks');
-      const data = await response.json();
-      return data;
-    }
-    getResponse().then((data) => {
-      const allLinks = data.message;
-      const filteredLinks = allLinks.filter((link)=>(link.projectId == projectId));
-      const projectLinks = filteredLinks.length == 0 ? {} : filteredLinks[0];
-      const githubLink = projectLinks.github;
-      setLink(githubLink);
-    })
-  }, []);
+    Github.getCommits(link).then((data) => {
+      setLoading(false)
+      console.log(commits)
+      setCommits(data);
+    });
+  });
 
   function cloneAddress() {
     const address = "";

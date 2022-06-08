@@ -23,7 +23,7 @@ export async function getCommits(link) {
   const repos = link.split("/")[4];
 
   const response = await fetch(
-    `https://api.github.com/repos/${owner}/${repos}/commits?per_page=100`
+    `https://api.github.com/repos/${owner}/${repos}/commits`
   );
   const json = await response.json();
   let returns = [];
