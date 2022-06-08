@@ -6,22 +6,22 @@ import RegisteredLink from "../custom/sections/linklistcomponent";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 
-const Cards = ({projects}) => {
+const Cards = ({ projects }) => {
   const schedules = [
     {
-      title: '논문 작성',
-      start: '2022-05-06',
-      end: '2022-05-09',
+      title: "논문 작성",
+      start: "2022-05-06",
+      end: "2022-05-09",
     },
     {
-      title: '논문 통합',
-      start: '2022-05-08',
-      end: '2022-05-10',
+      title: "논문 통합",
+      start: "2022-05-08",
+      end: "2022-05-10",
     },
     {
-      title: '17시 교수님 면담',
-      start: '2022-05-09',
-      end: '2022-05-11',
+      title: "17시 교수님 면담",
+      start: "2022-05-09",
+      end: "2022-05-11",
     },
   ];
   const router = useRouter();
@@ -46,16 +46,16 @@ const Cards = ({projects}) => {
   // }, []);
   useEffect(() => {
     const getResponse = async () => {
-      const response = await fetch('/api/addproject');
+      const response = await fetch("/api/addproject");
       const data = await response.json();
       return data;
-    }
+    };
     getResponse().then((data) => {
       const projects = data.message;
-      const project = projects.filter((project) => (project._id == projectId))[0];
+      const project = projects.filter((project) => project._id == projectId)[0];
       setUsers(project.users);
       setProjectName(project.title);
-    })
+    });
   }, []);
 
   const [email, setEmail] = useState("");
@@ -74,31 +74,41 @@ const Cards = ({projects}) => {
       const sender = session.user.email;
       const receiver = email;
       const dateForm = new Date();
-      const date = dateForm.getFullYear() + "." + (dateForm.getMonth()+1) + "." + dateForm.getDate();
-      const requestBody = { 
-        "projectId" : projectId,
-        "sender" : sender,
-        "receiver" : receiver,
-        "date" : date,
-        "projectName" : projectName
-      }
-      const response = await fetch('/api/invitation', {
-        method: 'POST',
+      const date =
+        dateForm.getFullYear() +
+        "." +
+        (dateForm.getMonth() + 1) +
+        "." +
+        dateForm.getDate();
+      const requestBody = {
+        projectId: projectId,
+        sender: sender,
+        receiver: receiver,
+        date: date,
+        projectName: projectName,
+      };
+      const response = await fetch("/api/invitation", {
+        method: "POST",
         body: JSON.stringify(requestBody),
       });
       console.log(response.json());
-      setEmail("")
+      setEmail("");
       alert(`${email}님에게 초대장을 전송하였습니다`);
     }
   };
-  
+
   return (
     <div>
       <Container className="m-t-40">
         <Row>
           <Col md="6">
             <Card body className="card-shadow">
-              <CalendarFunction events={events} setEvents={setEvents} projectId={projectId} isDashboard={true} />
+              <CalendarFunction
+                events={events}
+                setEvents={setEvents}
+                projectId={projectId}
+                isDashboard={true}
+              />
             </Card>
           </Col>
 
@@ -108,13 +118,12 @@ const Cards = ({projects}) => {
               <p>현재 프로젝트의 참여중인 팀원</p>
               <div className="m-b-5">
                 {users.map((user, i) => (
-                <span className="m-r-10 p-t-10 p-b-10 dashboard-member">
-                  {user.name}
-                </span>
-                ))
-              }
+                  <span className="m-r-10 p-t-10 p-b-10 dashboard-member">
+                    {user.name}
+                  </span>
+                ))}
               </div>
-          
+
               <hr />
               <h3>Add Another Member</h3>
               <p>추가하려는 팀원의 구글 메일 주소를 입력해주세요</p>
@@ -146,7 +155,8 @@ const Cards = ({projects}) => {
           font-family: "Spoca_B";
         }
 
-        p {
+        p,
+        span {
           font-family: "RIDI";
         }
       `}</style>
