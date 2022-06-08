@@ -25,13 +25,13 @@ export default async function handler(req, res) {
                 // connect to the database
                 let { db } = await connectToDatabase();
                 // fetch the posts
-                let projects = await db
-                    .collection('calendars')
+                let schedules = await db
+                    .collection('calendar')
                     .find({})
                     .toArray();
                 // return the posts
                 return res.json({
-                    message: JSON.parse(JSON.stringify(projects)),
+                    message: JSON.parse(JSON.stringify(schedules)),
                     success: true,
                 });
             } catch (error) {
@@ -64,21 +64,21 @@ export default async function handler(req, res) {
             const projectId = JSON.parse(req.body).projectId;
             const schedule = JSON.parse(req.body).schedule;
             let project = await db
-                    .collection('calendars')
-                    .find({_id : new ObjectId(projectId)})
+                    .collection('calendar')
+                    .find({projectId : projectId})
                     .toArray();
-            const schedules = project[0].schedules
-            schedules.push(schedule)
+            const array = project[0].schedules
+            array.push(schedule)
             // update the published status of the post
-            await db.collection('calendars').updateOne(
+            await db.collection('calendar').updateOne(
                 {
-                    projectId: new ObjectId(projectId),
+                    projectId: projectId,
                 },
-                { $set: { schedules: schedules } }//click butten, change published true
+                { $set: { "schedules": array } }//click butten, change published true
             );
             // return a message
             return res.json({
-                message: 'Post updated successfully',
+                message: JSON.stringify(array),
                 success: true,
             });
         }
@@ -90,11 +90,11 @@ export default async function handler(req, res) {
             const schedules = JSON.parse(req.body).schedules;
         
             // Deleting the post
-            await db.collection('calendars').updateOne(
+            await db.collection('calendar').updateOne(
               {
-                  projectId: new ObjectId(projectId),
+                  projectId:projectId,
               },
-              { $set: { schedules: schedules } }//click butten, change published true
+              { $set: { "schedules": schedules } }//click butten, change published true
           );
         
             // returning a message

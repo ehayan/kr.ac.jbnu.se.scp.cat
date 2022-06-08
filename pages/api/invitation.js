@@ -59,7 +59,7 @@ export default async function handler(req, res) {
 
         async function updatePost(req, res) {
             let { db } = await connectToDatabase();
-            const id = JSON.parse(req.body).projectId;
+            const id = JSON.parse(req.body).id;
             const projectId = JSON.parse(req.body).projectId;
             const name = JSON.parse(req.body).name;
             const email = JSON.parse(req.body).email;
@@ -82,7 +82,7 @@ export default async function handler(req, res) {
             });
             // return a message
             return res.json({
-                message: JSON.stringify(users),
+                message: JSON.stringify(id),
                 success: true,
             });
         }

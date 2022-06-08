@@ -6,40 +6,23 @@ import { useEffect, useState } from 'react';
 import { useRouter } from "next/router";
 
 const Dashboard = (page) => {
-  const schedules = [
-    {
-      title: '논문 작성',
-      start: '2022-05-06',
-      end: '2022-05-09',
-    },
-    {
-      title: '논문 통합',
-      start: '2022-05-08',
-      end: '2022-05-10',
-    },
-    {
-      title: '17시 교수님 면담',
-      start: '2022-05-09',
-      end: '2022-05-11',
-    },
-  ];
   const router = useRouter();
   const projectId = router.query.projectId;
-  const [events, setEvents] = useState(schedules);
+  const [events, setEvents] = useState([]);
 
-  // useEffect(() => {
-  //   const getResponse = async () => {
-  //     const response = await fetch('/api/calendar');
-  //     const data = await response.json();
-  //     return data;
-  //   }
-  //   getResponse().then((data) => {
-  //     const allSchedules = data.message;
-  //     const scheduleDatas = allSchedules.filter((schedule) => (schedule.projectId == projectId))[0];
-  //     const schedules = scheduleDatas.schedules;
-  //     setEvents(schedules);
-  //   })
-  // }, []);
+  useEffect(() => {
+    const getResponse = async () => {
+      const response = await fetch('/api/calendar');
+      const data = await response.json();
+      return data;
+    }
+    getResponse().then((data) => {
+      const allSchedules = data.message;
+      const scheduleDatas = allSchedules.filter((schedule) => (schedule.projectId == projectId))[0];
+      const schedules = scheduleDatas.schedules;
+      setEvents(schedules);
+    })
+  }, []);
 
   return (
     <div>

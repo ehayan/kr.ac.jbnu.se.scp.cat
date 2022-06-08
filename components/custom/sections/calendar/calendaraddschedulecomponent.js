@@ -17,10 +17,11 @@ const AddScheduleComponent = ({ events, setEvents, projectId }) => {
       "projectId" : projectId,
       "schedule" : schedule
     }
-    await fetch('/api/calendar', {
+    const response = await fetch('/api/calendar', {
       method: 'PUT',
       body: JSON.stringify(requestBody),
     });
+    console.log(response.json().then((data)=>console.log(data.message)))
     setEvents([...events, schedule]);
     event.target.parentElement.children[1].children[1].value = '';
     event.target.parentElement.children[3].children[1].value = '';
