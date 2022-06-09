@@ -1,9 +1,9 @@
 /* eslint-disable */
-import { useCallback, useEffect, useState } from "react";
-import { Row, Col, Container, Card, CardBody } from "reactstrap";
-import * as Trello from "../../../api/trello";
-import { Element, animateScroll as scroll } from "react-scroll";
-import { db } from "../../../pages/firebase";
+import { useCallback, useEffect, useState } from 'react';
+import { Row, Col, Container, Card, CardBody } from 'reactstrap';
+import * as Trello from '../../../api/trello';
+import { Element, animateScroll as scroll } from 'react-scroll';
+import { db } from '../../../pages/firebase';
 
 const TrelloBoardComponent = (prop) => {
   // const link = "https://trello.com/b/i6j02hs3/cat-example";
@@ -45,35 +45,36 @@ const TrelloBoardComponent = (prop) => {
   return (
     <div>
       <div>
-        <div className="m-l-30">
-          <h2 className="title font-bold">
+        <div className='m-l-30'>
+          <h2 className='title font-bold'>
             Trello : {Trello.getProjectName(prop.link)}
           </h2>
-          <span className="subtitle">URL : </span>
+          <span className='subtitle'>URL : </span>
           <a href={prop.link}>{prop.link}</a>
         </div>
-        <Element
+
+        <Container
           style={{
-            width: "1700px",
-            height: "800px",
-            overflow: "scroll",
+            width: '100vw',
+            height: '85vh',
+            overflow: 'scroll',
           }}
         >
-          <Row className="m-l-5 m-t-30 trello-flex-nowrap">
+          <Row className='m-t-30 trello-flex-nowrap'>
             {loading ? (
-              <div class="box">
-                <p className="m-t-12p"></p>
-                <div className="loader9"></div>
+              <div class='box'>
+                <p className='m-t-12p'></p>
+                <div className='loader9'></div>
               </div>
             ) : (
               trelloDatas.map((data) => (
-                <Card className=" board-card board-align card-width-300 m-b-0 p-0 b-all m-l-20">
-                  <p className="board-card-name m-b-0 ">{data.board.name}</p>
+                <Card className=' board-card board-align card-width-300 m-b-0 p-0 b-all m-l-20'>
+                  <p className='board-card-name m-b-0'>{data.board.name}</p>
                   <CardBody>
                     {data.card.map((card) => (
-                      <Card className="card-width-270 b-all">
+                      <Card className='card-width-270 b-all'>
                         <CardBody>
-                          <p className="board-card-content">{card.name}</p>
+                          <p className='board-card-content'>{card.name}</p>
                         </CardBody>
                       </Card>
                     ))}
@@ -82,15 +83,15 @@ const TrelloBoardComponent = (prop) => {
               ))
             )}
           </Row>
-        </Element>
+        </Container>
       </div>
       <style jsx>{`
         h2 {
-          font-family: "Spoca_B";
+          font-family: 'Spoca_B';
         }
         span,
         p {
-          font-family: "RIDI";
+          font-family: 'RIDI';
         }
       `}</style>
     </div>

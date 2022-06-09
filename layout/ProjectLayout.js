@@ -13,6 +13,11 @@ const ProjectLayout = ({ children }) => {
           <div className='container-fluid'>{children}</div>
         </div>
       </div>
+      <style jsx>{`
+        main {
+          overflow: hidden;
+        }
+      `}</style>
     </main>
   );
 };
